@@ -1,5 +1,6 @@
 @echo off
 chcp 65001 >nul
+cd /d "%~dp0"
 title Deploy Wuthering Waves TCG to GitHub Pages (bao123e)
 echo ========================================================
 echo   DONG BO AETHERIA TCG LEN GITHUB: bao123e/wwtcg
