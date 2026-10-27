@@ -1,0 +1,536 @@
+/* ====================================================================
+   AETHERIA TCG - Cyber-Arcane Glassmorphic & Holographic Foil Stylesheet
+   ==================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-deep-void: #070913;
+  --bg-card-surface: rgba(15, 23, 42, 0.75);
+  --color-cyan-astral: #38bdf8;
+  --color-purple-void: #c084fc;
+  --color-gold-solar: #facc15;
+  --color-crimson-ur: #f43f5e;
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-glow: rgba(56, 189, 248, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-deep-void);
+  color: #f8fafc;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(7, 9, 19, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* ====================================================================
+   WebGL Background Canvas & Scene Setup
+   ==================================================================== */
+#webgl-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#webgl-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ====================================================================
+   Glassmorphic Panels & HUD Elements
+   ==================================================================== */
+.glass-panel {
+  background: rgba(11, 15, 29, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 20px -2px rgba(56, 189, 248, 0.05);
+}
+
+.glass-panel-glow {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 25px -3px rgba(56, 189, 248, 0.25);
+}
+
+/* Gradient Glowing Button */
+.btn-summon-glow {
+  background: linear-gradient(135deg, #0284c7 0%, #6366f1 50%, #d946ef 100%);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-summon-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+  transform: rotate(35deg);
+  animation: shine-sweep 3.5s infinite;
+}
+
+@keyframes shine-sweep {
+  0% { transform: translateX(-100%) rotate(35deg); }
+  30%, 100% { transform: translateX(100%) rotate(35deg); }
+}
+
+.btn-summon-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 35px rgba(99, 102, 241, 0.6), 0 0 15px rgba(217, 70, 239, 0.4);
+}
+
+.btn-summon-glow:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ====================================================================
+   3D Card Tilt & Holographic Foil Shaders
+   ==================================================================== */
+.card-inner-3d {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+.card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+}
+
+.card-back-bg {
+  background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 70%, #020617 100%);
+  background-size: 100% 100%;
+}
+
+.card-back-bg::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(56, 189, 248, 0.4);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* ====================================================================
+   Secret Rare & Holographic Grating Patterns
+   ==================================================================== */
+
+/* UR (Ultra Rare) - Cosmic Rainbow Prismatic Diffraction Foil */
+.holo-cosmic-rainbow {
+  background: linear-gradient(135deg, #181824 0%, #0d111a 100%);
+  position: relative;
+}
+
+.holo-cosmic-rainbow .holo-shimmer-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 0, 128, 0.35) 15%,
+    rgba(255, 230, 0, 0.4) 30%,
+    rgba(0, 255, 200, 0.35) 50%,
+    rgba(0, 150, 255, 0.4) 70%,
+    rgba(180, 0, 255, 0.35) 85%,
+    transparent 100%
+  );
+  background-size: 300% 300%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.85;
+  animation: rainbow-shift 5s ease infinite alternate;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes rainbow-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* SSR (Super Special Rare) - Solar Gold Flare Foil */
+.holo-solar-gold .holo-shimmer-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    125deg,
+    transparent 0%,
+    rgba(250, 204, 21, 0.45) 25%,
+    rgba(254, 240, 138, 0.6) 50%,
+    rgba(245, 158, 11, 0.4) 75%,
+    transparent 100%
+  );
+  background-size: 250% 250%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.9;
+  animation: gold-shift 4s ease infinite alternate;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes gold-shift {
+  0% { background-position: 10% 20%; }
+  100% { background-position: 90% 80%; }
+}
+
+/* SR (Super Rare) - Purple Void Foil */
+.holo-void-purple .holo-shimmer-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(192, 132, 252, 0.35) 30%,
+    rgba(233, 213, 255, 0.5) 50%,
+    rgba(147, 51, 234, 0.35) 70%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  mix-blend-mode: screen;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* R (Rare) - Astral Cyan Sheen */
+.holo-astral-cyan .holo-shimmer-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(56, 189, 248, 0.25) 40%,
+    rgba(186, 230, 253, 0.4) 50%,
+    transparent 60%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Specular Light Reflection Glare */
+.holo-specular-glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.45) 0%,
+    transparent 60%
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* ====================================================================
+   Aura Pulse Rings for Face-down Cards
+   ==================================================================== */
+.card-aura-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 18px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.aura-pulse-ur {
+  opacity: 1;
+  background: linear-gradient(45deg, #f43f5e, #a855f7, #38bdf8, #fbbf24);
+  filter: blur(10px);
+  animation: aura-glow-ur 2s infinite alternate;
+}
+
+@keyframes aura-glow-ur {
+  0% { transform: scale(0.97); opacity: 0.7; }
+  100% { transform: scale(1.05); opacity: 1; filter: blur(14px); }
+}
+
+.aura-pulse-ssr {
+  opacity: 1;
+  background: radial-gradient(circle, #facc15 0%, #f59e0b 60%, transparent 80%);
+  filter: blur(8px);
+  animation: aura-glow-ssr 2s infinite alternate;
+}
+
+@keyframes aura-glow-ssr {
+  0% { transform: scale(0.98); opacity: 0.6; }
+  100% { transform: scale(1.03); opacity: 0.95; }
+}
+
+/* ====================================================================
+   Rarity Badges
+   ==================================================================== */
+.badge-ur {
+  background: linear-gradient(135deg, #f43f5e, #ec4899, #8b5cf6);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(244, 63, 94, 0.7);
+}
+
+.badge-ssr {
+  background: linear-gradient(135deg, #f59e0b, #eab308, #fef08a);
+  color: #451a03;
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.7);
+}
+
+.badge-sr {
+  background: linear-gradient(135deg, #9333ea, #a855f7, #c084fc);
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+}
+
+.badge-r {
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  color: #ffffff;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.4);
+}
+
+/* ====================================================================
+   Stage 1 & 2 Summon Overlays & Magic Circle
+   ==================================================================== */
+#summon-circle-container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+#rarity-flash-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#shard-particles-container {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+  pointer-events: none;
+}
+
+/* ====================================================================
+   Drag-to-Rip Pack Slider
+   ==================================================================== */
+#pack-tear-slider {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 48px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  cursor: grab;
+  z-index: 20;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+  transition: opacity 0.3s;
+}
+
+#pack-tear-slider:active {
+  cursor: grabbing;
+}
+
+#slice-laser-trail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.4), rgba(244, 63, 94, 0.9));
+  box-shadow: 0 0 15px #f43f5e;
+  border-radius: 9999px;
+  transition: width 0.05s linear;
+}
+
+/* Pulse animation utility */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+/* 3D Inspector Modal Perspective */
+.inspector-card-container {
+  perspective: 1400px;
+}
+
+.inspector-card-target {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+/* ====================================================================
+   Reveal Stage Overlay & Compact Card Scaling
+   ==================================================================== */
+#reveal-stage-overlay {
+  scrollbar-width: thin;
+  scrollbar-color: #38bdf8 rgba(7, 9, 19, 0.8);
+}
+
+.gacha-card-wrapper {
+  perspective: 1000px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gacha-card-wrapper:hover {
+  transform: translateY(-4px) scale(1.025);
+  z-index: 25;
+}
+
+#close-reveal-overlay-btn:active {
+  transform: scale(0.95);
+}
+
+/* ====================================================================
+   CS2 Case Opening & Roulette Styles
+   ==================================================================== */
+#cs2-roulette-track {
+  display: flex;
+  transition: none; /* Controlled via requestAnimationFrame for exact physics */
+}
+
+.cs2-track-item {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.cs2-track-item:hover {
+  transform: translateY(-2px);
+}
+
+#cs2-center-needle {
+  box-shadow: 0 0 16px #facc15, 0 0 30px rgba(250, 204, 21, 0.4);
+}
+
+/* ====================================================================
+   APEX CELESTIAL SUPERNOVA & REALITY SHATTER
+   ==================================================================== */
+#supernova-inversion-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: #ffffff;
+  mix-blend-mode: difference;
+}
+
+#supernova-reality-cracks-svg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  pointer-events: none;
+}
+
+/* ====================================================================
+   WUTHERING WAVES (鸣潮) CONVENE STYLING
+   ==================================================================== */
+.wuwa-sonoro-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  border: 2px solid rgba(250, 204, 21, 0.6);
+  box-shadow: 0 0 35px rgba(250, 204, 21, 0.4);
+  pointer-events: none;
+}
+
+#wuwa-meteor-beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 100vh;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 40;
+}
+
+.wuwa-diamond-card {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.wuwa-diamond-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  z-index: 20;
+}
+
+/* WuWa Tracker Sleek Dark Scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 9999px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(250, 204, 21, 0.4);
+  border-radius: 9999px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(250, 204, 21, 0.8);
+}
