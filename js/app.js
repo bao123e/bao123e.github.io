@@ -30,14 +30,31 @@ class AppController {
     }
 
     // 5. Initialize WuWa Convene Engine
-    if (window.wuwaConveneEngine) {
-      window.wuwaConveneEngine.init();
+    try {
+      if (window.wuwaConveneEngine) {
+        window.wuwaConveneEngine.init();
+      }
+    } catch (e) {
+      console.error('[AppController] Error initializing Convene Engine:', e);
     }
 
     // 6. Initialize 2D Chibi Combat Arena Canvas
-    const combatCanvas = document.getElementById('combat-canvas');
-    if (combatCanvas && window.wuwaCombat) {
-      window.wuwaCombat.init(combatCanvas);
+    try {
+      const combatCanvas = document.getElementById('combat-canvas');
+      if (combatCanvas && window.wuwaCombat) {
+        window.wuwaCombat.init(combatCanvas);
+      }
+    } catch (e) {
+      console.error('[AppController] Error initializing Combat Canvas:', e);
+    }
+
+    // 7. Ensure Tier List is ready
+    try {
+      if (window.wuwaTierList && window.wuwaMasterData) {
+        window.wuwaTierList.initData(window.wuwaMasterData);
+      }
+    } catch (e) {
+      console.error('[AppController] Error initializing Tier List:', e);
     }
 
     // Default view: Convene

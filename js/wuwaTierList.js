@@ -12,6 +12,10 @@ class WuWaTierList {
     this.resonators = [];
     this.selectedResonator = null;
 
+    if (window.wuwaMasterData) {
+      this.initData(window.wuwaMasterData);
+    }
+
     window.addEventListener('wuwa_data_ready', (e) => {
       this.initData(e.detail);
     });
@@ -67,6 +71,14 @@ class WuWaTierList {
   render() {
     const container = document.getElementById('tierlist-container');
     if (!container) return;
+
+    if (!this.resonators || !this.resonators.length) {
+      if (window.wuwaMasterData?.resonators?.length) {
+        this.resonators = window.wuwaMasterData.resonators;
+      } else if (window.cardDataService?.wuwaResonators?.length) {
+        this.resonators = window.cardDataService.wuwaResonators;
+      }
+    }
 
     const lang = window.wuwaI18n ? window.wuwaI18n.getLang() : 'vi';
     const t = (k) => window.wuwaI18n ? window.wuwaI18n.t(k) : k;
@@ -186,13 +198,13 @@ class WuWaTierList {
     }
 
     return matched.map(r => {
-      const name = r.name[lang] || r.name.en;
+      const name = typeof r.name === 'object' ? (r.name[lang] || r.name.en || r.id) : (r.displayName ? (r.displayName[lang] || r.displayName.en) : (r.name || r.id));
       const elemColor = this.getElementColor(r.element);
-      const avatarSrc = r.assets.avatar || r.assets.chibi || 'assets/jinhsi-official.webp';
+      const avatarSrc = r.assets?.avatar || r.assets?.chibi || r.image || 'assets/jinhsi-official.webp';
 
       return `
         <div onclick="window.wuwaTierList.openBuildModal('${r.id}')"
-             class="group relative w-14 sm:w-16 flex flex-col items-center cursor-pointer transform transition-all duration-200 hover:scale-110 active:scale-95"
+             class="tier-res-chip group relative w-14 sm:w-16 flex flex-col items-center cursor-pointer transform transition-all duration-200 hover:scale-110 active:scale-95"
              title="${name} (${r.element} • ${r.weapon}) - Click to view Build Guide">
           
           <!-- Avatar Frame -->
@@ -227,8 +239,9 @@ class WuWaTierList {
     const lang = window.wuwaI18n ? window.wuwaI18n.getLang() : 'vi';
     const t = (k) => window.wuwaI18n ? window.wuwaI18n.t(k) : k;
 
-    const name = res.name[lang] || res.name.en;
+    const name = typeof res.name === 'object' ? (res.name[lang] || res.name.en || res.id) : (res.displayName ? (res.displayName[lang] || res.displayName.en) : (res.name || res.id));
     const elemColor = this.getElementColor(res.element);
+    const avatarSrc = res.assets?.avatar || res.assets?.chibi || res.image || 'assets/jinhsi-official.webp';
     const analysis = res.build?.analysis ? (res.build.analysis[lang] || res.build.analysis.en) : 'No analysis available.';
 
     content.innerHTML = `
@@ -237,7 +250,7 @@ class WuWaTierList {
         <div class="flex items-center gap-3.5">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-slate-900 border-2 shadow-xl flex-shrink-0"
                style="border-color: ${elemColor}; box-shadow: 0 0 25px ${elemColor}40">
-            <img src="${res.assets.avatar || res.assets.chibi}" alt="${name}" class="w-full h-full object-cover object-top"
+            <img src="${avatarSrc}" alt="${name}" class="w-full h-full object-cover object-top"
                  onerror="this.src='assets/jinhsi-official.webp'">
           </div>
           <div>

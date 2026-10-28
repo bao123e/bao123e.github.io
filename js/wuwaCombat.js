@@ -42,6 +42,11 @@ class WuWaCombatArena {
 
     this.imagesCache = {};
 
+    if (window.wuwaMasterData) {
+      this.masterData = window.wuwaMasterData;
+      this.initSquadRuntime();
+    }
+
     window.addEventListener('wuwa_data_ready', (e) => {
       this.masterData = e.detail;
       this.initSquadRuntime();
@@ -52,6 +57,11 @@ class WuWaCombatArena {
     });
 
     this.bindKeyboard();
+  }
+
+  updateUI() {
+    this.updateHUD();
+    this.renderSquadSelector();
   }
 
   init(canvasEl) {
