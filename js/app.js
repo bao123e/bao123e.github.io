@@ -251,7 +251,7 @@ class AppController {
              class="glass-panel p-3 sm:p-4 rounded-2xl border border-white/10 hover:border-amber-400/50 transition-all cursor-pointer flex flex-col justify-between group hover:scale-[1.02] shadow-xl">
           <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-black mb-3 border" style="border-color: ${elemColor}40">
             <img src="${r.assets.avatar || r.assets.chibi}" alt="${name}" class="w-full h-full object-cover object-top"
-                 onerror="this.src='assets/jinhsi-official.webp'">
+                 onerror="window.cardDataService ? window.cardDataService.handleImageError(this, '${r.id}') : (this.onerror=null)">
             <span class="absolute top-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded uppercase"
                   style="background-color: ${elemColor}25; color: ${elemColor}; border: 1px solid ${elemColor}60">
               ${r.element}

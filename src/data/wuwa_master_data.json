@@ -3619,7 +3619,7 @@
       },
       "tiers": {
         "toa": "T1.5",
-        "ww": "T1",
+        "ww": "T1.5",
         "matrix": "T1.5"
       },
       "build": {
@@ -4046,6 +4046,2488 @@
           }
         }
       }
+    }
+  ],
+  "weapons": [
+    {
+      "id": "w_blooming_jadehaven",
+      "weaponId": 21050116,
+      "name": {
+        "en": "Blooming Jadehaven",
+        "vi": "Bích Ngọc Uyển (Blooming Jadehaven)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050116_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050116_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-bloomingjadehaven.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050116_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-bloomingjadehaven.mp4"
+    },
+    {
+      "id": "w_unspoken_rue",
+      "weaponId": 21020107,
+      "name": {
+        "en": "Unspoken Rue",
+        "vi": "Nỗi Buồn Khôn Nguôi (Unspoken Rue)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020107_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020107_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-unspokenrue.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020107_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-unspokenrue.mp4"
+    },
+    {
+      "id": "w_glint_of_clouds",
+      "weaponId": 21020106,
+      "name": {
+        "en": "Glint of Clouds",
+        "vi": "Ánh Mây Lấp Lánh (Glint of Clouds)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020106_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020106_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-glintofclouds.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020106_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-glintofclouds.mp4"
+    },
+    {
+      "id": "w_thousandfold_deliverance",
+      "weaponId": 21010076,
+      "name": {
+        "en": "Thousandfold Deliverance",
+        "vi": "Ngàn Lần Cứu Chuộc (Thousandfold Deliverance)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010076_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010076_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-thousandfolddeliverance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010076_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-thousandfolddeliverance.mp4"
+    },
+    {
+      "id": "w_firstlight_s_herald",
+      "weaponId": 21050096,
+      "name": {
+        "en": "Firstlight's Herald",
+        "vi": "Bình Minh Kêu Gọi (Firstlight's Herald)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050096_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050096_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-firstlightsherald.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050096_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-firstlightsherald.mp4"
+    },
+    {
+      "id": "w_azure_oath",
+      "weaponId": 21020096,
+      "name": {
+        "en": "Azure Oath",
+        "vi": "Lời Thề Xanh Thẳm (Azure Oath)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020096_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020096_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-azureoath.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020096_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-azureoath.mp4"
+    },
+    {
+      "id": "w_freeze_frame",
+      "weaponId": 21050086,
+      "name": {
+        "en": "Freeze Frame",
+        "vi": "Đóng Băng Khung Hình (Freeze Frame)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050086_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050086_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-freezeframe.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050086_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-freezeframe.mp4"
+    },
+    {
+      "id": "w_skull_thrasher",
+      "weaponId": 21030066,
+      "name": {
+        "en": "Skull Thrasher",
+        "vi": "Kích Liệt Nghiền Xương (Skull Thrasher)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030066_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030066_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-skullthrasher.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030066_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-skullthrasher.mp4"
+    },
+    {
+      "id": "w_spectral_trigger",
+      "weaponId": 21030056,
+      "name": {
+        "en": "Spectral Trigger",
+        "vi": "Cò Súng Quang Phổ (Spectral Trigger)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030056_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030056_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-spectraltrigger.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030056_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-spectraltrigger.mp4"
+    },
+    {
+      "id": "w_frostburn",
+      "weaponId": 21020086,
+      "name": {
+        "en": "Frostburn",
+        "vi": "Băng Hỏa Đồng Quy (Frostburn)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-frostburn.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-frostburn.mp4"
+    },
+    {
+      "id": "w_forged_dwarf_star",
+      "weaponId": 21050076,
+      "name": {
+        "en": "Forged Dwarf Star",
+        "vi": "Sao Lùn Rèn Đúc (Forged Dwarf Star)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050076_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050076_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-forgeddwarfstar.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050076_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-forgeddwarfstar.mp4"
+    },
+    {
+      "id": "w_solsworn_ciphers",
+      "weaponId": 21040066,
+      "name": {
+        "en": "Solsworn Ciphers",
+        "vi": "Solsworn Ciphers"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040066_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040066_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040066_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_daybreaker_s_spine",
+      "weaponId": 21040056,
+      "name": {
+        "en": "Daybreaker's Spine",
+        "vi": "Cột Sống Bình Minh (Daybreaker's Spine)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040056_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040056_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-daybreakersspine.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040056_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-daybreakersspine.mp4"
+    },
+    {
+      "id": "w_everbright_polestar",
+      "weaponId": 21020076,
+      "name": {
+        "en": "Everbright Polestar",
+        "vi": "Sao Bắc Đẩu Rạng Rỡ (Everbright Polestar)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020076_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020076_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-everbrightpolestar.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020076_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-everbrightpolestar.mp4"
+    },
+    {
+      "id": "w_boson_astrolabe",
+      "weaponId": 21050045,
+      "name": {
+        "en": "Boson Astrolabe",
+        "vi": "Boson Astrolabe"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21050045_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21050045_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21050045_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_pulsation_bracer",
+      "weaponId": 21040045,
+      "name": {
+        "en": "Pulsation Bracer",
+        "vi": "Pulsation Bracer"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040045_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040045_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040045_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_phasic_homogenizer",
+      "weaponId": 21030045,
+      "name": {
+        "en": "Phasic Homogenizer",
+        "vi": "Phasic Homogenizer"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21030045_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21030045_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21030045_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_laser_shearer",
+      "weaponId": 21020045,
+      "name": {
+        "en": "Laser Shearer",
+        "vi": "Laser Shearer"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21020045_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21020045_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21020045_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_radiance_cleaver",
+      "weaponId": 21010045,
+      "name": {
+        "en": "Radiance Cleaver",
+        "vi": "Radiance Cleaver"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21010045_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21010045_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon_21010045_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_starfield_calibrator",
+      "weaponId": 21010066,
+      "name": {
+        "en": "Starfield Calibrator",
+        "vi": "Starfield Calibrator"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010066_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010066_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010066_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_spectrum_blaster",
+      "weaponId": 21030046,
+      "name": {
+        "en": "Spectrum Blaster",
+        "vi": "Pháo Quang Phổ (Spectrum Blaster)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030046_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030046_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-spectrumblaster.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030046_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-spectrumblaster.mp4"
+    },
+    {
+      "id": "w_kumokiri",
+      "weaponId": 21010056,
+      "name": {
+        "en": "Kumokiri",
+        "vi": "Kumokiri"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010056_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010056_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010056_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_emerald_sentence",
+      "weaponId": 21020066,
+      "name": {
+        "en": "Emerald Sentence",
+        "vi": "Emerald Sentence"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020066_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020066_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020066_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_lux_u0026_umbra",
+      "weaponId": 21030036,
+      "name": {
+        "en": "Lux \\u0026 Umbra",
+        "vi": "Lux \\u0026 Umbra"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030036_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030036_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030036_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_radiant_dawn",
+      "weaponId": 21050104,
+      "name": {
+        "en": "Radiant Dawn",
+        "vi": "Radiant Dawn"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050104_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050104_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050104_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_aether_strike",
+      "weaponId": 21040104,
+      "name": {
+        "en": "Aether Strike",
+        "vi": "Aether Strike"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040104_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040104_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040104_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_solar_flame",
+      "weaponId": 21030104,
+      "name": {
+        "en": "Solar Flame",
+        "vi": "Solar Flame"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030104_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030104_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030104_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_feather_edge",
+      "weaponId": 21020104,
+      "name": {
+        "en": "Feather Edge",
+        "vi": "Feather Edge"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020104_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020104_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020104_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_aureate_zenith",
+      "weaponId": 21010104,
+      "name": {
+        "en": "Aureate Zenith",
+        "vi": "Aureate Zenith"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010104_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010104_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010104_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_thunderflare_dominion",
+      "weaponId": 21010046,
+      "name": {
+        "en": "Thunderflare Dominion",
+        "vi": "Thunderflare Dominion"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010046_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010046_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010046_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_moongazer_s_sigil",
+      "weaponId": 21040046,
+      "name": {
+        "en": "Moongazer's Sigil",
+        "vi": "Moongazer's Sigil"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040046_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040046_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040046_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_lethean_elegy",
+      "weaponId": 21050066,
+      "name": {
+        "en": "Lethean Elegy",
+        "vi": "Lethean Elegy"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050066_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050066_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050066_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_wildfire_mark",
+      "weaponId": 21010036,
+      "name": {
+        "en": "Wildfire Mark",
+        "vi": "Wildfire Mark"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010036_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010036_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010036_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_defier_s_thorn",
+      "weaponId": 21020056,
+      "name": {
+        "en": "Defier's Thorn",
+        "vi": "Defier's Thorn"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020056_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020056_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020056_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_woodland_aria",
+      "weaponId": 21030026,
+      "name": {
+        "en": "Woodland Aria",
+        "vi": "Woodland Aria"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030026_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030026_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030026_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_blazing_justice",
+      "weaponId": 21040036,
+      "name": {
+        "en": "Blazing Justice",
+        "vi": "Blazing Justice"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040019_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040019_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040019_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_bloodpact_s_pledge",
+      "weaponId": 21020046,
+      "name": {
+        "en": "Bloodpact's Pledge",
+        "vi": "Bloodpact's Pledge"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020026_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020026_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020026_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_whispers_of_sirens",
+      "weaponId": 21050056,
+      "name": {
+        "en": "Whispers of Sirens",
+        "vi": "Whispers of Sirens"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050030_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050030_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050030_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_ocean_s_gift",
+      "weaponId": 21050027,
+      "name": {
+        "en": "Ocean's Gift",
+        "vi": "Ocean's Gift"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050036_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050036_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050036_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_luminous_hymn",
+      "weaponId": 21050046,
+      "name": {
+        "en": "Luminous Hymn",
+        "vi": "Luminous Hymn"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050029_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050029_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050029_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_unflickering_valor",
+      "weaponId": 21020036,
+      "name": {
+        "en": "Unflickering Valor",
+        "vi": "Unflickering Valor"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020025_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020025_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020025_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_the_last_dance",
+      "weaponId": 21030016,
+      "name": {
+        "en": "The Last Dance",
+        "vi": "Vũ Điệu Cuối Cùng (The Last Dance)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030017_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030017_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-thousandfolddeliverance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030017_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-thousandfolddeliverance.mp4"
+    },
+    {
+      "id": "w_tragicomedy",
+      "weaponId": 21040026,
+      "name": {
+        "en": "Tragicomedy",
+        "vi": "Tragicomedy"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040018_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040018_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040018_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_waltz_in_masquerade",
+      "weaponId": 21050094,
+      "name": {
+        "en": "Waltz in Masquerade",
+        "vi": "Waltz in Masquerade"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050094_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050094_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050094_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_legend_of_drunken_hero",
+      "weaponId": 21040094,
+      "name": {
+        "en": "Legend of Drunken Hero",
+        "vi": "Legend of Drunken Hero"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040094_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040094_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040094_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_romance_in_farewell",
+      "weaponId": 21030094,
+      "name": {
+        "en": "Romance in Farewell",
+        "vi": "Romance in Farewell"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030094_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030094_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030094_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_fables_of_wisdom",
+      "weaponId": 21020094,
+      "name": {
+        "en": "Fables of Wisdom",
+        "vi": "Fables of Wisdom"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020094_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020094_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020094_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_meditations_on_mercy",
+      "weaponId": 21010094,
+      "name": {
+        "en": "Meditations on Mercy",
+        "vi": "Meditations on Mercy"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010094_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010094_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010094_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_call_of_the_abyss",
+      "weaponId": 21050017,
+      "name": {
+        "en": "Call of the Abyss",
+        "vi": "Call of the Abyss"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050017_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050017_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050017_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_red_spring",
+      "weaponId": 21020026,
+      "name": {
+        "en": "Red Spring",
+        "vi": "Suối Nguồn Đỏ (Red Spring)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020017_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020017_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-unspokenrue.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020017_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-unspokenrue.mp4"
+    },
+    {
+      "id": "w_somnoire_anchor",
+      "weaponId": 21020017,
+      "name": {
+        "en": "Somnoire Anchor",
+        "vi": "Somnoire Anchor"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020019_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020019_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020019_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_fusion_accretion",
+      "weaponId": 21050084,
+      "name": {
+        "en": "Fusion Accretion",
+        "vi": "Fusion Accretion"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050084_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050084_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050084_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_celestial_spiral",
+      "weaponId": 21040084,
+      "name": {
+        "en": "Celestial Spiral",
+        "vi": "Celestial Spiral"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040084_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040084_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040084_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_relativistic_jet",
+      "weaponId": 21030084,
+      "name": {
+        "en": "Relativistic Jet",
+        "vi": "Relativistic Jet"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030084_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030084_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030084_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_endless_collapse",
+      "weaponId": 21020084,
+      "name": {
+        "en": "Endless Collapse",
+        "vi": "Endless Collapse"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020084_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020084_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020084_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_waning_redshift",
+      "weaponId": 21010084,
+      "name": {
+        "en": "Waning Redshift",
+        "vi": "Waning Redshift"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010084_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010084_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010084_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_stellar_symphony",
+      "weaponId": 21050036,
+      "name": {
+        "en": "Stellar Symphony",
+        "vi": "Giai Điệu Tinh Tú (Stellar Symphony)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050027_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050027_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-bloomingjadehaven.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050027_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-bloomingjadehaven.mp4"
+    },
+    {
+      "id": "w_verity_s_handle",
+      "weaponId": 21040016,
+      "name": {
+        "en": "Verity's Handle",
+        "vi": "Bính Thừa Chân Lý (Verity's Handle)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040016_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040016_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-frostburn.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040016_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-frostburn.mp4"
+    },
+    {
+      "id": "w_rime_draped_sprouts",
+      "weaponId": 21050026,
+      "name": {
+        "en": "Rime-Draped Sprouts",
+        "vi": "Quỳnh Chi Băng Tuyết (Rime-Draped Sprouts)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050026_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050026_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-freezeframe.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050026_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-freezeframe.mp4"
+    },
+    {
+      "id": "w_beguiling_melody",
+      "weaponId": 21010063,
+      "name": {
+        "en": "Beguiling Melody",
+        "vi": "Beguiling Melody"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010063_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010063_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010063_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_blazing_brilliance",
+      "weaponId": 21020016,
+      "name": {
+        "en": "Blazing Brilliance",
+        "vi": "Hách Lạc Quang Vũ (Blazing Brilliance)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020016_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020016_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020016_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-blazingbrilliance.mp4"
+    },
+    {
+      "id": "w_ages_of_harvest",
+      "weaponId": 21010026,
+      "name": {
+        "en": "Ages of Harvest",
+        "vi": "Thời Hoang Thệ Đoán (Ages of Harvest)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010026_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010026_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-bloomingjadehaven.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010026_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-bloomingjadehaven.mp4"
+    },
+    {
+      "id": "w_stringmaster",
+      "weaponId": 21050016,
+      "name": {
+        "en": "Stringmaster",
+        "vi": "Trạc Tơ Bắt Ảnh (Stringmaster)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050016_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050016_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-freezeframe.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050016_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-freezeframe.mp4"
+    },
+    {
+      "id": "w_verdant_summit",
+      "weaponId": 21010016,
+      "name": {
+        "en": "Verdant Summit",
+        "vi": "Kỷ Nguyên Xanh (Verdant Summit)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010016_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010016_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-forgeddwarfstar.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010016_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-forgeddwarfstar.mp4"
+    },
+    {
+      "id": "w_cosmic_ripples",
+      "weaponId": 21050015,
+      "name": {
+        "en": "Cosmic Ripples",
+        "vi": "Gợn Sóng Vũ Trụ (Cosmic Ripples)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050015_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050015_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-glintofclouds.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050015_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-glintofclouds.mp4"
+    },
+    {
+      "id": "w_abyss_surges",
+      "weaponId": 21040015,
+      "name": {
+        "en": "Abyss Surges",
+        "vi": "Vực Sâu Thét Gào (Abyss Surges)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040015_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040015_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-frostburn.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040015_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-frostburn.mp4"
+    },
+    {
+      "id": "w_static_mist",
+      "weaponId": 21030015,
+      "name": {
+        "en": "Static Mist",
+        "vi": "Sương Mù Tĩnh Điện (Static Mist)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030015_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030015_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-firstlightsherald.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030015_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-firstlightsherald.mp4"
+    },
+    {
+      "id": "w_emerald_of_genesis",
+      "weaponId": 21020015,
+      "name": {
+        "en": "Emerald of Genesis",
+        "vi": "Thiên Đình Ngọc Kiếm (Emerald of Genesis)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020015_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020015_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-azureoath.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020015_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-azureoath.mp4"
+    },
+    {
+      "id": "w_lustrous_razor",
+      "weaponId": 21010015,
+      "name": {
+        "en": "Lustrous Razor",
+        "vi": "Dao Cạo Ánh Sáng (Lustrous Razor)"
+      },
+      "rarity": 5,
+      "stars": 5,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010015_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010015_UI.webp",
+        "cutsceneVideo": "assets/videos/wuwa-5w-daybreakersspine.mp4"
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010015_UI.webp",
+      "videoUrl": "assets/videos/wuwa-5w-daybreakersspine.mp4"
+    },
+    {
+      "id": "w_comet_flare",
+      "weaponId": 21050064,
+      "name": {
+        "en": "Comet Flare",
+        "vi": "Comet Flare"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050064_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050064_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050064_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_hollow_mirage",
+      "weaponId": 21040064,
+      "name": {
+        "en": "Hollow Mirage",
+        "vi": "Hollow Mirage"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040064_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040064_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040064_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_novaburst",
+      "weaponId": 21030064,
+      "name": {
+        "en": "Novaburst",
+        "vi": "Bùng Nổ Siêu Tân Tinh (Novaburst)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030064_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030064_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030064_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_lunar_cutter",
+      "weaponId": 21020064,
+      "name": {
+        "en": "Lunar Cutter",
+        "vi": "Vầng Trăng Cắt Xé (Lunar Cutter)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020064_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020064_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020064_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_helios_cleaver",
+      "weaponId": 21010064,
+      "name": {
+        "en": "Helios Cleaver",
+        "vi": "Trảm Đao Mặt Trời (Helios)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010064_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010064_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010064_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_guardian_rectifier",
+      "weaponId": 21050053,
+      "name": {
+        "en": "Guardian Rectifier",
+        "vi": "Guardian Rectifier"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050053_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050053_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050053_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_guardian_gauntlets",
+      "weaponId": 21040053,
+      "name": {
+        "en": "Guardian Gauntlets",
+        "vi": "Guardian Gauntlets"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040053_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040053_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040053_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_guardian_pistols",
+      "weaponId": 21030053,
+      "name": {
+        "en": "Guardian Pistols",
+        "vi": "Guardian Pistols"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030053_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030053_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030053_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_guardian_sword",
+      "weaponId": 21020053,
+      "name": {
+        "en": "Guardian Sword",
+        "vi": "Guardian Sword"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020053_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020053_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020053_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_guardian_broadblade",
+      "weaponId": 21010053,
+      "name": {
+        "en": "Guardian Broadblade",
+        "vi": "Guardian Broadblade"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010053_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010053_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010053_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_rectifier_of_voyager",
+      "weaponId": 21050043,
+      "name": {
+        "en": "Rectifier of Voyager",
+        "vi": "Rectifier of Voyager"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050043_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050043_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050043_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_gauntlets_of_voyager",
+      "weaponId": 21040043,
+      "name": {
+        "en": "Gauntlets of Voyager",
+        "vi": "Gauntlets of Voyager"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040043_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040043_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040043_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_pistols_of_voyager",
+      "weaponId": 21030043,
+      "name": {
+        "en": "Pistols of Voyager",
+        "vi": "Pistols of Voyager"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030043_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030043_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030043_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_sword_of_voyager",
+      "weaponId": 21020043,
+      "name": {
+        "en": "Sword of Voyager",
+        "vi": "Sword of Voyager"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020043_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020043_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020043_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_broadblade_of_voyager",
+      "weaponId": 21010043,
+      "name": {
+        "en": "Broadblade of Voyager",
+        "vi": "Broadblade of Voyager"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010043_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010043_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010043_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_jinzhou_keeper",
+      "weaponId": 21050044,
+      "name": {
+        "en": "Jinzhou Keeper",
+        "vi": "Người Canh Giữ Kim Châu (Jinzhou Keeper)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050044_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050044_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050044_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_amity_accord",
+      "weaponId": 21040044,
+      "name": {
+        "en": "Amity Accord",
+        "vi": "Hiệp Ước Hữu Nghị (Amity Accord)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040044_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040044_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040044_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_undying_flame",
+      "weaponId": 21030044,
+      "name": {
+        "en": "Undying Flame",
+        "vi": "Ngọn Lửa Bất Diệt (Undying Flame)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030044_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030044_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030044_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_commando_of_conviction",
+      "weaponId": 21020044,
+      "name": {
+        "en": "Commando of Conviction",
+        "vi": "Niềm Tin Thiết Huyết (Commando)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020044_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020044_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020044_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_dauntless_evernight",
+      "weaponId": 21010044,
+      "name": {
+        "en": "Dauntless Evernight",
+        "vi": "Đêm Dài Bất Khuất (Dauntless)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010044_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010044_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010044_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_rectifier_25",
+      "weaponId": 21050034,
+      "name": {
+        "en": "Rectifier#25",
+        "vi": "Rectifier#25"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050034_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050034_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050034_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_gauntlets_21d",
+      "weaponId": 21040034,
+      "name": {
+        "en": "Gauntlets#21D",
+        "vi": "Gauntlets#21D"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040034_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040034_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040034_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_pistols_26",
+      "weaponId": 21030034,
+      "name": {
+        "en": "Pistols#26",
+        "vi": "Pistols#26"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030034_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030034_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030034_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_sword_18",
+      "weaponId": 21020034,
+      "name": {
+        "en": "Sword#18",
+        "vi": "Sword#18"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020034_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020034_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020034_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_broadblade_41",
+      "weaponId": 21010034,
+      "name": {
+        "en": "Broadblade#41",
+        "vi": "Broadblade#41"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010034_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010034_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010034_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_originite_type_v",
+      "weaponId": 21050023,
+      "name": {
+        "en": "Originite: Type V",
+        "vi": "Originite: Type V"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050023_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050023_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050023_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_originite_type_iv",
+      "weaponId": 21040023,
+      "name": {
+        "en": "Originite: Type IV",
+        "vi": "Originite: Type IV"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040023_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040023_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040023_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_originite_type_iii",
+      "weaponId": 21030023,
+      "name": {
+        "en": "Originite: Type III",
+        "vi": "Originite: Type III"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030023_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030023_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030023_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_originite_type_ii",
+      "weaponId": 21020023,
+      "name": {
+        "en": "Originite: Type II",
+        "vi": "Originite: Type II"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020023_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020023_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020023_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_originite_type_i",
+      "weaponId": 21010023,
+      "name": {
+        "en": "Originite: Type I",
+        "vi": "Originite: Type I"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010023_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010023_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010023_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_training_rectifier",
+      "weaponId": 21050011,
+      "name": {
+        "en": "Training Rectifier",
+        "vi": "Training Rectifier"
+      },
+      "rarity": 1,
+      "stars": 1,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050011_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050011_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050011_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_training_gauntlets",
+      "weaponId": 21040011,
+      "name": {
+        "en": "Training Gauntlets",
+        "vi": "Training Gauntlets"
+      },
+      "rarity": 1,
+      "stars": 1,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040011_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040011_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040011_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_training_pistols",
+      "weaponId": 21030011,
+      "name": {
+        "en": "Training Pistols",
+        "vi": "Training Pistols"
+      },
+      "rarity": 1,
+      "stars": 1,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030011_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030011_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030011_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_training_sword",
+      "weaponId": 21020011,
+      "name": {
+        "en": "Training Sword",
+        "vi": "Training Sword"
+      },
+      "rarity": 1,
+      "stars": 1,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020011_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020011_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020011_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_training_broadblade",
+      "weaponId": 21010011,
+      "name": {
+        "en": "Training Broadblade",
+        "vi": "Training Broadblade"
+      },
+      "rarity": 1,
+      "stars": 1,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010011_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010011_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010011_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_tyro_rectifier",
+      "weaponId": 21050012,
+      "name": {
+        "en": "Tyro Rectifier",
+        "vi": "Tyro Rectifier"
+      },
+      "rarity": 2,
+      "stars": 2,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050012_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050012_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050012_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_tyro_gauntlets",
+      "weaponId": 21040012,
+      "name": {
+        "en": "Tyro Gauntlets",
+        "vi": "Tyro Gauntlets"
+      },
+      "rarity": 2,
+      "stars": 2,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040012_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040012_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040012_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_tyro_pistols",
+      "weaponId": 21030012,
+      "name": {
+        "en": "Tyro Pistols",
+        "vi": "Tyro Pistols"
+      },
+      "rarity": 2,
+      "stars": 2,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030012_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030012_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030012_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_tyro_sword",
+      "weaponId": 21020012,
+      "name": {
+        "en": "Tyro Sword",
+        "vi": "Tyro Sword"
+      },
+      "rarity": 2,
+      "stars": 2,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020012_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020012_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020012_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_tyro_broadblade",
+      "weaponId": 21010012,
+      "name": {
+        "en": "Tyro Broadblade",
+        "vi": "Tyro Broadblade"
+      },
+      "rarity": 2,
+      "stars": 2,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": false,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010012_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010012_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010012_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_rectifier_of_night",
+      "weaponId": 21050013,
+      "name": {
+        "en": "Rectifier of Night",
+        "vi": "Pháp Khí Bóng Đêm (Rectifier of Night)"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050013_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050013_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050013_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_gauntlets_of_night",
+      "weaponId": 21040013,
+      "name": {
+        "en": "Gauntlets of Night",
+        "vi": "Bao Tay Bóng Đêm (Gauntlets of Night)"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040013_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040013_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040013_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_pistols_of_night",
+      "weaponId": 21030013,
+      "name": {
+        "en": "Pistols of Night",
+        "vi": "Súng Ngắn Bóng Đêm (Pistols of Night)"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030013_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030013_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030013_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_sword_of_night",
+      "weaponId": 21020013,
+      "name": {
+        "en": "Sword of Night",
+        "vi": "Thanh Kiếm Bóng Đêm (Sword of Night)"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020013_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020013_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020013_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_broadblade_of_night",
+      "weaponId": 21010013,
+      "name": {
+        "en": "Broadblade of Night",
+        "vi": "Đại Đao Bóng Đêm (Broadblade of Night)"
+      },
+      "rarity": 3,
+      "stars": 3,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010013_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010013_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010013_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_variation",
+      "weaponId": 21050024,
+      "name": {
+        "en": "Variation",
+        "vi": "Kỳ Biến (Variation)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050024_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050024_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050024_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_marcato",
+      "weaponId": 21040024,
+      "name": {
+        "en": "Marcato",
+        "vi": "Cường Âm Đoạn (Marcato)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040024_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040024_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040024_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_cadenza",
+      "weaponId": 21030024,
+      "name": {
+        "en": "Cadenza",
+        "vi": "Hoa Lệ Khúc (Cadenza)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030024_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030024_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030024_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_overture",
+      "weaponId": 21020024,
+      "name": {
+        "en": "Overture",
+        "vi": "Khúc Mở Đầu (Overture)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020024_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020024_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020024_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_discord",
+      "weaponId": 21010024,
+      "name": {
+        "en": "Discord",
+        "vi": "Bất Hòa (Discord)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010024_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010024_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010024_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_augment",
+      "weaponId": 21050074,
+      "name": {
+        "en": "Augment",
+        "vi": "Augment"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Rectifier",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050074_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050074_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050074_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_stonard",
+      "weaponId": 21040074,
+      "name": {
+        "en": "Stonard",
+        "vi": "Thạch Trụ (Stonard)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Gauntlets",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040074_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040074_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21040074_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_thunderbolt",
+      "weaponId": 21030074,
+      "name": {
+        "en": "Thunderbolt",
+        "vi": "Thunderbolt"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Pistols",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030074_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030074_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030074_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_lumingloss",
+      "weaponId": 21020074,
+      "name": {
+        "en": "Lumingloss",
+        "vi": "Lumingloss"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Sword",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020074_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020074_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020074_UI.webp",
+      "videoUrl": null
+    },
+    {
+      "id": "w_autumntrace",
+      "weaponId": 21010074,
+      "name": {
+        "en": "Autumntrace",
+        "vi": "Dấu Vết Mùa Thu (Autumntrace)"
+      },
+      "rarity": 4,
+      "stars": 4,
+      "category": "weapon",
+      "weapon": "Broadblade",
+      "isGachaPullable": true,
+      "assets": {
+        "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010074_UI.webp",
+        "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010074_UI.webp",
+        "cutsceneVideo": null
+      },
+      "image": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010074_UI.webp",
+      "videoUrl": null
     }
   ]
 }

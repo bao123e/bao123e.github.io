@@ -200,7 +200,7 @@ class WuWaTierList {
     return matched.map(r => {
       const name = typeof r.name === 'object' ? (r.name[lang] || r.name.en || r.id) : (r.displayName ? (r.displayName[lang] || r.displayName.en) : (r.name || r.id));
       const elemColor = this.getElementColor(r.element);
-      const avatarSrc = r.assets?.avatar || r.assets?.chibi || r.image || 'assets/jinhsi-official.webp';
+      const avatarSrc = r.assets?.avatar || r.assets?.chibi || r.image || '';
 
       return `
         <div onclick="window.wuwaTierList.openBuildModal('${r.id}')"
@@ -211,7 +211,7 @@ class WuWaTierList {
           <div class="w-13 h-13 sm:w-15 sm:h-15 rounded-2xl overflow-hidden bg-slate-900 border-2 transition-all shadow-lg group-hover:shadow-[0_0_20px_${elemColor}]"
                style="border-color: ${elemColor}">
             <img src="${avatarSrc}" alt="${name}" class="w-full h-full object-cover object-top"
-                 onerror="this.src='assets/jinhsi-official.webp'">
+                 onerror="window.cardDataService ? window.cardDataService.handleImageError(this, '${r.id}') : (this.onerror=null)">
           </div>
 
           <!-- Element Indicator Dot -->
@@ -241,7 +241,7 @@ class WuWaTierList {
 
     const name = typeof res.name === 'object' ? (res.name[lang] || res.name.en || res.id) : (res.displayName ? (res.displayName[lang] || res.displayName.en) : (res.name || res.id));
     const elemColor = this.getElementColor(res.element);
-    const avatarSrc = res.assets?.avatar || res.assets?.chibi || res.image || 'assets/jinhsi-official.webp';
+    const avatarSrc = res.assets?.avatar || res.assets?.chibi || res.image || '';
     const analysis = res.build?.analysis ? (res.build.analysis[lang] || res.build.analysis.en) : 'No analysis available.';
 
     content.innerHTML = `
@@ -251,7 +251,7 @@ class WuWaTierList {
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-slate-900 border-2 shadow-xl flex-shrink-0"
                style="border-color: ${elemColor}; box-shadow: 0 0 25px ${elemColor}40">
             <img src="${avatarSrc}" alt="${name}" class="w-full h-full object-cover object-top"
-                 onerror="this.src='assets/jinhsi-official.webp'">
+                 onerror="window.cardDataService ? window.cardDataService.handleImageError(this, '${res.id}') : (this.onerror=null)">
           </div>
           <div>
             <div class="flex items-center gap-2 flex-wrap">

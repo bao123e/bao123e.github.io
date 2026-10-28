@@ -132,7 +132,10 @@ class WuWaCombatArena {
         element: 'Spectro',
         weapon: 'Sword',
         role: idx === 0 ? 'main_dps' : (idx === 1 ? 'sub_dps' : 'support'),
-        assets: { chibi: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/IconRoleHeadQ/T_IconRoleHeadQJinxi.png', avatar: 'assets/jinhsi-official.webp' },
+        assets: {
+          avatar: `https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_${id}_UI.webp`,
+          fullArt: `https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_${id}_UI.webp`
+        },
         combatStats: { hp: 11000, atk: 2400, critRate: 0.7, critDmg: 2.5 }
       };
 
@@ -1455,7 +1458,7 @@ class WuWaCombatArena {
             <div class="flex items-center gap-2.5 min-w-0">
               <div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-900 border flex-shrink-0" style="border-color: ${elemColor}">
                 <img src="${res.assets?.avatar || res.assets?.chibi}" alt="${name}" class="w-full h-full object-cover object-top"
-                     onerror="this.src='assets/jinhsi-official.webp'">
+                     onerror="window.cardDataService ? window.cardDataService.handleImageError(this, '${res.id}') : (this.onerror=null)">
               </div>
               <div class="truncate">
                 <span class="text-[9px] font-mono font-bold uppercase tracking-wider text-amber-400">${slot.title}</span>
@@ -1502,7 +1505,7 @@ class WuWaCombatArena {
              class="p-2 rounded-2xl border transition-all cursor-pointer flex items-center gap-2.5 ${isSelected ? 'bg-amber-500/25 border-amber-400 shadow-[0_0_18px_rgba(250,204,21,0.35)] scale-[1.02]' : 'bg-black/50 border-white/10 hover:border-white/30 hover:bg-black/70'}">
           <div class="w-11 h-11 rounded-xl overflow-hidden bg-slate-900 border flex-shrink-0" style="border-color: ${elemColor}">
             <img src="${r.assets.avatar || r.assets.chibi}" alt="${name}" class="w-full h-full object-cover object-top"
-                 onerror="this.src='assets/jinhsi-official.webp'">
+                 onerror="window.cardDataService ? window.cardDataService.handleImageError(this, '${r.id}') : (this.onerror=null)">
           </div>
           <div class="min-w-0">
             <div class="font-orbitron font-bold text-xs text-white truncate">${name}</div>

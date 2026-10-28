@@ -136,7 +136,7 @@ class WuWaConveneEngine {
         featured5Star: null,
         weaponType: 'Omni',
         themeColor: '#38bdf8',
-        rateUp4Stars: ['w_commando_conviction', 'w_undying_flame', 'w_novaburst'],
+        rateUp4Stars: ['w_commando_of_conviction', 'w_undying_flame', 'w_novaburst'],
         bgGradient: 'from-blue-950/60 via-slate-950/90 to-[#070913]'
       },
       w_blazing_brilliance: {
@@ -147,7 +147,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_blazing_brilliance',
         weaponType: 'Sword',
         themeColor: '#f43f5e',
-        rateUp4Stars: ['w_commando_conviction', 'w_lunar_cutter', 'w_undying_flame'],
+        rateUp4Stars: ['w_commando_of_conviction', 'w_lunar_cutter', 'w_undying_flame'],
         bgGradient: 'from-rose-950/60 via-slate-950/90 to-[#070913]'
       },
       w_blooming_jadehaven: {
@@ -158,7 +158,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_blooming_jadehaven',
         weaponType: 'Broadblade',
         themeColor: '#10b981',
-        rateUp4Stars: ['w_dauntless_evernight', 'w_helio_sleeper', 'w_commando_conviction'],
+        rateUp4Stars: ['w_dauntless_evernight', 'w_helios_cleaver', 'w_commando_of_conviction'],
         bgGradient: 'from-emerald-950/60 via-slate-950/90 to-[#070913]'
       },
       w_azure_oath: {
@@ -169,7 +169,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_azure_oath',
         weaponType: 'Sword',
         themeColor: '#06b6d4',
-        rateUp4Stars: ['w_lunar_cutter', 'w_commando_conviction', 'w_novaburst'],
+        rateUp4Stars: ['w_lunar_cutter', 'w_commando_of_conviction', 'w_novaburst'],
         bgGradient: 'from-cyan-950/60 via-slate-950/90 to-[#070913]'
       },
       w_firstlights_herald: {
@@ -177,7 +177,7 @@ class WuWaConveneEngine {
         category: 'weapon',
         title: "FIRSTLIGHT'S HERALD",
         subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Pistols',
-        featured5Star: 'w_firstlights_herald',
+        featured5Star: 'w_firstlight_s_herald',
         weaponType: 'Pistols',
         themeColor: '#facc15',
         rateUp4Stars: ['w_undying_flame', 'w_novaburst', 'w_cadenza'],
@@ -191,7 +191,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_forged_dwarf_star',
         weaponType: 'Broadblade',
         themeColor: '#f97316',
-        rateUp4Stars: ['w_dauntless_evernight', 'w_commando_conviction', 'w_helio_sleeper'],
+        rateUp4Stars: ['w_dauntless_evernight', 'w_commando_of_conviction', 'w_helios_cleaver'],
         bgGradient: 'from-orange-950/60 via-slate-950/90 to-[#070913]'
       },
       w_unspoken_rue: {
@@ -202,7 +202,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_unspoken_rue',
         weaponType: 'Sword',
         themeColor: '#e11d48',
-        rateUp4Stars: ['w_lunar_cutter', 'w_commando_conviction', 'w_undying_flame'],
+        rateUp4Stars: ['w_lunar_cutter', 'w_commando_of_conviction', 'w_undying_flame'],
         bgGradient: 'from-rose-950/60 via-slate-950/90 to-[#070913]'
       },
       w_thousandfold_deliverance: {
@@ -213,7 +213,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_thousandfold_deliverance',
         weaponType: 'Sword',
         themeColor: '#eab308',
-        rateUp4Stars: ['w_lunar_cutter', 'w_commando_conviction', 'w_cadenza'],
+        rateUp4Stars: ['w_lunar_cutter', 'w_commando_of_conviction', 'w_cadenza'],
         bgGradient: 'from-yellow-950/60 via-slate-950/90 to-[#070913]'
       },
       w_freeze_frame: {
@@ -224,7 +224,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_freeze_frame',
         weaponType: 'Rectifier',
         themeColor: '#38bdf8',
-        rateUp4Stars: ['w_jinzhou_keeper', 'w_helio_sleeper', 'w_undying_flame'],
+        rateUp4Stars: ['w_jinzhou_keeper', 'w_helios_cleaver', 'w_undying_flame'],
         bgGradient: 'from-sky-950/60 via-slate-950/90 to-[#070913]'
       },
       w_spectral_trigger: {
@@ -246,7 +246,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_skull_thrasher',
         weaponType: 'Gauntlets',
         themeColor: '#ef4444',
-        rateUp4Stars: ['w_amity_accord', 'w_commando_conviction', 'w_undying_flame'],
+        rateUp4Stars: ['w_amity_accord', 'w_commando_of_conviction', 'w_undying_flame'],
         bgGradient: 'from-red-950/60 via-slate-950/90 to-[#070913]'
       },
       w_ages_of_harvest: {
@@ -257,7 +257,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_ages_of_harvest',
         weaponType: 'Broadblade',
         themeColor: '#facc15',
-        rateUp4Stars: ['w_dauntless_evernight', 'w_commando_conviction', 'w_helio_sleeper'],
+        rateUp4Stars: ['w_dauntless_evernight', 'w_commando_of_conviction', 'w_helios_cleaver'],
         bgGradient: 'from-amber-950/60 via-slate-950/90 to-[#070913]'
       },
       w_stringmaster: {
@@ -268,7 +268,7 @@ class WuWaConveneEngine {
         featured5Star: 'w_stringmaster',
         weaponType: 'Rectifier',
         themeColor: '#8b5cf6',
-        rateUp4Stars: ['w_jinzhou_keeper', 'w_helio_sleeper', 'w_undying_flame'],
+        rateUp4Stars: ['w_jinzhou_keeper', 'w_helios_cleaver', 'w_undying_flame'],
         bgGradient: 'from-violet-950/60 via-slate-950/90 to-[#070913]'
       },
       w_verdant_summit: {
@@ -1270,7 +1270,7 @@ class WuWaConveneEngine {
       rateUpContainer.innerHTML = '';
       const listToShow = (b.rateUp4Stars && b.rateUp4Stars.length)
         ? b.rateUp4Stars
-        : (b.category === 'weapon' ? ['w_commando_conviction', 'w_undying_flame', 'w_novaburst'] : ['wuwa-4-sanhua', 'wuwa-4-danjin', 'wuwa-4-chixia']);
+        : (b.category === 'weapon' ? ['w_commando_of_conviction', 'w_undying_flame', 'w_novaburst'] : ['wuwa-4-sanhua', 'wuwa-4-danjin', 'wuwa-4-chixia']);
 
       listToShow.forEach(cid => {
         const c = window.cardDataService.getCardById(cid);

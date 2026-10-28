@@ -42,7 +42,7 @@ class CardDataService {
     // 1. Resonators from Master Data (or built-in defaults)
     const masterList = (this.masterData && this.masterData.resonators) ? this.masterData.resonators : [];
     
-    const formattedResonators = masterList.map(r => {
+    this.wuwaResonators = masterList.map(r => {
       const isRover = r.id.startsWith('rover');
       const stars = isRover ? 4 : (r.rarity || 5);
       return {
@@ -56,104 +56,43 @@ class CardDataService {
         element: r.element,
         weapon: r.weapon,
         role: r.role,
-        image: r.assets?.avatar || r.assets?.chibi || `https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/${r.id}.png`,
+        image: r.assets?.avatar || r.assets?.chibi || `https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_${r.id}_UI.webp`,
         videoUrl: r.assets?.cutsceneVideo || `assets/videos/wuwa-5-${r.id}.mp4`,
+        assets: r.assets,
         build: r.build,
         tiers: r.tiers,
         combatStats: r.combatStats
       };
     });
 
-    // Additional 4-Star Resonators
-    const fourStarResonators = [
-      { id: 'sanhua', name: 'Sanhua', element: 'Glacio', weapon: 'Sword', role: 'sub_dps', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Sanhua.png' },
-      { id: 'mortefi', name: 'Mortefi', element: 'Fusion', weapon: 'Pistols', role: 'sub_dps', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Mortefi.png' },
-      { id: 'danjin', name: 'Danjin', element: 'Havoc', weapon: 'Sword', role: 'main_dps', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Danjin.png' },
-      { id: 'chixia', name: 'Chixia', element: 'Fusion', weapon: 'Pistols', role: 'main_dps', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Chixia.png' },
-      { id: 'baizhi', name: 'Baizhi', element: 'Glacio', weapon: 'Rectifier', role: 'support', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Baizhi.png' },
-      { id: 'yangyang', name: 'Yangyang', element: 'Aero', weapon: 'Sword', role: 'support', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Yangyang.png' },
-      { id: 'yuanwu', name: 'Yuanwu', element: 'Electro', weapon: 'Gauntlets', role: 'support', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Yuanwu.png' },
-      { id: 'taoqi', name: 'Taoqi', element: 'Havoc', weapon: 'Broadblade', role: 'support', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Taoqi.png' },
-      { id: 'aalto', name: 'Aalto', element: 'Aero', weapon: 'Pistols', role: 'sub_dps', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Aalto.png' },
-      { id: 'youhu', name: 'Youhu', element: 'Glacio', weapon: 'Gauntlets', role: 'support', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Youhu.png' }
-    ].map(r => ({
-      ...r,
-      stars: 4,
-      rarity: 'SSR',
-      isGachaPullable: true,
-      category: 'resonator',
-      displayName: { en: r.name, vi: r.name }
-    }));
+    // 2. Weapons Pool from Master Data (124 Akademiya Official Weapons)
+    const masterWeapons = (this.masterData && this.masterData.weapons && this.masterData.weapons.length)
+      ? this.masterData.weapons
+      : [];
 
-    // Merge Unique Resonators
-    const resMap = new Map();
-    formattedResonators.forEach(r => resMap.set(r.id, r));
-    fourStarResonators.forEach(r => {
-      if (!resMap.has(r.id)) resMap.set(r.id, r);
+    const rarityMap = { 5: 'UR', 4: 'SSR', 3: 'SR', 2: 'R', 1: 'N' };
+
+    this.wuwaWeapons = masterWeapons.map(w => {
+      const stars = w.stars || w.rarity || 5;
+      const img = w.assets?.icon || w.assets?.fullArt || w.image;
+      return {
+        id: w.id,
+        weaponId: w.weaponId,
+        name: typeof w.name === 'object' ? (w.name.en || w.id) : w.name,
+        displayName: w.name,
+        stars: stars,
+        rarity: rarityMap[stars] || 'SSR',
+        category: 'weapon',
+        weapon: w.weapon || 'Sword',
+        weaponType: w.weapon || 'Sword',
+        isGachaPullable: w.isGachaPullable !== undefined ? w.isGachaPullable : true,
+        image: img,
+        videoUrl: w.assets?.cutsceneVideo || w.videoUrl || null,
+        assets: w.assets || { icon: img, fullArt: img }
+      };
     });
-    this.wuwaResonators = Array.from(resMap.values());
 
-    // 2. 5★ Signature Weapons Pool with Individual Cutscene Videos (from YouTube)
-    const w5 = [
-      { id: 'w_blazing_brilliance', name: 'Blazing Brilliance', weapon: 'Sword', stars: 5, videoUrl: 'assets/videos/wuwa-5w-blazingbrilliance.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Blazing_Brilliance.png' },
-      { id: 'w_blooming_jadehaven', name: 'Blooming Jadehaven', weapon: 'Broadblade', stars: 5, videoUrl: 'assets/videos/wuwa-5w-bloomingjadehaven.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Ages_of_Harvest.png' },
-      { id: 'w_azure_oath', name: 'Azure Oath', weapon: 'Sword', stars: 5, videoUrl: 'assets/videos/wuwa-5w-azureoath.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Emerald_of_Genesis.png' },
-      { id: 'w_firstlights_herald', name: "Firstlight's Herald", weapon: 'Pistols', stars: 5, videoUrl: 'assets/videos/wuwa-5w-firstlightsherald.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Static_Mist.png' },
-      { id: 'w_frostburn', name: 'Frostburn', weapon: 'Gauntlets', stars: 5, videoUrl: 'assets/videos/wuwa-5w-frostburn.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Abyss_Surges.png' },
-      { id: 'w_glint_of_clouds', name: 'Glint of Clouds', weapon: 'Rectifier', stars: 5, videoUrl: 'assets/videos/wuwa-5w-glintofclouds.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Cosmic_Ripples.png' },
-      { id: 'w_forged_dwarf_star', name: 'Forged Dwarf Star', weapon: 'Broadblade', stars: 5, videoUrl: 'assets/videos/wuwa-5w-forgeddwarfstar.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Verdant_Summit.png' },
-      { id: 'w_everbright_polestar', name: 'Everbright Polestar', weapon: 'Gauntlets', stars: 5, videoUrl: 'assets/videos/wuwa-5w-everbrightpolestar.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Abyss_Surges.png' },
-      { id: 'w_daybreakers_spine', name: "Daybreaker's Spine", weapon: 'Broadblade', stars: 5, videoUrl: 'assets/videos/wuwa-5w-daybreakersspine.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Lustrous_Razor.png' },
-      { id: 'w_spectrum_blaster', name: 'Spectrum Blaster', weapon: 'Pistols', stars: 5, videoUrl: 'assets/videos/wuwa-5w-spectrumblaster.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Static_Mist.png' },
-      { id: 'w_unspoken_rue', name: 'Unspoken Rue', weapon: 'Sword', stars: 5, videoUrl: 'assets/videos/wuwa-5w-unspokenrue.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Red_Spring.png' },
-      { id: 'w_thousandfold_deliverance', name: 'Thousandfold Deliverance', weapon: 'Sword', stars: 5, videoUrl: 'assets/videos/wuwa-5w-thousandfolddeliverance.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/The_Last_Dance.png' },
-      { id: 'w_freeze_frame', name: 'Freeze Frame', weapon: 'Rectifier', stars: 5, videoUrl: 'assets/videos/wuwa-5w-freezeframe.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Stringmaster.png' },
-      { id: 'w_spectral_trigger', name: 'Spectral Trigger', weapon: 'Pistols', stars: 5, videoUrl: 'assets/videos/wuwa-5w-spectraltrigger.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Static_Mist.png' },
-      { id: 'w_skull_thrasher', name: 'Skull Thrasher', weapon: 'Gauntlets', stars: 5, videoUrl: 'assets/videos/wuwa-5w-skullthrasher.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Abyss_Surges.png' },
-      { id: 'w_red_spring', name: 'Red Spring', weapon: 'Sword', stars: 5, videoUrl: 'assets/videos/wuwa-5w-unspokenrue.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Red_Spring.png' },
-      { id: 'w_ages_of_harvest', name: 'Ages of Harvest', weapon: 'Broadblade', stars: 5, videoUrl: 'assets/videos/wuwa-5w-bloomingjadehaven.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Ages_of_Harvest.png' },
-      { id: 'w_verdant_summit', name: 'Verdant Summit', weapon: 'Broadblade', stars: 5, videoUrl: 'assets/videos/wuwa-5w-forgeddwarfstar.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Verdant_Summit.png' },
-      { id: 'w_stringmaster', name: 'Stringmaster', weapon: 'Rectifier', stars: 5, videoUrl: 'assets/videos/wuwa-5w-freezeframe.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Stringmaster.png' },
-      { id: 'w_emerald_genesis', name: 'Emerald of Genesis', weapon: 'Sword', stars: 5, videoUrl: 'assets/videos/wuwa-5w-azureoath.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Emerald_of_Genesis.png' },
-      { id: 'w_static_mist', name: 'Static Mist', weapon: 'Pistols', stars: 5, videoUrl: 'assets/videos/wuwa-5w-firstlightsherald.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Static_Mist.png' },
-      { id: 'w_abyss_surges', name: 'Abyss Surges', weapon: 'Gauntlets', stars: 5, videoUrl: 'assets/videos/wuwa-5w-frostburn.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Abyss_Surges.png' },
-      { id: 'w_cosmic_ripples', name: 'Cosmic Ripples', weapon: 'Rectifier', stars: 5, videoUrl: 'assets/videos/wuwa-5w-glintofclouds.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Cosmic_Ripples.png' },
-      { id: 'w_lustrous_razor', name: 'Lustrous Razor', weapon: 'Broadblade', stars: 5, videoUrl: 'assets/videos/wuwa-5w-daybreakersspine.mp4', image: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/Lustrous_Razor.png' }
-    ];
-
-    const w4 = [
-      { id: 'w_commando_conviction', name: 'Commando Conviction', weapon: 'Sword', stars: 4 },
-      { id: 'w_lunar_cutter', name: 'Lunar Cutter', weapon: 'Sword', stars: 4 },
-      { id: 'w_dauntless_evernight', name: 'Dauntless Evernight', weapon: 'Broadblade', stars: 4 },
-      { id: 'w_autumntrace', name: 'Autumntrace', weapon: 'Broadblade', stars: 4 },
-      { id: 'w_undying_flame', name: 'Undying Flame', weapon: 'Pistols', stars: 4 },
-      { id: 'w_novaburst', name: 'Novaburst', weapon: 'Pistols', stars: 4 },
-      { id: 'w_jinzhou_keeper', name: 'Jinzhou Keeper', weapon: 'Rectifier', stars: 4 },
-      { id: 'w_augmentation', name: 'Augmentation', weapon: 'Rectifier', stars: 4 },
-      { id: 'w_amity_accord', name: 'Amity Accord', weapon: 'Gauntlets', stars: 4 },
-      { id: 'w_stonard', name: 'Stonard', weapon: 'Gauntlets', stars: 4 }
-    ];
-
-    const w3 = [
-      { id: 'w_sword_night', name: 'Sword of Night', weapon: 'Sword', stars: 3 },
-      { id: 'w_originite_type1', name: 'Originite: Type I', weapon: 'Sword', stars: 3 },
-      { id: 'w_broadblade_night', name: 'Broadblade of Night', weapon: 'Broadblade', stars: 3 },
-      { id: 'w_originite_type2', name: 'Originite: Type II', weapon: 'Broadblade', stars: 3 },
-      { id: 'w_pistols_night', name: 'Pistols of Night', weapon: 'Pistols', stars: 3 },
-      { id: 'w_originite_type3', name: 'Originite: Type III', weapon: 'Pistols', stars: 3 },
-      { id: 'w_rectifier_night', name: 'Rectifier of Night', weapon: 'Rectifier', stars: 3 },
-      { id: 'w_originite_type4', name: 'Originite: Type IV', weapon: 'Rectifier', stars: 3 },
-      { id: 'w_gauntlets_night', name: 'Gauntlets of Night', weapon: 'Gauntlets', stars: 3 },
-      { id: 'w_originite_type5', name: 'Originite: Type V', weapon: 'Gauntlets', stars: 3 }
-    ];
-
-    this.wuwaWeapons = [
-      ...w5.map(w => ({ ...w, category: 'weapon', rarity: 'UR', isGachaPullable: true, displayName: { en: w.name, vi: w.name } })),
-      ...w4.map(w => ({ ...w, category: 'weapon', rarity: 'SSR', isGachaPullable: true, image: `https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/${w.id.replace('w_', '')}.png`, displayName: { en: w.name, vi: w.name } })),
-      ...w3.map(w => ({ ...w, category: 'weapon', rarity: 'SR', isGachaPullable: true, image: `https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Weapon/Icon/3star.png`, displayName: { en: w.name, vi: w.name } }))
-    ];
-
-    // Combine all into Master Pool
+    // Combine all into Master Pools
     this.pools.wuwa = [
       ...this.wuwaResonators,
       ...this.wuwaWeapons
@@ -163,37 +102,68 @@ class CardDataService {
     this.pools.wuwa_weapon = this.wuwaWeapons;
   }
 
-  // Get single item by ID (Resonator or Weapon)
+  // Get single item by ID (Resonator or Weapon) with alias & prefix tolerance
   getCardById(id) {
     if (!id) return null;
 
-    // Check pool first
-    const fromPool = this.pools.wuwa.find(c => c.id === id);
-    if (fromPool) return fromPool;
+    let cleanId = String(id).trim();
 
-    // Check resonators master list
-    const fromMaster = this.getResonatorById(id);
-    if (fromMaster) {
+    // Map historical aliases to canonical IDs
+    const ALIASES = {
+      'w_firstlights_herald': 'w_firstlight_s_herald',
+      'w_commando_conviction': 'w_commando_of_conviction',
+      'w_helio_sleeper': 'w_helios_cleaver',
+      'w_helios_sleeper': 'w_helios_cleaver',
+    };
+    if (ALIASES[cleanId]) cleanId = ALIASES[cleanId];
+
+    // 1. Direct match in active pool
+    let found = this.pools.wuwa.find(c => c.id === cleanId || c.id === id);
+    if (found) return found;
+
+    // 2. Strip standard prefixes: wuwa-5-, wuwa-4-, wuwa-3-, wuwa-
+    const unPrefixed = cleanId.replace(/^wuwa-[345]-/, '').replace(/^wuwa-/, '');
+    if (ALIASES[unPrefixed]) {
+      const aliasTarget = ALIASES[unPrefixed];
+      found = this.pools.wuwa.find(c => c.id === aliasTarget);
+      if (found) return found;
+    }
+
+    found = this.pools.wuwa.find(c => c.id === unPrefixed);
+    if (found) return found;
+
+    // 3. Search resonators in master list
+    const fromMasterRes = this.getResonatorById(unPrefixed) || this.getResonatorById(cleanId);
+    if (fromMasterRes) {
+      const isRover = fromMasterRes.id.startsWith('rover');
+      const stars = isRover ? 4 : (fromMasterRes.rarity || 5);
       return {
-        id: fromMaster.id,
-        name: typeof fromMaster.name === 'object' ? (fromMaster.name.en || fromMaster.id) : fromMaster.name,
-        displayName: fromMaster.name,
-        stars: fromMaster.rarity || 5,
-        rarity: (fromMaster.rarity || 5) === 5 ? 'UR' : 'SSR',
+        id: fromMasterRes.id,
+        name: typeof fromMasterRes.name === 'object' ? (fromMasterRes.name.en || fromMasterRes.id) : fromMasterRes.name,
+        displayName: fromMasterRes.name,
+        stars: stars,
+        rarity: stars === 5 ? 'UR' : 'SSR',
         category: 'resonator',
-        element: fromMaster.element,
-        weapon: fromMaster.weapon,
-        role: fromMaster.role,
-        image: fromMaster.assets?.avatar || fromMaster.assets?.chibi || 'assets/jinhsi-official.webp',
-        videoUrl: fromMaster.assets?.cutsceneVideo || `assets/videos/wuwa-5-${fromMaster.id}.mp4`,
-        build: fromMaster.build,
-        tiers: fromMaster.tiers,
-        combatStats: fromMaster.combatStats
+        element: fromMasterRes.element,
+        weapon: fromMasterRes.weapon,
+        role: fromMasterRes.role,
+        image: fromMasterRes.assets?.avatar || fromMasterRes.assets?.chibi || `https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_${fromMasterRes.id}_UI.webp`,
+        videoUrl: fromMasterRes.assets?.cutsceneVideo || `assets/videos/wuwa-5-${fromMasterRes.id}.mp4`,
+        assets: fromMasterRes.assets,
+        build: fromMasterRes.build,
+        tiers: fromMasterRes.tiers,
+        combatStats: fromMasterRes.combatStats
       };
     }
 
-    // Check weapons
-    const fromWeapons = this.wuwaWeapons.find(w => w.id === id);
+    // 4. Search weapons in master list
+    const fromWeapons = this.wuwaWeapons.find(w =>
+      w.id === cleanId ||
+      w.id === unPrefixed ||
+      w.id === 'w_' + unPrefixed ||
+      (w.name && typeof w.name === 'string' && w.name.toLowerCase() === unPrefixed.toLowerCase()) ||
+      (w.displayName && typeof w.displayName.en === 'string' && w.displayName.en.toLowerCase() === unPrefixed.toLowerCase())
+    );
     if (fromWeapons) return fromWeapons;
 
     return null;
@@ -201,11 +171,12 @@ class CardDataService {
 
   getResonatorById(id) {
     if (!id) return null;
+    const cleanId = String(id).replace(/^wuwa-[345]-/, '').replace(/^wuwa-/, '');
     if (this.masterData && this.masterData.resonators) {
-      const match = this.masterData.resonators.find(r => r.id === id);
+      const match = this.masterData.resonators.find(r => r.id === cleanId || r.id === id);
       if (match) return match;
     }
-    return this.wuwaResonators.find(r => r.id === id) || null;
+    return this.wuwaResonators.find(r => r.id === cleanId || r.id === id) || null;
   }
 
   async getCardsForBanner(bannerKey = 'wuwa') {
@@ -214,14 +185,51 @@ class CardDataService {
 
   handleImageError(imgEl, itemId) {
     if (!imgEl) return;
-    imgEl.onerror = null;
-    if (itemId && itemId.includes('jinhsi')) {
-      imgEl.src = 'assets/jinhsi-official.webp';
-    } else if (itemId && itemId.includes('carlotta')) {
-      imgEl.src = 'assets/carlotta-wuwa.gif';
-    } else {
-      imgEl.src = 'assets/jinhsi-official.webp';
+    imgEl.onerror = null; // Prevent loop
+
+    if (itemId) {
+      const card = this.getCardById(itemId);
+      if (card) {
+        if (card.category === 'weapon') {
+          // If weapon image failed, try alternative asset or fallback SVG
+          if (card.assets?.fullArt && imgEl.src !== card.assets.fullArt) {
+            imgEl.src = card.assets.fullArt;
+            return;
+          }
+          const starCount = card.stars || 4;
+          const starColor = starCount === 5 ? '#facc15' : '#c084fc';
+          const typeName = card.weapon || 'Weapon';
+          const cardName = typeof card.name === 'string' ? card.name : (card.name?.en || 'Weapon');
+          imgEl.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><rect width="256" height="256" fill="%230f172a"/><circle cx="128" cy="110" r="60" fill="%231e293b" stroke="${encodeURIComponent(starColor)}" stroke-width="3"/><path d="M128 75 L133 90 L148 90 L136 100 L140 115 L128 106 L116 115 L120 100 L108 90 L123 90 Z" fill="${encodeURIComponent(starColor)}"/><text x="128" y="195" font-family="sans-serif" font-weight="bold" font-size="16" fill="%23f1f5f9" text-anchor="middle">${encodeURIComponent(cardName.substring(0, 18))}</text><text x="128" y="220" font-family="sans-serif" font-size="12" fill="${encodeURIComponent(starColor)}" text-anchor="middle">${encodeURIComponent(typeName)} • ${starCount}★</text></svg>`;
+          return;
+        } else {
+          // Resonator
+          if (card.assets?.fullArt && imgEl.src !== card.assets.fullArt) {
+            imgEl.src = card.assets.fullArt;
+            return;
+          }
+          if (card.assets?.avatar && imgEl.src !== card.assets.avatar) {
+            imgEl.src = card.assets.avatar;
+            return;
+          }
+          if (card.id === 'jinhsi') {
+            imgEl.src = 'assets/jinhsi-official.webp';
+            return;
+          }
+          if (card.id === 'carlotta') {
+            imgEl.src = 'assets/carlotta-wuwa.gif';
+            return;
+          }
+          const elem = card.element || 'Spectro';
+          const resName = typeof card.name === 'string' ? card.name : (card.name?.en || 'Resonator');
+          imgEl.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><rect width="256" height="256" fill="%23090d16"/><circle cx="128" cy="110" r="64" fill="%23172033" stroke="%2338bdf8" stroke-width="3"/><text x="128" y="120" font-family="sans-serif" font-weight="bold" font-size="28" fill="%2338bdf8" text-anchor="middle">${encodeURIComponent(elem.substring(0, 3).toUpperCase())}</text><text x="128" y="200" font-family="sans-serif" font-weight="bold" font-size="15" fill="%23f8fafc" text-anchor="middle">${encodeURIComponent(resName.substring(0, 18))}</text><text x="128" y="222" font-family="sans-serif" font-size="12" fill="%2394a3b8" text-anchor="middle">${encodeURIComponent(elem)} Resonator</text></svg>`;
+          return;
+        }
+      }
     }
+
+    // Neutral fallback - never default to Jinhsi!
+    imgEl.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><rect width="256" height="256" fill="%230b0f19"/><circle cx="128" cy="110" r="50" fill="%231e293b"/><text x="128" y="118" font-family="sans-serif" font-weight="bold" font-size="24" fill="%2364748b" text-anchor="middle">✦</text><text x="128" y="195" font-family="sans-serif" font-size="13" fill="%2364748b" text-anchor="middle">WuWa Asset</text></svg>`;
   }
 
   getEmbeddedMasterData() {
