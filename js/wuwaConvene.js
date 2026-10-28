@@ -1262,14 +1262,15 @@ class WuWaConveneEngine {
         videoEl.pause();
       } catch (e) {}
 
+      const resolve = currentStepResolve;
+      currentStepResolve = null;
+
       if (currentStepCleanup) {
         currentStepCleanup();
         currentStepCleanup = null;
       }
 
-      if (currentStepResolve) {
-        const resolve = currentStepResolve;
-        currentStepResolve = null;
+      if (resolve) {
         resolve();
       }
     };

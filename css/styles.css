@@ -629,6 +629,10 @@ body {
   transform: scale(0.95);
 }
 
+.wuwa-skip-character-btn * {
+  pointer-events: none;
+}
+
 @media (max-width: 640px) {
   .wuwa-skip-character-btn {
     top: 10px;
