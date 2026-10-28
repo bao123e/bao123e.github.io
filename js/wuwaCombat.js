@@ -16,6 +16,8 @@ class WuWaCombatArena {
     this.selectedSquad = ['jinhsi', 'changli', 'verina']; // 3 Resonator IDs
     this.activeSlot = 0; // 0, 1, 2
     this.selectedToken = 'plunderer_seal';
+    this.squadFilter = 'all';
+    this.squadSearch = '';
 
     this.battleState = 'setup'; // 'setup' | 'fighting' | 'paused' | 'ended'
     this.isAuto = false;
@@ -70,6 +72,7 @@ class WuWaCombatArena {
     this.resizeCanvas();
     window.addEventListener('resize', () => this.resizeCanvas());
     this.initSquadRuntime();
+    this.renderSquadSelector();
   }
 
   resizeCanvas() {
@@ -105,8 +108,23 @@ class WuWaCombatArena {
     this.renderSquadSelector();
   }
 
+  getStageBackgroundUrl() {
+    const modeData = window.wuwaMasterData?.combatModesData;
+    if (this.selectedMode === 'toa') {
+      return modeData?.toa?.stageBg || 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/UiSingleTower/Image/T_UiSingleTowerBg_UI.png';
+    } else if (this.selectedMode === 'ww') {
+      return modeData?.whimpering_wastes?.stageBg || 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/UiTacetfield/Image/T_TacetfieldFirstBg.png';
+    } else if (this.selectedMode === 'matrix') {
+      return modeData?.matrix?.stageBg || 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/UiSingleTower/Image/T_loopTowerBg03_UI.png';
+    }
+    return '';
+  }
+
   initSquadRuntime() {
     const list = window.wuwaMasterData?.resonators || [];
+    const canvasH = this.canvas ? this.canvas.height : 400;
+    const floorY = canvasH * 0.68;
+
     this.squadRuntime = this.selectedSquad.map((id, idx) => {
       const data = list.find(r => r.id === id) || {
         id,
@@ -114,7 +132,7 @@ class WuWaCombatArena {
         element: 'Spectro',
         weapon: 'Sword',
         role: idx === 0 ? 'main_dps' : (idx === 1 ? 'sub_dps' : 'support'),
-        assets: { chibi: 'assets/jinhsi-official.webp', avatar: 'assets/jinhsi-official.webp' },
+        assets: { chibi: 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/IconRoleHeadQ/T_IconRoleHeadQJinxi.png', avatar: 'assets/jinhsi-official.webp' },
         combatStats: { hp: 11000, atk: 2400, critRate: 0.7, critDmg: 2.5 }
       };
 
@@ -133,7 +151,7 @@ class WuWaCombatArena {
         attackTimer: 0,
         animX: 0,
         x: 180,
-        y: (this.canvas ? this.canvas.height * 0.65 : 280)
+        y: floorY - 35
       };
     });
     this.activeSlot = 0;
@@ -223,11 +241,14 @@ class WuWaCombatArena {
       name: { en: "Scar (Aberrant Form)", vi: "Scar (Dạng Quỷ Dê)" },
       hp: 450000,
       atk: 1400,
-      vibrationMax: 100
+      vibrationMax: 100,
+      sprite: "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_34011.png"
     };
 
     const canvasH = this.canvas ? this.canvas.height : 400;
     const canvasW = this.canvas ? this.canvas.width : 800;
+    const floorY = canvasH * 0.68;
+    const spriteUrl = bossConfig.sprite || "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_34011.png";
 
     this.enemies = [{
       id: 'toa_boss',
@@ -240,14 +261,18 @@ class WuWaCombatArena {
       atk: bossConfig.atk || 1400,
       element: bossConfig.elementResist || 'Havoc',
       isBoss: true,
-      x: canvasW - 200,
-      y: canvasH * 0.62,
-      width: 140,
-      height: 160,
+      x: canvasW - 190,
+      y: floorY - 55,
+      width: 170,
+      height: 190,
+      sprite: spriteUrl,
       telegraphType: null, // 'parry' (gold circle) or 'dodge' (red flash)
       telegraphTimer: 0,
-      attackCooldown: 3.5
+      attackCooldown: 3.5,
+      animBob: 0
     }];
+
+    this.getImage(spriteUrl);
   }
 
   spawnWwWave(waveIdx) {
@@ -257,35 +282,71 @@ class WuWaCombatArena {
       enemyName: "Tacet Discord Pack (x6)",
       count: 6,
       hpPerMob: 30000,
-      pointsPerKill: 200
+      pointsPerKill: 200,
+      sprite: "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_02.png"
     };
 
     const canvasH = this.canvas ? this.canvas.height : 400;
     const canvasW = this.canvas ? this.canvas.width : 800;
+    const floorY = canvasH * 0.68;
     const mobCount = wave.count || 5;
+    const isBossWave = (waveIdx === 3 || mobCount === 1);
 
     this.enemies = [];
-    for (let i = 0; i < mobCount; i++) {
+
+    if (isBossWave) {
+      const bossSprite = wave.sprite || "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_34021.png";
       this.enemies.push({
-        id: `mob_${waveIdx}_${i}`,
-        name: { en: wave.enemyName, vi: wave.enemyName },
-        hp: wave.hpPerMob,
-        maxHp: wave.hpPerMob,
-        vibration: 30,
-        maxVibration: 30,
+        id: `mob_${waveIdx}_boss`,
+        name: { en: "Crownless (Overlord Class)", vi: "Vô Quán Giả (Crownless)" },
+        hp: wave.hpPerMob || 280000,
+        maxHp: wave.hpPerMob || 280000,
+        vibration: 100,
+        maxVibration: 100,
         staggerTimer: 0,
-        atk: 650,
-        pointsPerKill: wave.pointsPerKill || 200,
-        element: (i % 2 === 0 ? 'Glacio' : 'Havoc'),
-        isBoss: false,
-        x: canvasW - 120 - (i * 35),
-        y: canvasH * 0.58 + ((i % 3) * 30),
-        width: 60,
-        height: 70,
-        telegraphType: (i === 0 ? 'dodge' : null),
+        atk: 1350,
+        pointsPerKill: wave.pointsPerKill || 2000,
+        element: 'Havoc',
+        isBoss: true,
+        x: canvasW - 190,
+        y: floorY - 60,
+        width: 170,
+        height: 200,
+        sprite: bossSprite,
+        telegraphType: null,
         telegraphTimer: 0,
-        attackCooldown: 3.0 + (i * 0.8)
+        attackCooldown: 3.2,
+        animBob: 0
       });
+      this.getImage(bossSprite);
+    } else {
+      const defaultMobSprite = wave.sprite || "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_02.png";
+      for (let i = 0; i < mobCount; i++) {
+        const mob = {
+          id: `mob_${waveIdx}_${i}`,
+          name: { en: wave.enemyName, vi: wave.enemyName },
+          hp: wave.hpPerMob,
+          maxHp: wave.hpPerMob,
+          vibration: 35,
+          maxVibration: 35,
+          staggerTimer: 0,
+          atk: 650,
+          pointsPerKill: wave.pointsPerKill || 200,
+          element: (i % 2 === 0 ? 'Glacio' : 'Havoc'),
+          isBoss: false,
+          x: canvasW - 110 - (i * 42),
+          y: floorY - 25 + ((i % 3 - 1) * 22),
+          width: 80,
+          height: 95,
+          sprite: defaultMobSprite,
+          telegraphType: (i === 0 ? 'dodge' : null),
+          telegraphTimer: 0,
+          attackCooldown: 3.0 + (i * 0.7),
+          animBob: i * 0.5
+        };
+        this.enemies.push(mob);
+        this.getImage(mob.sprite);
+      }
     }
   }
 
@@ -298,6 +359,8 @@ class WuWaCombatArena {
 
     const canvasH = this.canvas ? this.canvas.height : 400;
     const canvasW = this.canvas ? this.canvas.width : 800;
+    const floorY = canvasH * 0.68;
+    const spriteUrl = matrixData?.boss?.sprite || "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_34080.png";
 
     this.enemies = [{
       id: 'matrix_boss',
@@ -313,16 +376,20 @@ class WuWaCombatArena {
       atk: 1600 * phaseConfig.attackSpeed,
       attackSpeed: phaseConfig.attackSpeed,
       parryWindowMs: phaseConfig.parryWindowMs,
-      element: 'Spectro',
+      element: phase === 1 ? 'Spectro' : (phase === 2 ? 'Electro' : 'Havoc'),
       isBoss: true,
-      x: canvasW - 220,
-      y: canvasH * 0.60,
-      width: 150,
-      height: 180,
+      x: canvasW - 200,
+      y: floorY - 65,
+      width: 180,
+      height: 220,
+      sprite: spriteUrl,
       telegraphType: null,
       telegraphTimer: 0,
-      attackCooldown: 2.8 / phaseConfig.attackSpeed
+      attackCooldown: 3.6 / phaseConfig.attackSpeed,
+      animBob: 0
     }];
+
+    this.getImage(spriteUrl);
   }
 
   // Game Loop (60FPS)
@@ -880,6 +947,7 @@ class WuWaCombatArena {
     const ctx = this.ctx;
     const w = this.canvas.width;
     const h = this.canvas.height;
+    const floorY = h * 0.68;
 
     ctx.save();
 
@@ -890,30 +958,55 @@ class WuWaCombatArena {
       ctx.translate(ox, oy);
     }
 
-    // 1. Clear & Background Gradient (Sci-Fi Tacet Field)
-    const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
-    bgGrad.addColorStop(0, '#0a0d17');
-    bgGrad.addColorStop(1, '#05070c');
-    ctx.fillStyle = bgGrad;
-    ctx.fillRect(0, 0, w, h);
+    // 1. Draw Authentic Stage Backdrop Image (ToA / WW / Matrix)
+    const stageBgUrl = this.getStageBackgroundUrl();
+    const stageImg = this.getImage(stageBgUrl);
 
-    // 2. Arena Perspective Grid Lines
+    if (stageImg && stageImg.complete && stageImg.naturalWidth > 0) {
+      // Draw backdrop covering the canvas with nice cinematic tint
+      ctx.drawImage(stageImg, 0, 0, w, h);
+
+      // Vignette & Floor lighting overlay
+      const overlayGrad = ctx.createLinearGradient(0, 0, 0, h);
+      overlayGrad.addColorStop(0, 'rgba(5, 7, 13, 0.60)');
+      overlayGrad.addColorStop(0.55, 'rgba(10, 14, 25, 0.40)');
+      overlayGrad.addColorStop(1, 'rgba(5, 7, 13, 0.88)');
+      ctx.fillStyle = overlayGrad;
+      ctx.fillRect(0, 0, w, h);
+    } else {
+      // Fallback sci-fi gradient
+      const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
+      bgGrad.addColorStop(0, '#0a0d17');
+      bgGrad.addColorStop(1, '#05070c');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+    }
+
+    // Dynamic Sci-Fi Floor Platform Grid
+    const gridGrad = ctx.createLinearGradient(0, floorY, 0, h);
+    gridGrad.addColorStop(0, 'rgba(56, 189, 248, 0.18)');
+    gridGrad.addColorStop(1, 'rgba(56, 189, 248, 0.0)');
+    ctx.fillStyle = gridGrad;
+    ctx.fillRect(0, floorY, w, h - floorY);
+
+    ctx.strokeStyle = 'rgba(212, 180, 117, 0.35)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0, floorY);
+    ctx.lineTo(w, floorY);
+    ctx.stroke();
+
+    // Perspective Arena Grid Lines
     ctx.strokeStyle = 'rgba(56, 189, 248, 0.08)';
     ctx.lineWidth = 1;
-    for (let x = 0; x < w; x += 40) {
+    for (let x = 0; x < w; x += 50) {
       ctx.beginPath();
-      ctx.moveTo(x, h * 0.55);
+      ctx.moveTo(x, floorY);
       ctx.lineTo(x * 1.3 - w * 0.15, h);
       ctx.stroke();
     }
-    for (let y = h * 0.55; y < h; y += 25) {
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(w, y);
-      ctx.stroke();
-    }
 
-    // 3. Draw Slashes FX
+    // 2. Draw Slashes FX
     this.slashes.forEach(s => {
       ctx.save();
       ctx.strokeStyle = s.color;
@@ -925,7 +1018,7 @@ class WuWaCombatArena {
       ctx.restore();
     });
 
-    // 4. Draw Particles
+    // 3. Draw Particles
     this.particles.forEach(p => {
       ctx.fillStyle = p.color;
       ctx.globalAlpha = Math.max(0, p.alpha);
@@ -935,12 +1028,12 @@ class WuWaCombatArena {
     });
     ctx.globalAlpha = 1;
 
-    // 5. Draw Enemies
+    // 4. Draw Enemies
     this.enemies.forEach(enemy => {
       this.drawEnemy(enemy);
     });
 
-    // 6. Draw Player Resonators (Standby Bench + Active Chibi)
+    // 5. Draw Player Resonators (Standby Bench + Active Chibi)
     this.squadRuntime.forEach((res, idx) => {
       if (idx !== this.activeSlot) {
         // Bench mini chibi
@@ -953,7 +1046,7 @@ class WuWaCombatArena {
       this.drawActiveResonator(activeRes);
     }
 
-    // 7. Draw Floating Combat Damage Numbers
+    // 6. Draw Floating Combat Damage Numbers
     this.floatingTexts.forEach(ft => {
       ctx.save();
       ctx.font = `bold ${ft.size}px 'Orbitron', monospace`;
@@ -1060,110 +1153,129 @@ class WuWaCombatArena {
   drawEnemy(enemy) {
     const ctx = this.ctx;
     const x = enemy.x;
-    const y = enemy.y;
+    // Add subtle idle floating / breathing animation
+    const bob = Math.sin((performance.now() / 600) + (enemy.animBob || 0)) * (enemy.isBoss ? 4 : 2);
+    const y = enemy.y + bob;
     const elemColor = this.getElementColor(enemy.element);
 
     ctx.save();
 
-    // Floor Shadow
-    ctx.fillStyle = 'rgba(0,0,0,0.5)';
+    // 1. Dynamic Floor Shadow (scaled by height above ground)
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
     ctx.beginPath();
-    ctx.ellipse(x, y + (enemy.height / 2) - 10, enemy.width * 0.45, 16, 0, 0, Math.PI * 2);
+    ctx.ellipse(x, enemy.y + (enemy.height * 0.42), enemy.width * 0.45, 14, 0, 0, Math.PI * 2);
     ctx.fill();
 
-    // Telegraph Indicators!
+    // 2. Telegraph Indicators (Parry / Dodge)
     if (enemy.telegraphTimer > 0) {
       if (enemy.telegraphType === 'parry') {
         // GOLDEN CIRCLE PARRY WINDOW!
         const maxTime = enemy.parryWindowMs ? enemy.parryWindowMs / 1000 : 0.85;
         const progress = Math.max(0, enemy.telegraphTimer / maxTime);
-        const radius = 35 + progress * 50;
+        const radius = 40 + progress * 60;
 
         ctx.strokeStyle = '#facc15';
         ctx.lineWidth = 4;
         ctx.shadowColor = '#facc15';
-        ctx.shadowBlur = 20;
+        ctx.shadowBlur = 24;
 
         ctx.beginPath();
         ctx.arc(x, y - 20, radius, 0, Math.PI * 2);
         ctx.stroke();
 
-        ctx.font = "bold 13px 'Orbitron', sans-serif";
+        ctx.font = "bold 14px 'Orbitron', sans-serif";
         ctx.fillStyle = "#facc15";
         ctx.textAlign = "center";
-        ctx.fillText("⚡ PARRY (SPACE)!", x, y - radius - 10);
+        ctx.fillText("⚡ PARRY (SPACE)!", x, y - radius - 15);
       } else if (enemy.telegraphType === 'dodge') {
         // RED FLASH DANGER TELEGRAPH!
         ctx.strokeStyle = '#f43f5e';
         ctx.lineWidth = 3;
         ctx.shadowColor = '#f43f5e';
-        ctx.shadowBlur = 25;
+        ctx.shadowBlur = 28;
 
         ctx.beginPath();
-        ctx.arc(x, y - 20, 50, 0, Math.PI * 2);
+        ctx.arc(x, y - 20, 55, 0, Math.PI * 2);
         ctx.stroke();
 
-        ctx.font = "bold 13px 'Orbitron', sans-serif";
+        ctx.font = "bold 14px 'Orbitron', sans-serif";
         ctx.fillStyle = "#f43f5e";
         ctx.textAlign = "center";
-        ctx.fillText("⚠️ DODGE (SPACE)!", x, y - 65);
+        ctx.fillText("⚠️ DODGE (SPACE)!", x, y - 75);
       }
     }
 
-    // Boss / Mob Body Representation
-    if (enemy.isBoss) {
+    // 3. Boss / Mob Sprite Rendering (Real Visual Assets)
+    const spriteImg = enemy.sprite ? this.getImage(enemy.sprite) : null;
+
+    if (spriteImg && spriteImg.complete && spriteImg.naturalWidth > 0) {
+      // Glow Aura around sprite
+      ctx.shadowColor = elemColor;
+      ctx.shadowBlur = enemy.isBoss ? 28 : 14;
+
+      // If staggered, wobble and dim
+      if (enemy.staggerTimer > 0) {
+        ctx.globalAlpha = 0.7;
+        const wobble = Math.sin(performance.now() * 0.05) * 6;
+        ctx.drawImage(spriteImg, x - (enemy.width / 2) + wobble, y - (enemy.height / 2), enemy.width, enemy.height);
+        ctx.globalAlpha = 1.0;
+
+        // Dazed stars
+        ctx.font = "bold 20px sans-serif";
+        ctx.fillText("💫", x, y - (enemy.height / 2) - 30);
+      } else {
+        ctx.drawImage(spriteImg, x - (enemy.width / 2), y - (enemy.height / 2), enemy.width, enemy.height);
+      }
+    } else {
+      // High-tech Cybernetic Silhouette Fallback (No emojis!)
       ctx.fillStyle = enemy.staggerTimer > 0 ? '#475569' : '#1e1b4b';
       ctx.strokeStyle = elemColor;
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 2.5;
       ctx.shadowColor = elemColor;
-      ctx.shadowBlur = 20;
+      ctx.shadowBlur = 18;
 
       ctx.beginPath();
-      ctx.roundRect(x - enemy.width / 2, y - enemy.height / 2, enemy.width, enemy.height, 24);
+      ctx.roundRect(x - enemy.width / 2, y - enemy.height / 2, enemy.width, enemy.height, enemy.isBoss ? 20 : 12);
       ctx.fill();
       ctx.stroke();
 
-      // Boss Icon / Crest
-      ctx.font = "bold 32px sans-serif";
+      // Stylized Crest
+      ctx.fillStyle = elemColor;
+      ctx.font = "bold 13px 'Orbitron', monospace";
       ctx.textAlign = "center";
-      ctx.fillText(enemy.staggerTimer > 0 ? "💫" : "👹", x, y + 10);
-    } else {
-      ctx.fillStyle = enemy.staggerTimer > 0 ? '#334155' : '#0f172a';
-      ctx.strokeStyle = elemColor;
-      ctx.lineWidth = 2;
-
-      ctx.beginPath();
-      ctx.roundRect(x - enemy.width / 2, y - enemy.height / 2, enemy.width, enemy.height, 16);
-      ctx.fill();
-      ctx.stroke();
-
-      ctx.font = "bold 20px sans-serif";
-      ctx.textAlign = "center";
-      ctx.fillText("👾", x, y + 6);
+      ctx.fillText(enemy.isBoss ? "[OVERLORD]" : "[TACET DISCORD]", x, y + 5);
     }
 
-    // Enemy Name & HP Bar
-    const barW = enemy.isBoss ? 160 : 70;
+    // 4. Enemy Header Tag & HP / Vibration Gauges
+    const barW = enemy.isBoss ? 170 : 80;
     const hpPct = Math.max(0, enemy.hp / enemy.maxHp);
+    const lang = window.wuwaI18n ? window.wuwaI18n.getLang() : 'vi';
+    const enemyDisplayName = typeof enemy.name === 'object' ? (enemy.name[lang] || enemy.name.en) : enemy.name;
 
     ctx.font = `bold ${enemy.isBoss ? 12 : 10}px 'Orbitron', sans-serif`;
     ctx.fillStyle = "#ffffff";
     ctx.textAlign = "center";
-    ctx.fillText(enemy.name.en || enemy.name, x, y - enemy.height / 2 - 20);
+    ctx.shadowColor = "#000000";
+    ctx.shadowBlur = 6;
+    ctx.fillText(enemyDisplayName, x, y - (enemy.height / 2) - 22);
 
-    // HP Bar
-    ctx.fillStyle = "rgba(0,0,0,0.8)";
-    ctx.fillRect(x - barW / 2, y - enemy.height / 2 - 14, barW, 6);
+    // HP Bar Outer Frame
+    ctx.fillStyle = "rgba(0,0,0,0.85)";
+    ctx.fillRect(x - barW / 2, y - (enemy.height / 2) - 15, barW, 7);
+    // HP Bar Fill
     ctx.fillStyle = enemy.isBoss ? "#f43f5e" : "#f97316";
-    ctx.fillRect(x - barW / 2, y - enemy.height / 2 - 14, barW * hpPct, 6);
+    ctx.fillRect(x - barW / 2, y - (enemy.height / 2) - 15, barW * hpPct, 7);
+    ctx.strokeStyle = "rgba(255,255,255,0.2)";
+    ctx.lineWidth = 1;
+    ctx.strokeRect(x - barW / 2, y - (enemy.height / 2) - 15, barW, 7);
 
-    // Vibration Strength Bar (Boss only)
+    // Vibration Gauge (Bosses)
     if (enemy.isBoss && enemy.maxVibration) {
       const vibPct = Math.max(0, enemy.vibration / enemy.maxVibration);
-      ctx.fillStyle = "rgba(0,0,0,0.8)";
-      ctx.fillRect(x - barW / 2, y - enemy.height / 2 - 7, barW, 4);
+      ctx.fillStyle = "rgba(0,0,0,0.85)";
+      ctx.fillRect(x - barW / 2, y - (enemy.height / 2) - 7, barW, 4);
       ctx.fillStyle = enemy.staggerTimer > 0 ? "#cbd5e1" : "#facc15";
-      ctx.fillRect(x - barW / 2, y - enemy.height / 2 - 7, barW * vibPct, 4);
+      ctx.fillRect(x - barW / 2, y - (enemy.height / 2) - 7, barW * vibPct, 4);
     }
 
     ctx.restore();
@@ -1284,29 +1396,123 @@ class WuWaCombatArena {
     });
   }
 
+  setSquadFilter(filter) {
+    this.squadFilter = filter;
+    document.querySelectorAll('.element-filter-chip').forEach(btn => {
+      const match = btn.innerText.toLowerCase().includes(filter.toLowerCase());
+      btn.classList.toggle('active', match);
+      btn.classList.toggle('bg-amber-500/20', match);
+      btn.classList.toggle('text-amber-300', match);
+      btn.classList.toggle('border-amber-400', match);
+      btn.classList.toggle('border-white/10', !match);
+      btn.classList.toggle('text-slate-300', !match);
+    });
+    this.renderSquadSelector();
+  }
+
+  setSquadSearch(query) {
+    this.squadSearch = (query || '').toLowerCase().trim();
+    this.renderSquadSelector();
+  }
+
+  removeFromSquad(id) {
+    if (this.selectedSquad.length > 1) {
+      this.selectedSquad = this.selectedSquad.filter(sid => sid !== id);
+      this.initSquadRuntime();
+      this.renderSquadSelector();
+    }
+  }
+
   renderSquadSelector() {
+    const allResonators = window.wuwaMasterData?.resonators || [];
+    const lang = window.wuwaI18n ? window.wuwaI18n.getLang() : 'vi';
+
+    // 1. Render Selected Squad Dock (Slot 1 Main DPS, Slot 2 Sub-DPS, Slot 3 Support)
+    const dock = document.getElementById('combat-selected-dock');
+    if (dock) {
+      const slotLabels = [
+        { title: "SLOT 1 // MAIN DPS", role: "main_dps" },
+        { title: "SLOT 2 // SUB-DPS", role: "sub_dps" },
+        { title: "SLOT 3 // SUPPORT", role: "support" }
+      ];
+
+      dock.innerHTML = slotLabels.map((slot, idx) => {
+        const resId = this.selectedSquad[idx];
+        const res = resId ? allResonators.find(r => r.id === resId) : null;
+        if (!res) {
+          return `
+            <div class="p-3 rounded-xl border border-dashed border-white/20 bg-black/40 flex items-center justify-center text-slate-500 font-mono text-xs">
+              [+ CHỌN SLOT ${idx + 1}]
+            </div>
+          `;
+        }
+
+        const name = typeof res.name === 'object' ? (res.name[lang] || res.name.en) : res.name;
+        const elemColor = this.getElementColor(res.element);
+
+        return `
+          <div class="relative p-2.5 rounded-xl border border-amber-400/40 bg-gradient-to-r from-slate-950 to-slate-900 flex items-center justify-between gap-3 shadow-md group">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-900 border flex-shrink-0" style="border-color: ${elemColor}">
+                <img src="${res.assets?.avatar || res.assets?.chibi}" alt="${name}" class="w-full h-full object-cover object-top"
+                     onerror="this.src='assets/jinhsi-official.webp'">
+              </div>
+              <div class="truncate">
+                <span class="text-[9px] font-mono font-bold uppercase tracking-wider text-amber-400">${slot.title}</span>
+                <div class="font-orbitron font-bold text-xs text-white truncate">${name}</div>
+                <div class="text-[10px] font-mono text-slate-400">${res.element} • ${res.weapon}</div>
+              </div>
+            </div>
+            ${this.selectedSquad.length > 1 ? `
+              <button onclick="window.wuwaCombat.removeFromSquad('${res.id}')"
+                      class="text-slate-500 hover:text-rose-400 p-1.5 transition-colors cursor-pointer" title="Đổi / Bỏ chọn">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 2. Render Roster Grid
     const container = document.getElementById('combat-squad-picker');
     if (!container) return;
 
-    const allResonators = window.wuwaMasterData?.resonators || [];
-    container.innerHTML = allResonators.map(r => {
+    let filtered = allResonators;
+    if (this.squadFilter && this.squadFilter !== 'all') {
+      filtered = filtered.filter(r => r.element.toLowerCase() === this.squadFilter.toLowerCase());
+    }
+    if (this.squadSearch) {
+      filtered = filtered.filter(r => {
+        const en = (r.name?.en || '').toLowerCase();
+        const vi = (r.name?.vi || '').toLowerCase();
+        const elem = (r.element || '').toLowerCase();
+        const role = (r.role || '').toLowerCase();
+        return en.includes(this.squadSearch) || vi.includes(this.squadSearch) || elem.includes(this.squadSearch) || role.includes(this.squadSearch);
+      });
+    }
+
+    container.innerHTML = filtered.map(r => {
       const isSelected = this.selectedSquad.includes(r.id);
       const elemColor = this.getElementColor(r.element);
+      const name = typeof r.name === 'object' ? (r.name[lang] || r.name.en) : r.name;
 
       return `
         <div onclick="window.wuwaCombat.toggleResonatorSelection('${r.id}')"
-             class="p-2 rounded-2xl border transition-all cursor-pointer flex items-center gap-3 ${isSelected ? 'bg-amber-500/20 border-amber-400 shadow-[0_0_15px_rgba(250,204,21,0.3)]' : 'bg-black/40 border-white/10 hover:border-white/30'}">
-          <div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-900 border" style="border-color: ${elemColor}">
-            <img src="${r.assets.avatar || r.assets.chibi}" alt="${r.name.en}" class="w-full h-full object-cover object-top"
+             class="p-2 rounded-2xl border transition-all cursor-pointer flex items-center gap-2.5 ${isSelected ? 'bg-amber-500/25 border-amber-400 shadow-[0_0_18px_rgba(250,204,21,0.35)] scale-[1.02]' : 'bg-black/50 border-white/10 hover:border-white/30 hover:bg-black/70'}">
+          <div class="w-11 h-11 rounded-xl overflow-hidden bg-slate-900 border flex-shrink-0" style="border-color: ${elemColor}">
+            <img src="${r.assets.avatar || r.assets.chibi}" alt="${name}" class="w-full h-full object-cover object-top"
                  onerror="this.src='assets/jinhsi-official.webp'">
           </div>
-          <div>
-            <div class="font-orbitron font-bold text-xs text-white">${r.name.en}</div>
-            <div class="text-[10px] font-mono text-slate-400">${r.element} • ${r.role.replace('_', ' ').toUpperCase()}</div>
+          <div class="min-w-0">
+            <div class="font-orbitron font-bold text-xs text-white truncate">${name}</div>
+            <div class="text-[10px] font-mono text-slate-400 truncate">${r.element} • ${r.role.replace('_', ' ').toUpperCase()}</div>
           </div>
         </div>
       `;
     }).join('');
+
+    if (window.lucide) window.lucide.createIcons();
   }
 
   toggleResonatorSelection(id) {

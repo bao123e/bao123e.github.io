@@ -618,77 +618,208 @@
           </div>
         </div>
 
-        <!-- Step 1: Mode Picker -->
-        <div class="glass-panel p-5 rounded-2xl border border-white/10 space-y-3">
-          <div class="text-xs font-orbitron font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
-            <i data-lucide="layers" class="w-4 h-4"></i>
-            <span>1. Chọn Chế Độ Endgame</span>
+        <!-- Step 1: Mode Picker (Rich Visual Game Assets) -->
+        <div class="glass-panel p-5 rounded-3xl border border-white/10 space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="text-xs font-orbitron font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>1. Chọn Chế Độ Khiêu Chiến (Endgame Modes)</span>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Authentic WuWa Boss Arenas</span>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <button data-mode="toa" class="combat-mode-btn active p-4 rounded-xl border border-amber-400 bg-amber-500/20 text-amber-300 text-left transition-all cursor-pointer">
-              <div class="font-orbitron font-black text-sm flex items-center justify-between mb-1">
-                <span>Tower of Adversity</span>
-                <i data-lucide="flame" class="w-4 h-4 text-amber-400"></i>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- ToA Card -->
+            <button data-mode="toa" class="combat-mode-btn active group relative rounded-2xl overflow-hidden border-2 border-amber-400 p-4 text-left transition-all duration-300 shadow-[0_0_25px_rgba(250,204,21,0.25)] cursor-pointer">
+              <div class="absolute inset-0 bg-cover bg-center brightness-[0.38] group-hover:brightness-[0.5] group-hover:scale-105 transition-all duration-500"
+                   style="background-image: url('https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/UiDailyTower/Image/T_DailyTowerBg0.png');"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+              
+              <div class="relative z-10 flex flex-col h-full justify-between gap-3">
+                <div class="flex items-start justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl overflow-hidden border border-amber-400/60 bg-black/60 shadow-lg flex-shrink-0">
+                      <img src="https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_34011.png" alt="Scar" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                      <span class="text-[10px] font-mono font-bold text-amber-400 uppercase px-2 py-0.5 rounded bg-amber-500/20 border border-amber-400/40">Boss Đơn Máu Trâu</span>
+                      <h3 class="font-orbitron font-black text-base text-white mt-1 group-hover:text-amber-300 transition-colors">Tower of Adversity</h3>
+                    </div>
+                  </div>
+                  <i data-lucide="flame" class="w-5 h-5 text-amber-400"></i>
+                </div>
+
+                <div class="space-y-1.5 pt-2 border-t border-white/10 text-xs font-mono">
+                  <div class="flex items-center justify-between text-slate-300">
+                    <span>⏱️ Thời gian:</span>
+                    <span class="font-bold text-amber-300">180 Giây</span>
+                  </div>
+                  <div class="flex items-center justify-between text-slate-300">
+                    <span>⭐⭐⭐ Mục tiêu:</span>
+                    <span class="font-bold text-amber-400">3 Huy Hiệu (3 Crests)</span>
+                  </div>
+                  <div class="text-[11px] text-amber-200/90 font-sans bg-amber-500/10 p-1.5 rounded border border-amber-400/20">
+                    ⚡ Hazard: Spectro & Fusion DMG +30%, Coordinated Attacks x1.5 Forte.
+                  </div>
+                </div>
               </div>
-              <p class="text-[11px] text-slate-300 font-mono">Khiêu chiến Boss máu trâu trong 180s. Nhận 3 Huy hiệu (3 Crests).</p>
             </button>
-            <button data-mode="ww" class="combat-mode-btn p-4 rounded-xl border border-white/10 text-slate-400 hover:text-white text-left transition-all cursor-pointer">
-              <div class="font-orbitron font-black text-sm flex items-center justify-between mb-1">
-                <span>Whimpering Wastes</span>
-                <i data-lucide="wind" class="w-4 h-4 text-purple-400"></i>
+
+            <!-- WW Card -->
+            <button data-mode="ww" class="combat-mode-btn group relative rounded-2xl overflow-hidden border-2 border-white/10 hover:border-purple-400/60 p-4 text-left transition-all duration-300 cursor-pointer">
+              <div class="absolute inset-0 bg-cover bg-center brightness-[0.35] group-hover:brightness-[0.45] group-hover:scale-105 transition-all duration-500"
+                   style="background-image: url('https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/UiTacetfield/Image/T_TacetfieldFirstBg.png');"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+
+              <div class="relative z-10 flex flex-col h-full justify-between gap-3">
+                <div class="flex items-start justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl overflow-hidden border border-purple-400/60 bg-black/60 shadow-lg flex-shrink-0">
+                      <img src="https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_34021.png" alt="Crownless" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                      <span class="text-[10px] font-mono font-bold text-purple-300 uppercase px-2 py-0.5 rounded bg-purple-500/20 border border-purple-400/40">Dọn Quái 4 Waves</span>
+                      <h3 class="font-orbitron font-black text-base text-white mt-1 group-hover:text-purple-300 transition-colors">Whimpering Wastes</h3>
+                    </div>
+                  </div>
+                  <i data-lucide="wind" class="w-5 h-5 text-purple-400"></i>
+                </div>
+
+                <div class="space-y-1.5 pt-2 border-t border-white/10 text-xs font-mono">
+                  <div class="flex items-center justify-between text-slate-300">
+                    <span>⏱️ Thời gian:</span>
+                    <span class="font-bold text-purple-300">120 Giây</span>
+                  </div>
+                  <div class="flex items-center justify-between text-slate-300">
+                    <span>🏆 Đánh giá:</span>
+                    <span class="font-bold text-purple-400">Hạng SSS (6,000+ Điểm)</span>
+                  </div>
+                  <div class="text-[11px] text-purple-200/90 font-sans bg-purple-500/10 p-1.5 rounded border border-purple-400/20">
+                    ✨ Tín vật buff chiến thuật (Tokens) hỗ trợ dọn AOE liên tục.
+                  </div>
+                </div>
               </div>
-              <p class="text-[11px] text-slate-400 font-mono">Dọn quái liên hoàn nhiều đợt (AOE Rush). Chọn Tín vật và tính điểm S/SSS.</p>
             </button>
-            <button data-mode="matrix" class="combat-mode-btn p-4 rounded-xl border border-white/10 text-slate-400 hover:text-white text-left transition-all cursor-pointer">
-              <div class="font-orbitron font-black text-sm flex items-center justify-between mb-1">
-                <span>Tactical Matrix</span>
-                <i data-lucide="cpu" class="w-4 h-4 text-sky-400"></i>
+
+            <!-- Matrix Card -->
+            <button data-mode="matrix" class="combat-mode-btn group relative rounded-2xl overflow-hidden border-2 border-white/10 hover:border-sky-400/60 p-4 text-left transition-all duration-300 cursor-pointer">
+              <div class="absolute inset-0 bg-cover bg-center brightness-[0.35] group-hover:brightness-[0.45] group-hover:scale-105 transition-all duration-500"
+                   style="background-image: url('https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/UiSingleTower/Image/T_loopTowerBg03_UI.png');"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+
+              <div class="relative z-10 flex flex-col h-full justify-between gap-3">
+                <div class="flex items-start justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl overflow-hidden border border-sky-400/60 bg-black/60 shadow-lg flex-shrink-0">
+                      <img src="https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_34080.png" alt="Fallacy of No Return" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                      <span class="text-[10px] font-mono font-bold text-sky-300 uppercase px-2 py-0.5 rounded bg-sky-500/20 border border-sky-400/40">3 Giai Đoạn Boss</span>
+                      <h3 class="font-orbitron font-black text-base text-white mt-1 group-hover:text-sky-300 transition-colors">Tactical Matrix</h3>
+                    </div>
+                  </div>
+                  <i data-lucide="cpu" class="w-5 h-5 text-sky-400"></i>
+                </div>
+
+                <div class="space-y-1.5 pt-2 border-t border-white/10 text-xs font-mono">
+                  <div class="flex items-center justify-between text-slate-300">
+                    <span>⏱️ Thời gian:</span>
+                    <span class="font-bold text-sky-300">150 Giây</span>
+                  </div>
+                  <div class="flex items-center justify-between text-slate-300">
+                    <span>⚡ Kỹ năng:</span>
+                    <span class="font-bold text-amber-400">Parry x2.5 • Né x1.8</span>
+                  </div>
+                  <div class="text-[11px] text-sky-200/90 font-sans bg-sky-500/10 p-1.5 rounded border border-sky-400/20">
+                    🎯 Fallacy of No Return tăng tốc độ & mở cửa sổ phản đòn chuẩn xác.
+                  </div>
+                </div>
               </div>
-              <p class="text-[11px] text-slate-400 font-mono">Boss đa giai đoạn tăng dần tốc độ. Thưởng hệ số nhân lớn khi Parry/Né.</p>
             </button>
           </div>
         </div>
 
-        <!-- Step 2: Squad Picker (Choose 3 Resonators) -->
-        <div class="glass-panel p-5 rounded-2xl border border-white/10 space-y-3">
-          <div class="flex items-center justify-between">
+        <!-- Step 2: Squad Picker (Choose 3 Resonators from 60 Characters) -->
+        <div class="glass-panel p-5 rounded-3xl border border-white/10 space-y-4">
+          <div class="flex items-center justify-between flex-wrap gap-2">
             <div class="text-xs font-orbitron font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
               <i data-lucide="users" class="w-4 h-4"></i>
-              <span>2. Chọn Đội Hình Xuất Kích (Tối đa 3 Resonators)</span>
+              <span>2. Chọn Đội Hình Xuất Kích (3 Resonators)</span>
             </div>
-            <span class="text-xs font-mono text-slate-400">Click nhân vật để thêm/thay thế</span>
+            <span class="text-xs font-mono text-slate-400">Bấm nhân vật để chọn / đổi slot</span>
           </div>
+
+          <!-- Active Selected Squad Dock Preview -->
+          <div id="combat-selected-dock" class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 bg-black/60 rounded-2xl border border-amber-400/30">
+            <!-- Populated via wuwaCombat.js -->
+          </div>
+
+          <!-- Filter & Search Toolbar -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <div id="combat-element-filters" class="flex items-center gap-1.5 flex-wrap">
+              <button onclick="window.wuwaCombat.setSquadFilter('all')" class="element-filter-chip active px-3 py-1 rounded-lg text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-400 transition-all cursor-pointer">Tất Cả (60)</button>
+              <button onclick="window.wuwaCombat.setSquadFilter('Glacio')" class="element-filter-chip px-3 py-1 rounded-lg text-xs font-mono text-slate-300 bg-black/40 border border-white/10 hover:border-sky-400 transition-all cursor-pointer">Glacio</button>
+              <button onclick="window.wuwaCombat.setSquadFilter('Fusion')" class="element-filter-chip px-3 py-1 rounded-lg text-xs font-mono text-slate-300 bg-black/40 border border-white/10 hover:border-orange-400 transition-all cursor-pointer">Fusion</button>
+              <button onclick="window.wuwaCombat.setSquadFilter('Electro')" class="element-filter-chip px-3 py-1 rounded-lg text-xs font-mono text-slate-300 bg-black/40 border border-white/10 hover:border-purple-400 transition-all cursor-pointer">Electro</button>
+              <button onclick="window.wuwaCombat.setSquadFilter('Aero')" class="element-filter-chip px-3 py-1 rounded-lg text-xs font-mono text-slate-300 bg-black/40 border border-white/10 hover:border-teal-400 transition-all cursor-pointer">Aero</button>
+              <button onclick="window.wuwaCombat.setSquadFilter('Spectro')" class="element-filter-chip px-3 py-1 rounded-lg text-xs font-mono text-slate-300 bg-black/40 border border-white/10 hover:border-yellow-400 transition-all cursor-pointer">Spectro</button>
+              <button onclick="window.wuwaCombat.setSquadFilter('Havoc')" class="element-filter-chip px-3 py-1 rounded-lg text-xs font-mono text-slate-300 bg-black/40 border border-white/10 hover:border-rose-400 transition-all cursor-pointer">Havoc</button>
+            </div>
+            
+            <div class="relative w-full sm:w-56">
+              <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+              <input id="combat-squad-search" type="text" placeholder="Tìm kiếm Resonator..."
+                     oninput="window.wuwaCombat.setSquadSearch(this.value)"
+                     class="w-full pl-9 pr-3 py-1.5 rounded-xl bg-black/60 border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 font-sans">
+            </div>
+          </div>
+
           <div id="combat-squad-picker" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 max-h-72 overflow-y-auto scrollbar-thin p-1">
             <!-- Populated via wuwaCombat.js -->
           </div>
         </div>
 
         <!-- Step 3: Token Buff (Whimpering Wastes only) -->
-        <div id="combat-token-section" class="hidden glass-panel p-5 rounded-2xl border border-purple-500/30 space-y-3">
-          <div class="text-xs font-orbitron font-bold text-purple-300 uppercase tracking-wider flex items-center gap-2">
-            <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
-            <span>3. Chọn Tín Vật Buff (Whimpering Wastes Token)</span>
+        <div id="combat-token-section" class="hidden glass-panel p-5 rounded-3xl border border-purple-500/40 space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="text-xs font-orbitron font-bold text-purple-300 uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+              <span>3. Chọn Tín Vật Chiến Thuật (Whimpering Wastes Token)</span>
+            </div>
+            <span class="text-xs font-mono text-purple-300">Tăng mạnh hiệu năng chiến đấu</span>
           </div>
+
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <label class="flex items-center gap-3 p-3 rounded-xl bg-black/40 border border-purple-400/40 cursor-pointer">
-              <input type="radio" name="combat-token" value="plunderer_seal" checked class="accent-purple-500">
+            <label class="token-card flex items-center gap-3.5 p-3.5 rounded-2xl bg-black/50 border border-purple-400/50 hover:border-purple-300 cursor-pointer transition-all shadow-lg">
+              <input type="radio" name="combat-token" value="plunderer_seal" checked class="accent-purple-500 w-4 h-4 flex-shrink-0">
+              <div class="w-11 h-11 rounded-xl overflow-hidden bg-slate-900 border border-purple-400/40 flex-shrink-0">
+                <img src="https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_02.png" alt="Plunderer's Seal" class="w-full h-full object-cover">
+              </div>
               <div class="text-xs">
                 <div class="font-orbitron font-bold text-purple-200">Plunderer's Seal</div>
-                <div class="text-[10px] font-mono text-slate-400">+25% ATK khi tiêu diệt quái</div>
+                <div class="text-[11px] font-mono text-slate-300 mt-0.5">+25% ATK cộng dồn mỗi khi diệt 1 quái</div>
               </div>
             </label>
-            <label class="flex items-center gap-3 p-3 rounded-xl bg-black/40 border border-white/10 cursor-pointer">
-              <input type="radio" name="combat-token" value="echoing_feather" class="accent-purple-500">
+
+            <label class="token-card flex items-center gap-3.5 p-3.5 rounded-2xl bg-black/50 border border-white/10 hover:border-purple-400/50 cursor-pointer transition-all shadow-lg">
+              <input type="radio" name="combat-token" value="echoing_feather" class="accent-purple-500 w-4 h-4 flex-shrink-0">
+              <div class="w-11 h-11 rounded-xl overflow-hidden bg-slate-900 border border-purple-400/40 flex-shrink-0">
+                <img src="https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_04.png" alt="Echoing Feather" class="w-full h-full object-cover">
+              </div>
               <div class="text-xs">
                 <div class="font-orbitron font-bold text-purple-200">Echoing Feather</div>
-                <div class="text-[10px] font-mono text-slate-400">+40% Concerto khi đánh thường</div>
+                <div class="text-[11px] font-mono text-slate-300 mt-0.5">+40% Concerto khi đánh thường (Quickswap nộ)</div>
               </div>
             </label>
-            <label class="flex items-center gap-3 p-3 rounded-xl bg-black/40 border border-white/10 cursor-pointer">
-              <input type="radio" name="combat-token" value="resonance_core" class="accent-purple-500">
+
+            <label class="token-card flex items-center gap-3.5 p-3.5 rounded-2xl bg-black/50 border border-white/10 hover:border-purple-400/50 cursor-pointer transition-all shadow-lg">
+              <input type="radio" name="combat-token" value="resonance_core" class="accent-purple-500 w-4 h-4 flex-shrink-0">
+              <div class="w-11 h-11 rounded-xl overflow-hidden bg-slate-900 border border-purple-400/40 flex-shrink-0">
+                <img src="https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/UI/UIResources/Common/Image/ImgBoss/T_Boss_06.png" alt="Resonance Core" class="w-full h-full object-cover">
+              </div>
               <div class="text-xs">
                 <div class="font-orbitron font-bold text-purple-200">Resonance Core</div>
-                <div class="text-[10px] font-mono text-slate-400">+50% Sát thương Chiêu Nộ (Liberation)</div>
+                <div class="text-[11px] font-mono text-slate-300 mt-0.5">+50% Sát thương Chiêu Nộ (Resonance Liberation)</div>
               </div>
             </label>
           </div>
@@ -1141,14 +1272,15 @@
   </div>
 
   <!-- Application Modular Scripts -->
-  <script src="js/audio.js?v=3.1"></script>
-  <script src="js/cardData.js?v=3.1"></script>
-  <script src="js/gachaEngine.js?v=3.1"></script>
-  <script src="js/wuwaI18n.js?v=3.1"></script>
-  <script src="js/wuwaTierList.js?v=3.1"></script>
-  <script src="js/wuwaCombat.js?v=3.1"></script>
-  <script src="js/threeScene.js?v=3.1"></script>
-  <script src="js/wuwaConvene.js?v=3.1"></script>
-  <script src="js/app.js?v=3.1"></script>
+  <script src="js/wuwaMasterData.js?v=3.2"></script>
+  <script src="js/audio.js?v=3.2"></script>
+  <script src="js/cardData.js?v=3.2"></script>
+  <script src="js/gachaEngine.js?v=3.2"></script>
+  <script src="js/wuwaI18n.js?v=3.2"></script>
+  <script src="js/wuwaTierList.js?v=3.2"></script>
+  <script src="js/wuwaCombat.js?v=3.2"></script>
+  <script src="js/threeScene.js?v=3.2"></script>
+  <script src="js/wuwaConvene.js?v=3.2"></script>
+  <script src="js/app.js?v=3.2"></script>
 </body>
 </html>

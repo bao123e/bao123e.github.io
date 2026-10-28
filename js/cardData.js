@@ -14,13 +14,17 @@ class CardDataService {
   }
 
   async init() {
-    try {
-      const res = await fetch('src/data/wuwa_master_data.json');
-      if (res.ok) {
-        this.masterData = await res.json();
+    if (window.wuwaMasterData && window.wuwaMasterData.resonators && window.wuwaMasterData.resonators.length) {
+      this.masterData = window.wuwaMasterData;
+    } else {
+      try {
+        const res = await fetch('src/data/wuwa_master_data.json');
+        if (res.ok) {
+          this.masterData = await res.json();
+        }
+      } catch (e) {
+        console.warn('[CardDataService] Local fetch error, using embedded fallback:', e);
       }
-    } catch (e) {
-      console.warn('[CardDataService] Local fetch error, using embedded fallback:', e);
     }
 
     if (!this.masterData || !this.masterData.resonators || !this.masterData.resonators.length) {

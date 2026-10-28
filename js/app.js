@@ -116,11 +116,11 @@ class AppController {
       btn.addEventListener('click', () => {
         const mode = btn.dataset.mode;
         document.querySelectorAll('.combat-mode-btn').forEach(b => {
-          b.classList.remove('active', 'border-amber-400', 'bg-amber-500/20', 'text-amber-300');
-          b.classList.add('border-white/10', 'text-slate-400');
+          b.classList.remove('active', 'border-amber-400', 'shadow-[0_0_25px_rgba(250,204,21,0.25)]');
+          b.classList.add('border-white/10');
         });
-        btn.classList.add('active', 'border-amber-400', 'bg-amber-500/20', 'text-amber-300');
-        btn.classList.remove('border-white/10', 'text-slate-400');
+        btn.classList.add('active', 'border-amber-400', 'shadow-[0_0_25px_rgba(250,204,21,0.25)]');
+        btn.classList.remove('border-white/10');
 
         if (window.wuwaCombat) {
           window.wuwaCombat.selectedMode = mode;
