@@ -81,7 +81,7 @@ class SoundFX {
     osc.stop(now + 0.07);
   }
 
-  // CS2 Case Roulette rapid tick (wooden/metallic crisp needle tick)
+  // Rapid tick sound
   playCaseTick() {
     if (this.muted) return;
     this.init();
@@ -105,7 +105,7 @@ class SoundFX {
     osc.stop(now + 0.028);
   }
 
-  // CS2 Case stopping clamp impact
+  // Heavy metallic impact sound
   playCaseStop() {
     if (this.muted) return;
     this.init();

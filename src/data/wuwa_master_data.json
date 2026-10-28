@@ -1,0 +1,1519 @@
+{
+  "themeConfig": {
+    "colors": {
+      "bgPrimary": "#0a0c10",
+      "bgSecondary": "#11151f",
+      "glassCard": "rgba(18, 22, 34, 0.78)",
+      "borderGold": "rgba(212, 180, 117, 0.25)",
+      "accentGold": "#d4b475",
+      "accentCyan": "#38bdf8",
+      "elements": {
+        "Glacio": "#38bdf8",
+        "Fusion": "#f97316",
+        "Electro": "#a855f7",
+        "Aero": "#2dd4bf",
+        "Spectro": "#facc15",
+        "Havoc": "#ec4899"
+      }
+    }
+  },
+  "i18n": {
+    "vi": {
+      "appTitle": "WUTHERING WAVES // AKADEMIYA TERMINAL",
+      "nav": {
+        "combat": "Đấu Trường 2D Chibi",
+        "tierList": "Bảng Xếp Hạng Meta",
+        "resonators": "Hồ Sơ Cộng Hưởng",
+        "language": "Tiếng Việt"
+      },
+      "modes": {
+        "toa": "Tháp Nghịch Cảnh (ToA)",
+        "toaDesc": "Khiêu chiến Boss đơn/đôi máu trâu. Đạt 3 Huy hiệu trước khi hết giờ.",
+        "ww": "Vùng Đất Than Khóc (Whimpering Wastes)",
+        "wwDesc": "Dọn quái đa đợt liên hoàn (Multi-wave AOE). Chọn Tín vật và tối ưu điểm số.",
+        "matrix": "Ma Trận Chiến Thuật (Matrix)",
+        "matrixDesc": "Boss đa giai đoạn cường độ cao. Tích điểm nhờ Parry, Né hoàn hảo và duy trì chuỗi Combo."
+      },
+      "roles": {
+        "main_dps": "Sát Thương Chủ Lực (Main DPS)",
+        "sub_dps": "Sát Thương Phụ / Hỗ Trợ Chuỗi (Sub-DPS)",
+        "support": "Khuếch Đại / Hồi Phục (Amplifier / Support)"
+      },
+      "combatUI": {
+        "basicAtk": "Đánh Thường",
+        "skill": "Kỹ Năng Cộng Hưởng",
+        "forte": "Mạch Forte",
+        "liberation": "Giải Phóng Cộng Hưởng",
+        "dodge": "Né Hoàn Hảo",
+        "parry": "Đỡ Đòn (Parry)",
+        "concerto": "Năng Lượng Hợp Tấu",
+        "vibration": "Độ Bền Bỉ (Vibration)",
+        "wave": "Đợt Quái",
+        "score": "Điểm Số",
+        "timeLeft": "Thời Gian Còn Lại",
+        "selectTeam": "Chọn Đội Hình 3 Người Cộng Hưởng",
+        "selectToken": "Chọn Tín Vật Buff (Token)",
+        "startBattle": "Bắt Đầu Khiêu Chiến"
+      }
+    },
+    "en": {
+      "appTitle": "WUTHERING WAVES // AKADEMIYA TERMINAL",
+      "nav": {
+        "combat": "2D Chibi Combat Arena",
+        "tierList": "Endgame Meta Tier List",
+        "resonators": "Resonator Archive",
+        "language": "English"
+      },
+      "modes": {
+        "toa": "Tower of Adversity (ToA)",
+        "toaDesc": "High-HP Boss Rush. Clear within the time limit to earn 3 Crests.",
+        "ww": "Whimpering Wastes",
+        "wwDesc": "Multi-wave AOE endless rush. Equip Tokens and maximize wave clear score.",
+        "matrix": "Tactical Matrix",
+        "matrixDesc": "Multi-phase Boss simulation. Gain high multipliers via Parries, Dodge Counters, and Combo uptime."
+      },
+      "roles": {
+        "main_dps": "Main DPS",
+        "sub_dps": "Sub-DPS / Hybrid",
+        "support": "Amplifier / Support"
+      },
+      "combatUI": {
+        "basicAtk": "Basic Attack",
+        "skill": "Resonance Skill",
+        "forte": "Forte Circuit",
+        "liberation": "Resonance Liberation",
+        "dodge": "Dodge Counter",
+        "parry": "Parry",
+        "concerto": "Concerto Energy",
+        "vibration": "Vibration Strength",
+        "wave": "Wave",
+        "score": "Score",
+        "timeLeft": "Time Remaining",
+        "selectTeam": "Select 3-Resonator Squad",
+        "selectToken": "Select Battle Token",
+        "startBattle": "Deploy Squad"
+      }
+    }
+  },
+  "assetBaseUrls": {
+    "githubRaw": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main",
+    "prydwenCdn": "https://www.prydwen.gg/static"
+  },
+  "resonators": [
+    {
+      "id": "camellya",
+      "name": {
+        "en": "Camellya",
+        "vi": "Camellya"
+      },
+      "rarity": 5,
+      "element": "Havoc",
+      "weapon": "Sword",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Camellya.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Camellya_1.png"
+      },
+      "tiers": {
+        "toa": "T0",
+        "ww": "T0",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Red Spring (Sắc Xuân Đỏ Thẫm)",
+        "echoSet": "Sun-sinking Eclipse (5pc)",
+        "mainEcho": "Nightmare: Crownless",
+        "statPriority": "Crit Rate / Crit DMG > Havoc DMG > ATK% > Basic Attack DMG%",
+        "analysis": {
+          "vi": "Trùm cả đơn mục tiêu lẫn AOE nhờ 2 dạng chuyển đổi Hoa Đỏ (AOE xoay liên hoàn) và Hoa Trắng (đơn mục tiêu).",
+          "en": "Dominates both single-target Bosses and multi-wave AOE thanks to Blossom Mode wide-area spins."
+        }
+      },
+      "combatStats": {
+        "hp": 11500,
+        "atk": 2450,
+        "critRate": 0.75,
+        "critDmg": 2.75,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Vining Waltz",
+            "multiplier": 1.4,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Crimson Blossom",
+            "cd": 6,
+            "multiplier": 3.2,
+            "aoeRadius": 260,
+            "concertoGain": 25
+          },
+          "forte": {
+            "name": "Ephemeral Twirl (Nuke)",
+            "cd": 12,
+            "multiplier": 6.8,
+            "aoeRadius": 320,
+            "concertoGain": 40
+          },
+          "liberation": {
+            "name": "Fervor Efflorescent",
+            "cd": 18,
+            "multiplier": 8.5,
+            "aoeRadius": 350
+          }
+        }
+      }
+    },
+    {
+      "id": "carlotta",
+      "name": {
+        "en": "Carlotta",
+        "vi": "Carlotta"
+      },
+      "rarity": 5,
+      "element": "Glacio",
+      "weapon": "Pistols",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Carlotta.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Carlotta_1.png"
+      },
+      "tiers": {
+        "toa": "T0",
+        "ww": "T1",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "The Last Dance",
+        "echoSet": "Frosty Resolve (5pc)",
+        "mainEcho": "Sentry Construct",
+        "statPriority": "Crit Rate / Crit DMG > Glacio DMG > ATK% > Resonance Skill DMG%",
+        "analysis": {
+          "vi": "Sát thương dồn đơn mục tiêu (Boss) đỉnh cao nhất hiện tại cùng khả năng khống chế đóng băng thoáng chốc và bám mục tiêu từ xa.",
+          "en": "Unmatched single-target burst DPS with incredible mobility and gap-closers for Bosses in ToA and Matrix."
+        }
+      },
+      "combatStats": {
+        "hp": 10800,
+        "atk": 2520,
+        "critRate": 0.78,
+        "critDmg": 2.9,
+        "isAoeSpecialist": false,
+        "skills": {
+          "basic": {
+            "name": "Crystal Shot",
+            "multiplier": 1.35,
+            "concertoGain": 10
+          },
+          "skill": {
+            "name": "Art of Violence",
+            "cd": 7,
+            "multiplier": 3.8,
+            "aoeRadius": 140,
+            "concertoGain": 25
+          },
+          "forte": {
+            "name": "Tinted Crystal Finale",
+            "cd": 10,
+            "multiplier": 6.2,
+            "aoeRadius": 180,
+            "concertoGain": 35
+          },
+          "liberation": {
+            "name": "Fatal Finale (4 Shots)",
+            "cd": 20,
+            "multiplier": 10.2,
+            "aoeRadius": 200
+          }
+        }
+      }
+    },
+    {
+      "id": "jinhsi",
+      "name": {
+        "en": "Jinhsi",
+        "vi": "Jinhsi"
+      },
+      "rarity": 5,
+      "element": "Spectro",
+      "weapon": "Broadblade",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Jinhsi.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Jinhsi_1.png"
+      },
+      "tiers": {
+        "toa": "T0",
+        "ww": "T1",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Ages of Harvest",
+        "echoSet": "Celestial Light (5pc)",
+        "mainEcho": "Jué",
+        "statPriority": "Crit Rate / Crit DMG > Spectro DMG > ATK% > Resonance Skill DMG%",
+        "analysis": {
+          "vi": "Sát thương Nuke từ Kỹ năng Cộng hưởng (Rồng phun) cực lớn, rất mạnh trong ToA và Matrix.",
+          "en": "Massive Resonance Skill nuke multiplier via Incandescence stacks."
+        }
+      },
+      "combatStats": {
+        "hp": 11200,
+        "atk": 2480,
+        "critRate": 0.8,
+        "critDmg": 2.7,
+        "isAoeSpecialist": false,
+        "skills": {
+          "basic": {
+            "name": "Slash of Dawn",
+            "multiplier": 1.3,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Overflowing Radiance",
+            "cd": 6,
+            "multiplier": 3.4,
+            "aoeRadius": 200,
+            "concertoGain": 25
+          },
+          "forte": {
+            "name": "Illuminous Epiphany (Jué Beam)",
+            "cd": 12,
+            "multiplier": 7.8,
+            "aoeRadius": 250,
+            "concertoGain": 45
+          },
+          "liberation": {
+            "name": "Purge of Evil",
+            "cd": 20,
+            "multiplier": 8.0,
+            "aoeRadius": 280
+          }
+        }
+      }
+    },
+    {
+      "id": "jiyan",
+      "name": {
+        "en": "Jiyan",
+        "vi": "Jiyan"
+      },
+      "rarity": 5,
+      "element": "Aero",
+      "weapon": "Broadblade",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Jiyan.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Jiyan_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T0",
+        "matrix": "T1"
+      },
+      "build": {
+        "bestWeapon": "Verdant Summit",
+        "echoSet": "Sierra Gale (5pc)",
+        "mainEcho": "Nightmare: Feilian Beringal",
+        "statPriority": "Crit Rate / Crit DMG > Aero DMG > Heavy Attack DMG% > ER%",
+        "analysis": {
+          "vi": "Ông hoàng chế độ Whimpering Wastes nhờ khả năng gom quái liên tục và sát thương diện rộng khi bật Giải phóng Cộng hưởng.",
+          "en": "King of Whimpering Wastes due to continuous crowd-control suction and huge AOE Heavy Attack sweeps."
+        }
+      },
+      "combatStats": {
+        "hp": 12000,
+        "atk": 2380,
+        "critRate": 0.75,
+        "critDmg": 2.65,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Lone Lance",
+            "multiplier": 1.25,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Windqueller",
+            "cd": 7,
+            "multiplier": 3.0,
+            "aoeRadius": 240,
+            "concertoGain": 25
+          },
+          "forte": {
+            "name": "Qingloong Vortex (Pull)",
+            "cd": 10,
+            "multiplier": 5.2,
+            "aoeRadius": 360,
+            "concertoGain": 35
+          },
+          "liberation": {
+            "name": "Emerald Storm: Prelude",
+            "cd": 16,
+            "multiplier": 8.4,
+            "aoeRadius": 380
+          }
+        }
+      }
+    },
+    {
+      "id": "xiangli_yao",
+      "name": {
+        "en": "Xiangli Yao",
+        "vi": "Xiangli Yao"
+      },
+      "rarity": 5,
+      "element": "Electro",
+      "weapon": "Gauntlets",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/XiangliYao.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/XiangliYao_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T0.5",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Verity's Handle",
+        "echoSet": "Void Thunder (5pc)",
+        "mainEcho": "Nightmare: Thundering Mephis",
+        "statPriority": "Crit Rate / Crit DMG > Electro DMG > Resonance Liberation DMG%",
+        "analysis": {
+          "vi": "Làm chậm thời gian của Boss khi tung chiêu, cực kỳ an toàn và hiệu quả trong cả 3 chế độ.",
+          "en": "Time-slow mechanics on Liberation cubes make him dominant in Matrix and Quickswap teams."
+        }
+      },
+      "combatStats": {
+        "hp": 11400,
+        "atk": 2420,
+        "critRate": 0.76,
+        "critDmg": 2.7,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Probe",
+            "multiplier": 1.3,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Deduction",
+            "cd": 6,
+            "multiplier": 3.3,
+            "aoeRadius": 220,
+            "concertoGain": 25
+          },
+          "forte": {
+            "name": "Law of Reigns (Cube Burst)",
+            "cd": 9,
+            "multiplier": 5.8,
+            "aoeRadius": 280,
+            "concertoGain": 35
+          },
+          "liberation": {
+            "name": "Cogitation Model",
+            "cd": 18,
+            "multiplier": 8.6,
+            "aoeRadius": 310
+          }
+        }
+      }
+    },
+    {
+      "id": "changli",
+      "name": {
+        "en": "Changli",
+        "vi": "Changli"
+      },
+      "rarity": 5,
+      "element": "Fusion",
+      "weapon": "Sword",
+      "role": "sub_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Changli.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Changli_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T0",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Blazing Brilliance",
+        "echoSet": "Molten Rift (5pc)",
+        "mainEcho": "Nightmare: Inferno Rider",
+        "statPriority": "Crit Rate / Crit DMG > Fusion DMG > Resonance Skill DMG% > ATK%",
+        "analysis": {
+          "vi": "Nữ hoàng Quickswap với tầm đánh AOE rộng và khả năng áp sát tức thì.",
+          "en": "Premier Quickswap DPS/Sub-DPS with wide AOE coverage and Fusion/Liberation amplification."
+        }
+      },
+      "combatStats": {
+        "hp": 11000,
+        "atk": 2440,
+        "critRate": 0.77,
+        "critDmg": 2.72,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Blazing Enlightment",
+            "multiplier": 1.3,
+            "concertoGain": 14
+          },
+          "skill": {
+            "name": "Tripartite Flames",
+            "cd": 8,
+            "multiplier": 3.9,
+            "aoeRadius": 270,
+            "concertoGain": 30
+          },
+          "forte": {
+            "name": "Flaming Sacrifice",
+            "cd": 10,
+            "multiplier": 6.0,
+            "aoeRadius": 300,
+            "concertoGain": 40
+          },
+          "liberation": {
+            "name": "Radiance of Fealty",
+            "cd": 18,
+            "multiplier": 8.2,
+            "aoeRadius": 340
+          }
+        }
+      }
+    },
+    {
+      "id": "zhezhi",
+      "name": {
+        "en": "Zhezhi",
+        "vi": "Zhezhi"
+      },
+      "rarity": 5,
+      "element": "Glacio",
+      "weapon": "Rectifier",
+      "role": "sub_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Zhezhi.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Zhezhi_1.png"
+      },
+      "tiers": {
+        "toa": "T0",
+        "ww": "T1",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Rime-Draped Sprouts",
+        "echoSet": "Empyrean Anthem (5pc)",
+        "mainEcho": "Hecate",
+        "statPriority": "Crit Rate / Crit DMG > ER% > Glacio DMG > Basic Attack DMG%",
+        "analysis": {
+          "vi": "Sub-DPS tốt nhất cho cả Carlotta và Jinhsi nhờ đòn đánh phối hợp (Coordinated Attack) và buff Kỹ năng Cộng hưởng.",
+          "en": "Top-tier Sub-DPS providing off-field Coordinated Attacks and massive Glacio + Resonance Skill amplification."
+        }
+      },
+      "combatStats": {
+        "hp": 10500,
+        "atk": 2150,
+        "critRate": 0.72,
+        "critDmg": 2.5,
+        "isAoeSpecialist": false,
+        "skills": {
+          "basic": {
+            "name": "Brushwork",
+            "multiplier": 1.15,
+            "concertoGain": 16
+          },
+          "skill": {
+            "name": "Manifestation",
+            "cd": 6,
+            "multiplier": 2.8,
+            "aoeRadius": 180,
+            "concertoGain": 35
+          },
+          "forte": {
+            "name": "Stroke of Genius",
+            "cd": 9,
+            "multiplier": 4.5,
+            "aoeRadius": 200,
+            "concertoGain": 45
+          },
+          "liberation": {
+            "name": "Inklit Spirit (Coord. Atk)",
+            "cd": 16,
+            "multiplier": 6.4,
+            "aoeRadius": 240
+          }
+        }
+      }
+    },
+    {
+      "id": "roccia",
+      "name": {
+        "en": "Roccia",
+        "vi": "Roccia"
+      },
+      "rarity": 5,
+      "element": "Havoc",
+      "weapon": "Gauntlets",
+      "role": "sub_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Roccia.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Roccia_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T0",
+        "matrix": "T0.5"
+      },
+      "build": {
+        "bestWeapon": "Tragicomedy",
+        "echoSet": "Midnight Veil (5pc)",
+        "mainEcho": "Lorelei",
+        "statPriority": "Crit Rate (tối thiểu 70%) > Crit DMG > Havoc DMG > Heavy Attack DMG%",
+        "analysis": {
+          "vi": "Gom quái lốc xoáy cực rộng trong Whimpering Wastes, buff Crit ATK cho toàn đội và khuếch đại Havoc + Đánh thường cho Camellya.",
+          "en": "T0 grouping specialist for Whimpering Wastes and the ultimate Havoc/Basic Attack buffer for Camellya."
+        }
+      },
+      "combatStats": {
+        "hp": 11200,
+        "atk": 2180,
+        "critRate": 0.75,
+        "critDmg": 2.55,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Pero Knock",
+            "multiplier": 1.2,
+            "concertoGain": 15
+          },
+          "skill": {
+            "name": "Acrobatic Tornado (Pull)",
+            "cd": 7,
+            "multiplier": 3.2,
+            "aoeRadius": 360,
+            "concertoGain": 35
+          },
+          "forte": {
+            "name": "Three-Bounce Slam",
+            "cd": 10,
+            "multiplier": 5.4,
+            "aoeRadius": 320,
+            "concertoGain": 45
+          },
+          "liberation": {
+            "name": "Commedia Improvviso!",
+            "cd": 18,
+            "multiplier": 6.8,
+            "aoeRadius": 340
+          }
+        }
+      }
+    },
+    {
+      "id": "shorekeeper",
+      "name": {
+        "en": "Shorekeeper",
+        "vi": "Shorekeeper"
+      },
+      "rarity": 5,
+      "element": "Spectro",
+      "weapon": "Rectifier",
+      "role": "support",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Shorekeeper.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Shorekeeper_1.png"
+      },
+      "tiers": {
+        "toa": "T0",
+        "ww": "T0",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Stellar Symphony / Variation",
+        "echoSet": "Rejuvenating Glow (5pc)",
+        "mainEcho": "Fallacy of No Return",
+        "statPriority": "Energy Regen (250%) > HP% > Crit DMG%",
+        "analysis": {
+          "vi": "Support T0 tuyệt đối ở mọi chế độ: Hồi máu, tăng 12.5% Crit Rate, 25% Crit DMG và 15% Khuếch đại toàn sát thương.",
+          "en": "Uncontested T0 Support across all modes: provides team-wide Crit Rate, Crit DMG, DMG Amplification, and healing."
+        }
+      },
+      "combatStats": {
+        "hp": 16500,
+        "atk": 1500,
+        "critRate": 0.5,
+        "critDmg": 2.6,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Origin Calculus",
+            "multiplier": 0.9,
+            "concertoGain": 18
+          },
+          "skill": {
+            "name": "Chaos Theory (Heal)",
+            "cd": 8,
+            "multiplier": 2.0,
+            "healTeam": 3200,
+            "concertoGain": 40
+          },
+          "forte": {
+            "name": "Illation Supernova",
+            "cd": 10,
+            "multiplier": 4.2,
+            "aoeRadius": 280,
+            "concertoGain": 45
+          },
+          "liberation": {
+            "name": "End Loop (Stellarealm Buff)",
+            "cd": 20,
+            "multiplier": 3.5,
+            "teamBuffCrit": true
+          }
+        }
+      }
+    },
+    {
+      "id": "verina",
+      "name": {
+        "en": "Verina",
+        "vi": "Verina"
+      },
+      "rarity": 5,
+      "element": "Spectro",
+      "weapon": "Rectifier",
+      "role": "support",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Verina.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Verina_1.png"
+      },
+      "tiers": {
+        "toa": "T0",
+        "ww": "T0",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Variation",
+        "echoSet": "Rejuvenating Glow (5pc)",
+        "mainEcho": "Bell-Borne Geochelone",
+        "statPriority": "Energy Regen (220%+) > ATK% > Healing Bonus",
+        "analysis": {
+          "vi": "Tốc độ tích Concerto nhanh nhất game (chỉ 3 giây trên sân), buff ATK và khuếch đại toàn sát thương cho cả đội.",
+          "en": "Fastest Concerto generation in the game with universal 15% All-DMG Deepen and ATK buffs."
+        }
+      },
+      "combatStats": {
+        "hp": 13500,
+        "atk": 2050,
+        "critRate": 0.5,
+        "critDmg": 1.8,
+        "isAoeSpecialist": false,
+        "skills": {
+          "basic": {
+            "name": "Cultivation",
+            "multiplier": 0.95,
+            "concertoGain": 20
+          },
+          "skill": {
+            "name": "Botany Experiment",
+            "cd": 6,
+            "multiplier": 2.1,
+            "healTeam": 2800,
+            "concertoGain": 45
+          },
+          "forte": {
+            "name": "Starflower (Heal & Buff)",
+            "cd": 8,
+            "multiplier": 3.0,
+            "healTeam": 3500,
+            "concertoGain": 50
+          },
+          "liberation": {
+            "name": "Arboreal Flourish",
+            "cd": 18,
+            "multiplier": 4.0,
+            "teamBuffCrit": true
+          }
+        }
+      }
+    },
+    {
+      "id": "yinlin",
+      "name": {
+        "en": "Yinlin",
+        "vi": "Yinlin"
+      },
+      "rarity": 5,
+      "element": "Electro",
+      "weapon": "Rectifier",
+      "role": "sub_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Yinlin.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Yinlin_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T0",
+        "matrix": "T0.5"
+      },
+      "build": {
+        "bestWeapon": "Stringmaster",
+        "echoSet": "Void Thunder (5pc)",
+        "mainEcho": "Tempest Mephis",
+        "statPriority": "Crit Rate / Crit DMG > Electro DMG > ATK% > Energy Regen",
+        "analysis": {
+          "vi": "Hỗ trợ sát thương Lôi diện rộng cực mạnh, buff Outro 20% Electro DMG và 25% Liberation DMG cho chủ lực.",
+          "en": "Premier Electro Sub-DPS with Judgement marks and Outro buffing 20% Electro DMG and 25% Liberation DMG."
+        }
+      },
+      "combatStats": {
+        "hp": 10500,
+        "atk": 2380,
+        "critRate": 0.72,
+        "critDmg": 2.65,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Zap Strings",
+            "multiplier": 1.25,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Magnetic Roar",
+            "cd": 8,
+            "multiplier": 3.5,
+            "aoeRadius": 220,
+            "concertoGain": 30
+          },
+          "forte": {
+            "name": "Chameleon's Judgement",
+            "cd": 10,
+            "multiplier": 5.8,
+            "aoeRadius": 280,
+            "concertoGain": 35
+          },
+          "liberation": {
+            "name": "Thundering Wrath",
+            "cd": 18,
+            "multiplier": 7.5,
+            "aoeRadius": 320
+          }
+        }
+      }
+    },
+    {
+      "id": "sanhua",
+      "name": {
+        "en": "Sanhua",
+        "vi": "Sanhua"
+      },
+      "rarity": 4,
+      "element": "Glacio",
+      "weapon": "Sword",
+      "role": "sub_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Sanhua.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Sanhua_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T1",
+        "matrix": "T0.5"
+      },
+      "build": {
+        "bestWeapon": "Emerald of Genesis",
+        "echoSet": "Moonlit Clouds (5pc)",
+        "mainEcho": "Impermanence Heron",
+        "statPriority": "Crit Rate / Crit DMG > Glacio DMG > ATK% > Energy Regen",
+        "analysis": {
+          "vi": "Nhân vật 4 sao có tốc độ xoay chu kỳ Concerto nhanh bậc nhất game, buff Outro 38% sát thương Đánh Thường.",
+          "en": "Fastest 4★ Concerto generator, providing an insane 38% Basic Attack DMG Deepen Outro buff."
+        }
+      },
+      "combatStats": {
+        "hp": 10200,
+        "atk": 2180,
+        "critRate": 0.68,
+        "critDmg": 2.45,
+        "isAoeSpecialist": false,
+        "skills": {
+          "basic": {
+            "name": "Freezing Edge",
+            "multiplier": 1.2,
+            "concertoGain": 15
+          },
+          "skill": {
+            "name": "Eternal Frost",
+            "cd": 6,
+            "multiplier": 3.0,
+            "aoeRadius": 180,
+            "concertoGain": 35
+          },
+          "forte": {
+            "name": "Clarity Thorn",
+            "cd": 8,
+            "multiplier": 4.8,
+            "aoeRadius": 210,
+            "concertoGain": 40
+          },
+          "liberation": {
+            "name": "Glacial Bloom",
+            "cd": 16,
+            "multiplier": 6.8,
+            "aoeRadius": 250
+          }
+        }
+      }
+    },
+    {
+      "id": "mortefi",
+      "name": {
+        "en": "Mortefi",
+        "vi": "Mortefi"
+      },
+      "rarity": 4,
+      "element": "Fusion",
+      "weapon": "Pistols",
+      "role": "sub_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Mortefi.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Mortefi_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T1",
+        "matrix": "T1"
+      },
+      "build": {
+        "bestWeapon": "Static Mist",
+        "echoSet": "Moonlit Clouds (5pc)",
+        "mainEcho": "Impermanence Heron",
+        "statPriority": "Energy Regen (180%+) > Crit Rate / Crit DMG > Fusion DMG",
+        "analysis": {
+          "vi": "Trợ thủ hỏa lực phụ hoàn hảo cho Jiyan với đòn đánh phụ rồng lửa liên tục và buff Outro 38% Heavy Attack DMG.",
+          "en": "Top-tier co-ordinated attacker, providing 38% Heavy Attack DMG Deepen for Jiyan and other heavy-hitters."
+        }
+      },
+      "combatStats": {
+        "hp": 9800,
+        "atk": 2100,
+        "critRate": 0.65,
+        "critDmg": 2.35,
+        "isAoeSpecialist": false,
+        "skills": {
+          "basic": {
+            "name": "Dissonance Volley",
+            "multiplier": 1.15,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Fury Flare",
+            "cd": 7,
+            "multiplier": 2.8,
+            "aoeRadius": 160,
+            "concertoGain": 30
+          },
+          "forte": {
+            "name": "Violent Reversal",
+            "cd": 10,
+            "multiplier": 4.2,
+            "aoeRadius": 190,
+            "concertoGain": 35
+          },
+          "liberation": {
+            "name": "Burning Rhapsody",
+            "cd": 20,
+            "multiplier": 6.2,
+            "aoeRadius": 220
+          }
+        }
+      }
+    },
+    {
+      "id": "encore",
+      "name": {
+        "en": "Encore",
+        "vi": "Encore"
+      },
+      "rarity": 5,
+      "element": "Fusion",
+      "weapon": "Rectifier",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Encore.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Encore_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T1",
+        "matrix": "T0.5"
+      },
+      "build": {
+        "bestWeapon": "Cosmic Ripples / Stringmaster",
+        "echoSet": "Molten Rift (5pc)",
+        "mainEcho": "Inferno Rider",
+        "statPriority": "Crit Rate / Crit DMG > Fusion DMG > ATK% > Basic Attack DMG%",
+        "analysis": {
+          "vi": "Sát thương Fusion dồn dập sau khi bật chiêu cuối biến hóa dạng Cosmos, swap cancel mượt mà.",
+          "en": "High DPS Fusion burst carry during Cosmos Rampage mode with fluid swap-cancels."
+        }
+      },
+      "combatStats": {
+        "hp": 10400,
+        "atk": 2400,
+        "critRate": 0.74,
+        "critDmg": 2.6,
+        "isAoeSpecialist": false,
+        "skills": {
+          "basic": {
+            "name": "Wooly Attack",
+            "multiplier": 1.3,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Flaming Woolies",
+            "cd": 8,
+            "multiplier": 3.4,
+            "aoeRadius": 180,
+            "concertoGain": 28
+          },
+          "forte": {
+            "name": "Denuo Cosmos Burst",
+            "cd": 12,
+            "multiplier": 6.5,
+            "aoeRadius": 240,
+            "concertoGain": 40
+          },
+          "liberation": {
+            "name": "Cosmos Frenzy",
+            "cd": 18,
+            "multiplier": 8.0,
+            "aoeRadius": 260
+          }
+        }
+      }
+    },
+    {
+      "id": "rover_havoc",
+      "name": {
+        "en": "Rover (Havoc)",
+        "vi": "Rover (Havoc)"
+      },
+      "rarity": 5,
+      "element": "Havoc",
+      "weapon": "Sword",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Rover_Havoc.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Rover_Havoc_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T0.5",
+        "matrix": "T0.5"
+      },
+      "build": {
+        "bestWeapon": "Emerald of Genesis",
+        "echoSet": "Sun-sinking Eclipse (5pc)",
+        "mainEcho": "Dreamless",
+        "statPriority": "Crit Rate / Crit DMG > Havoc DMG > ATK% > Liberation DMG%",
+        "analysis": {
+          "vi": "Chiêu cuối Nuke Havoc cực nhanh, kết hợp kích hoạt tức thì Main Echo Dreamless gây lượng sát thương khủng khiếp.",
+          "en": "Gigantic burst Liberation with instant-cast Dreamless echo integration."
+        }
+      },
+      "combatStats": {
+        "hp": 11000,
+        "atk": 2420,
+        "critRate": 0.76,
+        "critDmg": 2.7,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Dark Resonance Slash",
+            "multiplier": 1.35,
+            "concertoGain": 14
+          },
+          "skill": {
+            "name": "Wingblade",
+            "cd": 7,
+            "multiplier": 3.6,
+            "aoeRadius": 210,
+            "concertoGain": 32
+          },
+          "forte": {
+            "name": "Dark Surge Rampage",
+            "cd": 10,
+            "multiplier": 6.6,
+            "aoeRadius": 280,
+            "concertoGain": 42
+          },
+          "liberation": {
+            "name": "Deadening Abyss (Nuke)",
+            "cd": 18,
+            "multiplier": 9.2,
+            "aoeRadius": 320
+          }
+        }
+      }
+    },
+    {
+      "id": "phoebe",
+      "name": {
+        "en": "Phoebe",
+        "vi": "Phoebe"
+      },
+      "rarity": 5,
+      "element": "Spectro",
+      "weapon": "Rectifier",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Phoebe.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Phoebe_1.png"
+      },
+      "tiers": {
+        "toa": "T0",
+        "ww": "T0.5",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Luminous Lullaby",
+        "echoSet": "Celestial Light (5pc)",
+        "mainEcho": "Jué",
+        "statPriority": "Crit Rate / Crit DMG > Spectro DMG > ATK% > Energy Regen",
+        "analysis": {
+          "vi": "Chủ lực hệ Quang thế hệ mới với khả năng mở rộng vùng cộng hưởng và kích nổ chuỗi thanh trừng siêu thanh.",
+          "en": "Next-generation Spectro hypercarry with expanding sound zones and high frequency detonation."
+        }
+      },
+      "combatStats": {
+        "hp": 11300,
+        "atk": 2490,
+        "critRate": 0.78,
+        "critDmg": 2.8,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Solar Bell",
+            "multiplier": 1.38,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Radiant Chorus",
+            "cd": 6,
+            "multiplier": 3.5,
+            "aoeRadius": 240,
+            "concertoGain": 30
+          },
+          "forte": {
+            "name": "Sanctified Hymn",
+            "cd": 11,
+            "multiplier": 7.0,
+            "aoeRadius": 300,
+            "concertoGain": 45
+          },
+          "liberation": {
+            "name": "Heavenly Cascade",
+            "cd": 18,
+            "multiplier": 8.8,
+            "aoeRadius": 340
+          }
+        }
+      }
+    },
+    {
+      "id": "brant",
+      "name": {
+        "en": "Brant",
+        "vi": "Brant"
+      },
+      "rarity": 5,
+      "element": "Fusion",
+      "weapon": "Broadblade",
+      "role": "sub_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Brant.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Brant_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T0",
+        "matrix": "T0.5"
+      },
+      "build": {
+        "bestWeapon": "Verdant Summit",
+        "echoSet": "Molten Rift (5pc)",
+        "mainEcho": "Inferno Rider",
+        "statPriority": "Crit Rate / Crit DMG > Fusion DMG > ATK% > Energy Regen",
+        "analysis": {
+          "vi": "Sub-DPS hệ Hỏa chém kiếm trọng kích diện rộng và tạo vùng thiêu đốt giữ chân quái đông.",
+          "en": "Fusion Sub-DPS wielding heavy broadblade strikes with persistent ground immolation."
+        }
+      },
+      "combatStats": {
+        "hp": 12200,
+        "atk": 2360,
+        "critRate": 0.7,
+        "critDmg": 2.5,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Ignited Cleave",
+            "multiplier": 1.3,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Combustion Surge",
+            "cd": 7,
+            "multiplier": 3.3,
+            "aoeRadius": 220,
+            "concertoGain": 28
+          },
+          "forte": {
+            "name": "Blazing Core Slam",
+            "cd": 10,
+            "multiplier": 6.0,
+            "aoeRadius": 270,
+            "concertoGain": 38
+          },
+          "liberation": {
+            "name": "Infernal Calamity",
+            "cd": 18,
+            "multiplier": 7.8,
+            "aoeRadius": 310
+          }
+        }
+      }
+    },
+    {
+      "id": "cantarella",
+      "name": {
+        "en": "Cantarella",
+        "vi": "Cantarella"
+      },
+      "rarity": 5,
+      "element": "Havoc",
+      "weapon": "Gauntlets",
+      "role": "support",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Cantarella.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Cantarella_1.png"
+      },
+      "tiers": {
+        "toa": "T0",
+        "ww": "T0.5",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Abyss Surges",
+        "echoSet": "Rejuvenating Glow (5pc)",
+        "mainEcho": "Bell-Borne Geochelone",
+        "statPriority": "Energy Regen (200%+) > HP% > Healing Bonus",
+        "analysis": {
+          "vi": "Hỗ trợ bóng tối tạo khiên chặn sát thương chí mạng và cường hóa 25% sát thương hệ Havoc cho đồng đội.",
+          "en": "Havoc Support shielding against lethal hits and deepens team Havoc DMG by 25%."
+        }
+      },
+      "combatStats": {
+        "hp": 13800,
+        "atk": 2080,
+        "critRate": 0.52,
+        "critDmg": 1.85,
+        "isAoeSpecialist": false,
+        "skills": {
+          "basic": {
+            "name": "Shadow Palm",
+            "multiplier": 1.0,
+            "concertoGain": 18
+          },
+          "skill": {
+            "name": "Nocturne Ward",
+            "cd": 6,
+            "multiplier": 2.2,
+            "healTeam": 2600,
+            "concertoGain": 40
+          },
+          "forte": {
+            "name": "Abyssal Aegis",
+            "cd": 8,
+            "multiplier": 3.2,
+            "healTeam": 3200,
+            "concertoGain": 45
+          },
+          "liberation": {
+            "name": "Requiem of Chaos",
+            "cd": 18,
+            "multiplier": 4.5,
+            "teamBuffCrit": true
+          }
+        }
+      }
+    },
+    {
+      "id": "zani",
+      "name": {
+        "en": "Zani",
+        "vi": "Zani"
+      },
+      "rarity": 5,
+      "element": "Electro",
+      "weapon": "Pistols",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Zani.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Zani_1.png"
+      },
+      "tiers": {
+        "toa": "T0.5",
+        "ww": "T0.5",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Static Mist",
+        "echoSet": "Void Thunder (5pc)",
+        "mainEcho": "Tempest Mephis",
+        "statPriority": "Crit Rate / Crit DMG > Electro DMG > ATK% > Skill DMG%",
+        "analysis": {
+          "vi": "Xạ thủ song súng điện từ với tốc độ bắn liên thanh cực nhanh, tận dụng né hoàn hảo để nạp đạn phản đòn tức thì.",
+          "en": "Electromagnetic dual-pistol carry with ultra-high fire rate and dodge-counter reload synergy."
+        }
+      },
+      "combatStats": {
+        "hp": 10600,
+        "atk": 2480,
+        "critRate": 0.77,
+        "critDmg": 2.72,
+        "isAoeSpecialist": false,
+        "skills": {
+          "basic": {
+            "name": "Volt Pulse",
+            "multiplier": 1.35,
+            "concertoGain": 12
+          },
+          "skill": {
+            "name": "Overcharge Rounds",
+            "cd": 6,
+            "multiplier": 3.6,
+            "aoeRadius": 170,
+            "concertoGain": 28
+          },
+          "forte": {
+            "name": "Capacitor Discharge",
+            "cd": 10,
+            "multiplier": 6.4,
+            "aoeRadius": 220,
+            "concertoGain": 40
+          },
+          "liberation": {
+            "name": "Thunderstorm Execution",
+            "cd": 18,
+            "multiplier": 8.6,
+            "aoeRadius": 250
+          }
+        }
+      }
+    },
+    {
+      "id": "cartethyia",
+      "name": {
+        "en": "Cartethyia",
+        "vi": "Cartethyia"
+      },
+      "rarity": 5,
+      "element": "Aero",
+      "weapon": "Sword",
+      "role": "main_dps",
+      "assets": {
+        "avatar": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Character/Icon/Cartethyia.png",
+        "chibi": "https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main/Emote/Cartethyia_1.png"
+      },
+      "tiers": {
+        "toa": "T0",
+        "ww": "T0",
+        "matrix": "T0"
+      },
+      "build": {
+        "bestWeapon": "Emerald of Genesis",
+        "echoSet": "Sierra Gale (5pc)",
+        "mainEcho": "Feilian Beringal",
+        "statPriority": "Crit Rate / Crit DMG > Aero DMG > ATK% > Basic Attack DMG%",
+        "analysis": {
+          "vi": "Kiếm sĩ phong kiếm thanh thoát, chém lướt không gian tạo lốc xoáy kép gom sạch quái đa đợt.",
+          "en": "Graceful Aero swordmaster slicing space to create twin vortexes that sweep multi-wave mobs."
+        }
+      },
+      "combatStats": {
+        "hp": 11400,
+        "atk": 2510,
+        "critRate": 0.79,
+        "critDmg": 2.82,
+        "isAoeSpecialist": true,
+        "skills": {
+          "basic": {
+            "name": "Gale Flourish",
+            "multiplier": 1.38,
+            "concertoGain": 14
+          },
+          "skill": {
+            "name": "Zephyr Rip",
+            "cd": 6,
+            "multiplier": 3.7,
+            "aoeRadius": 250,
+            "concertoGain": 32
+          },
+          "forte": {
+            "name": "Tempest Spiral",
+            "cd": 10,
+            "multiplier": 7.2,
+            "aoeRadius": 310,
+            "concertoGain": 42
+          },
+          "liberation": {
+            "name": "Skyward Cataclysm",
+            "cd": 18,
+            "multiplier": 9.0,
+            "aoeRadius": 360
+          }
+        }
+      }
+    }
+  ],
+  "combatModesData": {
+    "toa": {
+      "timeLimitSeconds": 180,
+      "crestThresholds": [
+        60,
+        120,
+        150
+      ],
+      "hazardBuff": {
+        "vi": "Tăng 30% Sát thương Kỹ năng Cộng hưởng & Giải phóng Cộng hưởng khi đổi người.",
+        "en": "Increases Resonance Skill & Liberation DMG by 30% after triggering Intro Skill."
+      },
+      "bosses": [
+        {
+          "id": "scar_aberrant",
+          "name": {
+            "en": "Scar (Aberrant Goat Form)",
+            "vi": "Scar (Dạng Quỷ Dê Hỗn Mang)"
+          },
+          "hp": 450000,
+          "atk": 1400,
+          "vibrationMax": 100,
+          "elementResist": "Havoc"
+        },
+        {
+          "id": "sentry_construct",
+          "name": {
+            "en": "Sentry Construct",
+            "vi": "Cỗ Máy Canh Gác (Sentry Construct)"
+          },
+          "hp": 520000,
+          "atk": 1550,
+          "vibrationMax": 120,
+          "elementResist": "Glacio"
+        }
+      ]
+    },
+    "whimpering_wastes": {
+      "timeLimitSeconds": 120,
+      "rankThresholds": {
+        "B": 1500,
+        "A": 3000,
+        "S": 4500,
+        "SSS": 6000
+      },
+      "tokens": [
+        {
+          "id": "plunderer_seal",
+          "name": {
+            "en": "Plunderer Captain's Seal",
+            "vi": "Ấn Thuyền Trưởng Cướp Biển"
+          },
+          "desc": {
+            "vi": "Mỗi khi hồi máu hoặc đầy Concerto sẽ tạo một vụ nổ sấm sét diện rộng gây sát thương cực lớn.",
+            "en": "Triggers a massive AOE lightning shockwave whenever healing or Concerto is triggered."
+          },
+          "bonusMultiplier": 1.35
+        },
+        {
+          "id": "gale_emblem",
+          "name": {
+            "en": "Raging Gale Emblem",
+            "vi": "Huy Hiệu Cuồng Phong"
+          },
+          "desc": {
+            "vi": "Tăng 40% sát thương diện rộng (AOE) và tự động hút quái xung quanh mỗi 5 giây.",
+            "en": "Increases AOE DMG by 40% and pulls nearby enemies inward every 5 seconds."
+          },
+          "bonusMultiplier": 1.4
+        }
+      ],
+      "waves": [
+        {
+          "wave": 1,
+          "enemyName": "Havoc Dreadmane Pack (x6)",
+          "count": 6,
+          "hpPerMob": 28000,
+          "pointsPerKill": 150
+        },
+        {
+          "wave": 2,
+          "enemyName": "Glacio Glacialists & Wolves (x8)",
+          "count": 8,
+          "hpPerMob": 35000,
+          "pointsPerKill": 180
+        },
+        {
+          "wave": 3,
+          "enemyName": "Lightcrusher & Elite Tacet Discords (x5)",
+          "count": 5,
+          "hpPerMob": 55000,
+          "pointsPerKill": 320
+        },
+        {
+          "wave": 4,
+          "enemyName": "Chop Chop & Abyssal Knights (x6)",
+          "count": 6,
+          "hpPerMob": 68000,
+          "pointsPerKill": 400
+        }
+      ]
+    },
+    "matrix": {
+      "timeLimitSeconds": 150,
+      "parryScoreBonus": 500,
+      "dodgeScoreBonus": 300,
+      "boss": {
+        "id": "fallacy_matrix",
+        "name": {
+          "en": "Fallacy of No Return // OVERCLOCKED",
+          "vi": "Ngụy Thần Vô Quy // QUÁ TẢI MA TRẬN"
+        },
+        "phases": [
+          {
+            "phase": 1,
+            "hp": 250000,
+            "attackSpeed": 1.0,
+            "parryWindowMs": 600
+          },
+          {
+            "phase": 2,
+            "hp": 350000,
+            "attackSpeed": 1.35,
+            "parryWindowMs": 450
+          },
+          {
+            "phase": 3,
+            "hp": 450000,
+            "attackSpeed": 1.75,
+            "parryWindowMs": 350
+          }
+        ]
+      }
+    }
+  }
+}

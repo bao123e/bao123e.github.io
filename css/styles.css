@@ -440,25 +440,6 @@ body {
   transform: scale(0.95);
 }
 
-/* ====================================================================
-   CS2 Case Opening & Roulette Styles
-   ==================================================================== */
-#cs2-roulette-track {
-  display: flex;
-  transition: none; /* Controlled via requestAnimationFrame for exact physics */
-}
-
-.cs2-track-item {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-}
-
-.cs2-track-item:hover {
-  transform: translateY(-2px);
-}
-
-#cs2-center-needle {
-  box-shadow: 0 0 16px #facc15, 0 0 30px rgba(250, 204, 21, 0.4);
-}
 
 /* ====================================================================
    APEX CELESTIAL SUPERNOVA & REALITY SHATTER
@@ -651,4 +632,87 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ====================================================================
+   WUWA AKADEMIYA: TIER LIST & COMBAT ARENA STYLING
+   ==================================================================== */
+
+/* Tier Rank Badges */
+.tier-badge-t0 {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+}
+.tier-badge-t05 {
+  background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(249, 115, 22, 0.8);
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.4);
+}
+.tier-badge-t1 {
+  background: linear-gradient(135deg, #eab308 0%, #a16207 100%);
+  color: #000000;
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.4);
+}
+.tier-badge-t15 {
+  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+.tier-badge-t2 {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+.tier-badge-t3 {
+  background: linear-gradient(135deg, #64748b 0%, #334155 100%);
+  color: #cbd5e1;
+}
+
+/* Tier Row Glassmorphic container */
+.tier-row {
+  background: rgba(14, 18, 28, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.tier-row:hover {
+  border-color: rgba(212, 180, 117, 0.3);
+}
+
+/* Tier Resonator Chip */
+.tier-res-chip {
+  position: relative;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease;
+}
+.tier-res-chip:hover {
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* Combat Canvas & 60FPS Game HUD */
+#combat-canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  background: radial-gradient(circle at 50% 60%, #131929 0%, #080a11 100%);
+}
+
+/* Battle Action Buttons Sweeping Overlays */
+#combat-btn-forte, #combat-btn-liberation, #combat-btn-skill {
+  transition: all 0.15s ease;
+}
+#combat-btn-forte:active, #combat-btn-liberation:active, #combat-btn-skill:active {
+  transform: scale(0.92);
+}
+
+/* Floating Toast Animation */
+#app-toast {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(10, 12, 16, 0.92);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 

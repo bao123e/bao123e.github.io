@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Wuthering Waves // Akademiya Terminal - Chuyển Hướng...</title>
+  <script>
+    // Tự động chuyển hướng từ /wwtcg/ hoặc bất kỳ đường dẫn nào về trang chủ User Site
+    const pathname = window.location.pathname;
+    const origin = window.location.origin;
+    if (pathname.includes('/wwtcg')) {
+      window.location.replace(origin + '/' + window.location.search + window.location.hash);
+    } else {
+      window.location.replace(origin + '/');
+    }
+  </script>
+</head>
+<body style="background:#0a0c10;color:#d4b475;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;">
+  <div style="text-align:center;">
+    <h2 style="font-size:1.5rem;margin-bottom:0.5rem;">✦ WUTHERING WAVES // AKADEMIYA TERMINAL ✦</h2>
+    <p style="color:#94a3b8;">Đang chuyển hướng về trang chủ...</p>
+    <a href="/" style="color:#fde047;text-decoration:underline;">Nhấn vào đây nếu trang không tự tải</a>
+  </div>
+</body>
+</html>
