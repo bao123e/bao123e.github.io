@@ -12,8 +12,9 @@
 class WuWaConveneEngine {
   constructor() {
     this.isConvening = false;
+    this.bannerCategory = 'resonator'; // 'resonator' | 'weapon'
     this.currentBanner = 'all'; // 'all' | 'jinhsi' | 'changli' | 'camellya' | ...
-    this.pity5Star = 0; // 0 to 70
+    this.pity5Star = 0; // 0 to 80
     this.pity4Star = 0; // 0 to 10
     this.totalWuWaPulls = 0;
     this.pullHistory = [];
@@ -21,8 +22,12 @@ class WuWaConveneEngine {
     this.trackerSearchQuery = '';
 
     this.banners = {
+      // ==========================================
+      // RESONATOR CONVENE BANNERS (50/50 FEATURED)
+      // ==========================================
       all: {
         id: 'all',
+        category: 'resonator',
         title: 'TIDAL CONVERGENCE',
         subtitle: 'Standard Convene • All 48 Resonators & 64 Weapons (Equal 5★ Odds)',
         featured5Star: null,
@@ -33,6 +38,7 @@ class WuWaConveneEngine {
       },
       jinhsi: {
         id: 'jinhsi',
+        category: 'resonator',
         title: 'TIDES OF JINZHOU',
         subtitle: 'Magistrate’s Mandate • Featured Resonator Convene',
         featured5Star: 'wuwa-5-jinhsi',
@@ -43,6 +49,7 @@ class WuWaConveneEngine {
       },
       changli: {
         id: 'changli',
+        category: 'resonator',
         title: 'SOLITARY ASHEN FLAME',
         subtitle: 'Blazing Feather • Featured Resonator Convene',
         featured5Star: 'wuwa-5-changli',
@@ -53,6 +60,7 @@ class WuWaConveneEngine {
       },
       camellya: {
         id: 'camellya',
+        category: 'resonator',
         title: 'CRIMSON BLOOM',
         subtitle: 'Black Shores Sprout • Featured Resonator Convene',
         featured5Star: 'wuwa-5-camellya',
@@ -63,6 +71,7 @@ class WuWaConveneEngine {
       },
       shorekeeper: {
         id: 'shorekeeper',
+        category: 'resonator',
         title: 'QUIET SEA OF REMNANTS',
         subtitle: 'Overseer of Black Shores • Featured Resonator Convene',
         featured5Star: 'wuwa-5-shorekeeper',
@@ -73,6 +82,7 @@ class WuWaConveneEngine {
       },
       carlotta: {
         id: 'carlotta',
+        category: 'resonator',
         title: 'SONANCE DIVA',
         subtitle: 'Frost Harmonizer • Featured Resonator Convene',
         featured5Star: 'wuwa-5-carlotta',
@@ -83,6 +93,7 @@ class WuWaConveneEngine {
       },
       yinlin: {
         id: 'yinlin',
+        category: 'resonator',
         title: 'LIGHTNING CRADLE',
         subtitle: 'Zapstring Overseer • Featured Resonator Convene',
         featured5Star: 'wuwa-5-yinlin',
@@ -93,6 +104,7 @@ class WuWaConveneEngine {
       },
       jiyan: {
         id: 'jiyan',
+        category: 'resonator',
         title: 'VERDANT DRAGON TEMPEST',
         subtitle: 'Midnight Rangers General • Featured Resonator Convene',
         featured5Star: 'wuwa-5-jiyan',
@@ -103,6 +115,7 @@ class WuWaConveneEngine {
       },
       phrolova: {
         id: 'phrolova',
+        category: 'resonator',
         title: 'ABYSSAL DISCORD',
         subtitle: 'Fractsidus Sonata • Featured Resonator Convene',
         featured5Star: 'wuwa-5-phrolova',
@@ -110,6 +123,164 @@ class WuWaConveneEngine {
         themeColor: '#d946ef',
         rateUp4Stars: ['wuwa-4-danjin', 'wuwa-4-sanhua', 'wuwa-4-yangyang'],
         bgGradient: 'from-purple-950/60 via-slate-950/90 to-[#070913]'
+      },
+
+      // ==========================================
+      // WEAPON CONVENE BANNERS (100% 5★ GUARANTEE)
+      // ==========================================
+      w_all: {
+        id: 'w_all',
+        category: 'weapon',
+        title: 'ABSOLUTE PULSATION',
+        subtitle: 'Standard Weapon Convene • 100% 5★ Weapon Guarantee',
+        featured5Star: null,
+        weaponType: 'Omni',
+        themeColor: '#38bdf8',
+        rateUp4Stars: ['w_commando_conviction', 'w_undying_flame', 'w_novaburst'],
+        bgGradient: 'from-blue-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_blazing_brilliance: {
+        id: 'w_blazing_brilliance',
+        category: 'weapon',
+        title: 'BLAZING BRILLIANCE',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Sword (Changli Signature)',
+        featured5Star: 'w_blazing_brilliance',
+        weaponType: 'Sword',
+        themeColor: '#f43f5e',
+        rateUp4Stars: ['w_commando_conviction', 'w_lunar_cutter', 'w_undying_flame'],
+        bgGradient: 'from-rose-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_blooming_jadehaven: {
+        id: 'w_blooming_jadehaven',
+        category: 'weapon',
+        title: 'BLOOMING JADEHAVEN',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Broadblade',
+        featured5Star: 'w_blooming_jadehaven',
+        weaponType: 'Broadblade',
+        themeColor: '#10b981',
+        rateUp4Stars: ['w_dauntless_evernight', 'w_helio_sleeper', 'w_commando_conviction'],
+        bgGradient: 'from-emerald-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_azure_oath: {
+        id: 'w_azure_oath',
+        category: 'weapon',
+        title: 'AZURE OATH',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Sword',
+        featured5Star: 'w_azure_oath',
+        weaponType: 'Sword',
+        themeColor: '#06b6d4',
+        rateUp4Stars: ['w_lunar_cutter', 'w_commando_conviction', 'w_novaburst'],
+        bgGradient: 'from-cyan-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_firstlights_herald: {
+        id: 'w_firstlights_herald',
+        category: 'weapon',
+        title: "FIRSTLIGHT'S HERALD",
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Pistols',
+        featured5Star: 'w_firstlights_herald',
+        weaponType: 'Pistols',
+        themeColor: '#facc15',
+        rateUp4Stars: ['w_undying_flame', 'w_novaburst', 'w_cadenza'],
+        bgGradient: 'from-amber-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_forged_dwarf_star: {
+        id: 'w_forged_dwarf_star',
+        category: 'weapon',
+        title: 'FORGED DWARF STAR',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Broadblade',
+        featured5Star: 'w_forged_dwarf_star',
+        weaponType: 'Broadblade',
+        themeColor: '#f97316',
+        rateUp4Stars: ['w_dauntless_evernight', 'w_commando_conviction', 'w_helio_sleeper'],
+        bgGradient: 'from-orange-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_unspoken_rue: {
+        id: 'w_unspoken_rue',
+        category: 'weapon',
+        title: 'UNSPOKEN RUE',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Sword',
+        featured5Star: 'w_unspoken_rue',
+        weaponType: 'Sword',
+        themeColor: '#e11d48',
+        rateUp4Stars: ['w_lunar_cutter', 'w_commando_conviction', 'w_undying_flame'],
+        bgGradient: 'from-rose-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_thousandfold_deliverance: {
+        id: 'w_thousandfold_deliverance',
+        category: 'weapon',
+        title: 'THOUSANDFOLD DELIVERANCE',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Sword',
+        featured5Star: 'w_thousandfold_deliverance',
+        weaponType: 'Sword',
+        themeColor: '#eab308',
+        rateUp4Stars: ['w_lunar_cutter', 'w_commando_conviction', 'w_cadenza'],
+        bgGradient: 'from-yellow-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_freeze_frame: {
+        id: 'w_freeze_frame',
+        category: 'weapon',
+        title: 'FREEZE FRAME',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Rectifier',
+        featured5Star: 'w_freeze_frame',
+        weaponType: 'Rectifier',
+        themeColor: '#38bdf8',
+        rateUp4Stars: ['w_jinzhou_keeper', 'w_helio_sleeper', 'w_undying_flame'],
+        bgGradient: 'from-sky-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_spectral_trigger: {
+        id: 'w_spectral_trigger',
+        category: 'weapon',
+        title: 'SPECTRAL TRIGGER',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Pistols',
+        featured5Star: 'w_spectral_trigger',
+        weaponType: 'Pistols',
+        themeColor: '#a855f7',
+        rateUp4Stars: ['w_undying_flame', 'w_novaburst', 'w_cadenza'],
+        bgGradient: 'from-purple-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_skull_thrasher: {
+        id: 'w_skull_thrasher',
+        category: 'weapon',
+        title: 'SKULL THRASHER',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Gauntlets',
+        featured5Star: 'w_skull_thrasher',
+        weaponType: 'Gauntlets',
+        themeColor: '#ef4444',
+        rateUp4Stars: ['w_amity_accord', 'w_commando_conviction', 'w_undying_flame'],
+        bgGradient: 'from-red-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_ages_of_harvest: {
+        id: 'w_ages_of_harvest',
+        category: 'weapon',
+        title: 'AGES OF HARVEST',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Broadblade (Jinhsi Signature)',
+        featured5Star: 'w_ages_of_harvest',
+        weaponType: 'Broadblade',
+        themeColor: '#facc15',
+        rateUp4Stars: ['w_dauntless_evernight', 'w_commando_conviction', 'w_helio_sleeper'],
+        bgGradient: 'from-amber-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_stringmaster: {
+        id: 'w_stringmaster',
+        category: 'weapon',
+        title: 'STRINGMASTER',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Rectifier (Yinlin Signature)',
+        featured5Star: 'w_stringmaster',
+        weaponType: 'Rectifier',
+        themeColor: '#8b5cf6',
+        rateUp4Stars: ['w_jinzhou_keeper', 'w_helio_sleeper', 'w_undying_flame'],
+        bgGradient: 'from-violet-950/60 via-slate-950/90 to-[#070913]'
+      },
+      w_verdant_summit: {
+        id: 'w_verdant_summit',
+        category: 'weapon',
+        title: 'VERDANT SUMMIT',
+        subtitle: 'Featured Weapon Convene • 100% Guaranteed 5★ Broadblade (Jiyan Signature)',
+        featured5Star: 'w_verdant_summit',
+        weaponType: 'Broadblade',
+        themeColor: '#10b981',
+        rateUp4Stars: ['w_dauntless_evernight', 'w_lunar_cutter', 'w_novaburst'],
+        bgGradient: 'from-emerald-950/60 via-slate-950/90 to-[#070913]'
       }
     };
 
@@ -161,6 +332,16 @@ class WuWaConveneEngine {
   }
 
   bindEvents() {
+    // Banner category switcher buttons
+    const btnRes = document.getElementById('convene-type-resonator');
+    const btnWeap = document.getElementById('convene-type-weapon');
+    if (btnRes) {
+      btnRes.addEventListener('click', () => this.setBannerCategory('resonator'));
+    }
+    if (btnWeap) {
+      btnWeap.addEventListener('click', () => this.setBannerCategory('weapon'));
+    }
+
     // Banner tab switchers
     document.querySelectorAll('.wuwa-banner-tab').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -489,7 +670,9 @@ class WuWaConveneEngine {
       }
 
       let badge5050 = '';
-      if (item.is5050Won === true) {
+      if (item.category === 'weapon') {
+        badge5050 = '<span class="text-[9px] font-mono text-amber-300 font-bold flex items-center gap-1"><i data-lucide="shield-check" class="w-3 h-3 text-emerald-400"></i> 100% Guaranteed</span>';
+      } else if (item.is5050Won === true) {
         badge5050 = '<span class="text-[9px] font-mono text-emerald-400 font-bold flex items-center gap-1"><i data-lucide="check-circle" class="w-3 h-3"></i> Won 50/50</span>';
       } else if (item.is5050Won === false) {
         badge5050 = '<span class="text-[9px] font-mono text-purple-400 font-bold flex items-center gap-1"><i data-lucide="shield-alert" class="w-3 h-3"></i> Standard Drop</span>';
@@ -499,8 +682,8 @@ class WuWaConveneEngine {
 
       card.className = 'flex-shrink-0 w-44 sm:w-48 rounded-2xl p-3.5 bg-gradient-to-b from-amber-950/40 via-slate-900/90 to-black border-2 border-amber-400/60 flex flex-col items-center text-center shadow-xl relative group select-none hover:border-amber-300 transition-all';
       card.innerHTML = `
-        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-black border border-amber-400/80 mb-2 relative shadow-md">
-          <img src="${item.icon || item.image || ''}" alt="${item.name}" class="w-full h-full object-cover"
+        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-black border border-amber-400/80 mb-2 relative shadow-md flex items-center justify-center">
+          <img src="${item.icon || item.image || ''}" alt="${item.name}" class="${item.category === 'weapon' ? 'w-full h-full object-contain p-1' : 'w-full h-full object-cover'}"
                onerror="window.cardDataService.handleImageError(this, '${item.cardId}')">
           <span class="absolute top-0 right-0 bg-amber-400 text-black text-[9px] font-black px-1.5 font-mono">5★</span>
         </div>
@@ -693,7 +876,9 @@ class WuWaConveneEngine {
       }
 
       let badge5050 = '';
-      if (item.is5050Won === true) {
+      if (item.category === 'weapon') {
+        badge5050 = '<span class="text-[9px] font-mono text-amber-300 font-bold flex items-center gap-1"><i data-lucide="shield-check" class="w-3 h-3 text-emerald-400"></i> 100% Guaranteed</span>';
+      } else if (item.is5050Won === true) {
         badge5050 = '<span class="text-[9px] font-mono text-emerald-400 font-bold flex items-center gap-1"><i data-lucide="check-circle" class="w-3 h-3"></i> Won 50/50</span>';
       } else if (item.is5050Won === false) {
         badge5050 = '<span class="text-[9px] font-mono text-purple-400 font-bold flex items-center gap-1"><i data-lucide="shield-alert" class="w-3 h-3"></i> Standard Drop</span>';
@@ -703,8 +888,8 @@ class WuWaConveneEngine {
 
       card.className = 'flex-shrink-0 w-44 rounded-2xl p-3 bg-gradient-to-b from-amber-950/40 via-slate-900/90 to-black border-2 border-amber-400/60 flex flex-col items-center text-center shadow-xl relative group select-none hover:border-amber-300 transition-all';
       card.innerHTML = `
-        <div class="w-16 h-16 rounded-xl overflow-hidden bg-black border border-amber-400/80 mb-2 relative shadow-md">
-          <img src="${item.icon || item.image || ''}" alt="${item.name}" class="w-full h-full object-cover"
+        <div class="w-16 h-16 rounded-xl overflow-hidden bg-black border border-amber-400/80 mb-2 relative shadow-md flex items-center justify-center">
+          <img src="${item.icon || item.image || ''}" alt="${item.name}" class="${item.category === 'weapon' ? 'w-full h-full object-contain p-1' : 'w-full h-full object-cover'}"
                onerror="window.cardDataService.handleImageError(this, '${item.cardId}')">
           <span class="absolute top-0 right-0 bg-amber-400 text-black text-[9px] font-black px-1 font-mono">5★</span>
         </div>
@@ -810,26 +995,77 @@ class WuWaConveneEngine {
     });
   }
 
+  setBannerCategory(category, shouldSwitchBanner = true) {
+    this.bannerCategory = category;
+
+    if (window.soundFX) window.soundFX.playClick();
+
+    const resBtn = document.getElementById('convene-type-resonator');
+    const weapBtn = document.getElementById('convene-type-weapon');
+    const resTabs = document.getElementById('convene-resonator-tabs');
+    const weapTabs = document.getElementById('convene-weapon-tabs');
+
+    if (category === 'resonator') {
+      if (resBtn) {
+        resBtn.className = "px-5 py-2.5 rounded-2xl font-orbitron font-black text-xs sm:text-sm border-2 border-amber-400 bg-amber-500/20 text-amber-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] flex items-center gap-2 transition-all cursor-pointer";
+      }
+      if (weapBtn) {
+        weapBtn.className = "px-5 py-2.5 rounded-2xl font-orbitron font-black text-xs sm:text-sm border-2 border-white/10 bg-black/40 text-slate-400 hover:text-white flex items-center gap-2 transition-all cursor-pointer";
+      }
+      if (resTabs) resTabs.classList.remove('hidden');
+      if (weapTabs) weapTabs.classList.add('hidden');
+
+      if (shouldSwitchBanner) {
+        const targetBanner = (this.banners[this.currentBanner] && this.banners[this.currentBanner].category === 'resonator')
+          ? this.currentBanner
+          : 'all';
+        this.switchBanner(targetBanner);
+      }
+    } else {
+      if (resBtn) {
+        resBtn.className = "px-5 py-2.5 rounded-2xl font-orbitron font-black text-xs sm:text-sm border-2 border-white/10 bg-black/40 text-slate-400 hover:text-white flex items-center gap-2 transition-all cursor-pointer";
+      }
+      if (weapBtn) {
+        weapBtn.className = "px-5 py-2.5 rounded-2xl font-orbitron font-black text-xs sm:text-sm border-2 border-amber-400 bg-amber-500/20 text-amber-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] flex items-center gap-2 transition-all cursor-pointer";
+      }
+      if (resTabs) resTabs.classList.add('hidden');
+      if (weapTabs) weapTabs.classList.remove('hidden');
+
+      if (shouldSwitchBanner) {
+        const targetBanner = (this.banners[this.currentBanner] && this.banners[this.currentBanner].category === 'weapon')
+          ? this.currentBanner
+          : 'w_blazing_brilliance';
+        this.switchBanner(targetBanner);
+      }
+    }
+  }
+
   switchBanner(bannerId) {
     if (!this.banners[bannerId]) return;
     this.currentBanner = bannerId;
 
+    const b = this.banners[bannerId];
+    if (b.category && b.category !== this.bannerCategory) {
+      this.setBannerCategory(b.category, false);
+    }
+
     if (window.soundFX) window.soundFX.playClick();
 
-    document.querySelectorAll('.wuwa-banner-tab').forEach(b => {
-      if (b.dataset.banner === bannerId) {
-        b.classList.add('border-amber-400', 'bg-amber-500/20', 'text-amber-300');
-        b.classList.remove('border-transparent', 'text-slate-400');
+    document.querySelectorAll('.wuwa-banner-tab').forEach(btn => {
+      if (btn.dataset.banner === bannerId) {
+        btn.classList.add('border-amber-400', 'bg-amber-500/20', 'text-amber-300');
+        btn.classList.remove('border-transparent', 'text-slate-400');
       } else {
-        b.classList.remove('border-amber-400', 'bg-amber-500/20', 'text-amber-300');
-        b.classList.add('border-transparent', 'text-slate-400');
+        btn.classList.remove('border-amber-400', 'bg-amber-500/20', 'text-amber-300');
+        btn.classList.add('border-transparent', 'text-slate-400');
       }
     });
 
     this.renderBannerDetails();
+    this.updatePityUI();
   }
 
-  // Render authentic banner details with proper aspect ratio character art
+  // Render authentic banner details with proper aspect ratio character or weapon art
   renderBannerDetails() {
     const b = this.banners[this.currentBanner];
     if (!b) return;
@@ -841,95 +1077,189 @@ class WuWaConveneEngine {
     if (titleEl) titleEl.innerText = b.title;
     if (subEl) subEl.innerText = b.subtitle;
 
-    const featuredCard = b.featured5Star ? window.cardDataService.getCardById(b.featured5Star) : null;
-    if (featuredCard && featuredCardEl) {
-      const themeColor = b.themeColor || '#facc15';
-      featuredCardEl.innerHTML = `
-        <div class="relative w-full h-full min-h-[280px] sm:min-h-[320px] rounded-3xl overflow-hidden border-2 shadow-2xl flex items-center group select-none transition-all duration-300"
-             style="border-color: ${themeColor}88; background: linear-gradient(135deg, rgba(8,12,24,0.98) 0%, rgba(12,18,36,0.95) 50%, rgba(5,7,15,0.98) 100%);">
-          
-          <!-- Dynamic Ambient Glow matching Character Element -->
-          <div class="absolute -right-10 -bottom-10 w-96 h-96 rounded-full blur-3xl pointer-events-none opacity-20 transition-all duration-700 group-hover:opacity-35"
-               style="background: radial-gradient(circle, ${themeColor} 0%, transparent 70%);"></div>
-          <div class="absolute inset-0 bg-gradient-to-r from-[#070913] via-[#070913]/85 to-transparent z-10 pointer-events-none"></div>
+    const themeColor = b.themeColor || '#facc15';
 
-          <!-- Left Info Column (z-20) -->
-          <div class="relative z-20 flex flex-col justify-between h-full p-5 sm:p-7 max-w-[62%] sm:max-w-[56%]">
-            <div>
-              <div class="flex items-center gap-2 mb-2.5 flex-wrap">
-                <span class="font-orbitron font-black text-[10px] sm:text-xs px-2.5 py-1 rounded-lg shadow-lg flex items-center gap-1"
-                      style="background: ${themeColor}; color: #000;">
-                  <span>★</span> 5★ FEATURED
-                </span>
-                <span class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full border bg-black/60 backdrop-blur"
-                      style="color: ${themeColor}; border-color: ${themeColor}55;">
-                  ${featuredCard.element || 'Spectro'} • ${featuredCard.weapon || 'Broadblade'}
-                </span>
+    if (b.category === 'weapon') {
+      const weaponItem = b.featured5Star ? window.cardDataService.getCardById(b.featured5Star) : null;
+      if (weaponItem && featuredCardEl) {
+        featuredCardEl.innerHTML = `
+          <div class="relative w-full h-full min-h-[280px] sm:min-h-[320px] rounded-3xl overflow-hidden border-2 shadow-2xl flex items-center group select-none transition-all duration-300"
+               style="border-color: ${themeColor}88; background: linear-gradient(135deg, rgba(8,12,24,0.98) 0%, rgba(12,18,36,0.95) 50%, rgba(5,7,15,0.98) 100%);">
+            
+            <!-- Dynamic Ambient Glow -->
+            <div class="absolute -right-10 -bottom-10 w-96 h-96 rounded-full blur-3xl pointer-events-none opacity-20 transition-all duration-700 group-hover:opacity-35"
+                 style="background: radial-gradient(circle, ${themeColor} 0%, transparent 70%);"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#070913] via-[#070913]/85 to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Left Info Column (z-20) -->
+            <div class="relative z-20 flex flex-col justify-between h-full p-5 sm:p-7 max-w-[62%] sm:max-w-[56%]">
+              <div>
+                <div class="flex items-center gap-2 mb-2.5 flex-wrap">
+                  <span class="font-orbitron font-black text-[10px] sm:text-xs px-2.5 py-1 rounded-lg shadow-lg flex items-center gap-1"
+                        style="background: ${themeColor}; color: #000;">
+                    <span>⚔️</span> 5★ SIGNATURE WEAPON
+                  </span>
+                  <span class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full border bg-black/60 backdrop-blur"
+                        style="color: ${themeColor}; border-color: ${themeColor}55;">
+                    ${weaponItem.weapon || b.weaponType || 'Weapon'} • 5★
+                  </span>
+                </div>
+
+                <h2 class="font-orbitron font-black text-2xl sm:text-4xl text-white tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+                  ${weaponItem.name}
+                </h2>
+
+                <div class="flex items-center gap-1 text-sm mt-1 mb-2 font-mono font-bold" style="color: ${themeColor}">
+                  ★★★★★
+                </div>
+
+                <p class="text-xs sm:text-[13px] text-slate-300 line-clamp-3 font-sans leading-relaxed drop-shadow">
+                  Vũ khí trấn 5★ độc quyền. Đạt bảo hiểm 5★ tại Banner Vũ Khí sẽ ĐẢM BẢO 100% NHẬN ĐƯỢC vũ khí trấn này (Không bị lệch 50/50)! Kèm video triệu hồi cắt nét 3D.
+                </p>
               </div>
 
-              <h2 class="font-orbitron font-black text-2xl sm:text-4xl text-white tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
-                ${featuredCard.name}
-              </h2>
+              <!-- Weapon Rate-Up Perk Footer -->
+              <div class="pt-3 border-t border-white/10 flex items-center gap-3">
+                <div class="text-[10px] font-mono font-bold flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-emerald-950/60 text-emerald-300 border-emerald-500/40">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  <span>100% ĐẢM BẢO RA TRẤN (NO 50/50)</span>
+                </div>
+                <div class="text-[10px] font-mono text-amber-300 hidden sm:flex items-center gap-1">
+                  <i data-lucide="film" class="w-3 h-3 text-amber-400"></i>
+                  <span>3D Cutscene Animation</span>
+                </div>
+              </div>
+            </div>
 
-              <div class="flex items-center gap-1 text-sm mt-1 mb-2 font-mono font-bold" style="color: ${themeColor}">
+            <!-- Right Floating Weapon Illustration -->
+            <div class="absolute right-4 sm:right-12 bottom-4 top-4 w-[45%] sm:w-[40%] flex items-center justify-center pointer-events-none z-15">
+              <img src="${weaponItem.image || ''}" alt="${weaponItem.name}"
+                   class="max-h-[85%] max-w-[85%] object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.95)] transition-transform duration-700 group-hover:scale-110 pointer-events-none"
+                   onerror="window.cardDataService.handleImageError(this, '${weaponItem.id}')">
+            </div>
+          </div>
+        `;
+      } else if (featuredCardEl) {
+        // Standard Weapon Banner (w_all)
+        featuredCardEl.innerHTML = `
+          <div class="relative w-full h-full min-h-[280px] sm:min-h-[320px] rounded-3xl overflow-hidden border-2 border-amber-400/50 shadow-2xl bg-gradient-to-br from-amber-950/80 via-slate-950 to-black flex items-center group select-none p-6 sm:p-8">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(250,204,21,0.2)_0,transparent_70%)] pointer-events-none"></div>
+            
+            <div class="relative z-20 max-w-lg">
+              <div class="flex items-center gap-2 mb-2.5">
+                <span class="bg-amber-400 text-black font-orbitron font-black text-[10px] sm:text-xs px-2.5 py-1 rounded-lg shadow">ALL 5★ WEAPONS POOL</span>
+                <span class="text-xs font-mono font-bold text-amber-300">15 Signature Weapons With Video Cutscenes</span>
+              </div>
+              <h2 class="font-orbitron font-black text-2xl sm:text-4xl text-white drop-shadow-lg">ABSOLUTE PULSATION</h2>
+              <div class="flex items-center gap-1 text-sm mt-1 mb-2 text-amber-400 font-mono font-bold">
                 ★★★★★
               </div>
-
-              <p class="text-xs sm:text-[13px] text-slate-300 line-clamp-3 font-sans leading-relaxed drop-shadow">
-                ${featuredCard.quote || featuredCard.description}
+              <p class="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed mt-2">
+                Kho vũ khí 5 sao toàn diện với đầy đủ 15 hoạt cảnh triệu hồi vũ khí sắc nét từng giây. 100% rơi ra vũ khí 5 sao khi đạt mốc bảo hiểm.
               </p>
-            </div>
-
-            <!-- Banner Rate-Up Perk Footer -->
-            <div class="pt-3 border-t border-white/10 flex items-center gap-3">
-              <div class="text-[10px] font-mono font-bold flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-black/50"
-                   style="color: ${themeColor}; border-color: ${themeColor}44;">
-                <i data-lucide="sparkles" class="w-3 h-3"></i>
-                <span>50% WIN RATE BOOST ON 5★</span>
-              </div>
-              <div class="text-[10px] font-mono text-slate-400 hidden sm:block">
-                ATK ${featuredCard.atk || 3500} • DEF ${featuredCard.def || 3200}
+              <div class="mt-4 flex items-center gap-3">
+                <span class="text-[11px] font-mono text-emerald-300 bg-emerald-950/60 px-3 py-1 rounded-lg border border-emerald-500/30 flex items-center gap-1">
+                  <i data-lucide="shield-check" class="w-3 h-3 text-emerald-400"></i> 100% 5★ Weapon Guarantee
+                </span>
+                <span class="text-[11px] font-mono text-amber-200 bg-amber-950/60 px-3 py-1 rounded-lg border border-amber-500/30">
+                  ✦ 15 Cutscene Videos
+                </span>
               </div>
             </div>
           </div>
+        `;
+      }
+    } else {
+      // Resonator banner rendering
+      const featuredCard = b.featured5Star ? window.cardDataService.getCardById(b.featured5Star) : null;
+      if (featuredCard && featuredCardEl) {
+        featuredCardEl.innerHTML = `
+          <div class="relative w-full h-full min-h-[280px] sm:min-h-[320px] rounded-3xl overflow-hidden border-2 shadow-2xl flex items-center group select-none transition-all duration-300"
+               style="border-color: ${themeColor}88; background: linear-gradient(135deg, rgba(8,12,24,0.98) 0%, rgba(12,18,36,0.95) 50%, rgba(5,7,15,0.98) 100%);">
+            
+            <!-- Dynamic Ambient Glow matching Character Element -->
+            <div class="absolute -right-10 -bottom-10 w-96 h-96 rounded-full blur-3xl pointer-events-none opacity-20 transition-all duration-700 group-hover:opacity-35"
+                 style="background: radial-gradient(circle, ${themeColor} 0%, transparent 70%);"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#070913] via-[#070913]/85 to-transparent z-10 pointer-events-none"></div>
 
-          <!-- Right Floating Resonator Sprite (z-15) - Preserves natural aspect ratio without head cropping -->
-          <div class="absolute right-1 sm:right-6 bottom-0 top-0 w-[52%] sm:w-[48%] flex items-end justify-center pointer-events-none z-15 overflow-visible">
-            <img src="${featuredCard.image || ''}" alt="${featuredCard.name}"
-                 class="h-[120%] max-h-[380px] w-auto max-w-none object-contain object-bottom drop-shadow-[0_15px_35px_rgba(0,0,0,0.95)] transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-                 onerror="window.cardDataService.handleImageError(this, '${featuredCard.id}')">
+            <!-- Left Info Column (z-20) -->
+            <div class="relative z-20 flex flex-col justify-between h-full p-5 sm:p-7 max-w-[62%] sm:max-w-[56%]">
+              <div>
+                <div class="flex items-center gap-2 mb-2.5 flex-wrap">
+                  <span class="font-orbitron font-black text-[10px] sm:text-xs px-2.5 py-1 rounded-lg shadow-lg flex items-center gap-1"
+                        style="background: ${themeColor}; color: #000;">
+                    <span>★</span> 5★ FEATURED
+                  </span>
+                  <span class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full border bg-black/60 backdrop-blur"
+                        style="color: ${themeColor}; border-color: ${themeColor}55;">
+                    ${featuredCard.element || 'Spectro'} • ${featuredCard.weapon || 'Broadblade'}
+                  </span>
+                </div>
+
+                <h2 class="font-orbitron font-black text-2xl sm:text-4xl text-white tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+                  ${featuredCard.name}
+                </h2>
+
+                <div class="flex items-center gap-1 text-sm mt-1 mb-2 font-mono font-bold" style="color: ${themeColor}">
+                  ★★★★★
+                </div>
+
+                <p class="text-xs sm:text-[13px] text-slate-300 line-clamp-3 font-sans leading-relaxed drop-shadow">
+                  ${featuredCard.quote || featuredCard.description}
+                </p>
+              </div>
+
+              <!-- Banner Rate-Up Perk Footer -->
+              <div class="pt-3 border-t border-white/10 flex items-center gap-3">
+                <div class="text-[10px] font-mono font-bold flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-black/50"
+                     style="color: ${themeColor}; border-color: ${themeColor}44;">
+                  <i data-lucide="sparkles" class="w-3 h-3"></i>
+                  <span>50% WIN RATE BOOST ON 5★</span>
+                </div>
+                <div class="text-[10px] font-mono text-slate-400 hidden sm:block">
+                  ATK ${featuredCard.atk || 3500} • DEF ${featuredCard.def || 3200}
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Floating Resonator Sprite (z-15) - Preserves natural aspect ratio without head cropping -->
+            <div class="absolute right-1 sm:right-6 bottom-0 top-0 w-[52%] sm:w-[48%] flex items-end justify-center pointer-events-none z-15 overflow-visible">
+              <img src="${featuredCard.image || ''}" alt="${featuredCard.name}"
+                   class="h-[120%] max-h-[380px] w-auto max-w-none object-contain object-bottom drop-shadow-[0_15px_35px_rgba(0,0,0,0.95)] transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                   onerror="window.cardDataService.handleImageError(this, '${featuredCard.id}')">
+            </div>
           </div>
-        </div>
-      `;
-    } else if (featuredCardEl) {
-      // Standard Convene Banner (All 48 Resonators & 64 Weapons)
-      featuredCardEl.innerHTML = `
-        <div class="relative w-full h-full min-h-[280px] sm:min-h-[320px] rounded-3xl overflow-hidden border-2 border-cyan-400/50 shadow-2xl bg-gradient-to-br from-blue-950/90 via-slate-950 to-black flex items-center group select-none p-6 sm:p-8">
-          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.25)_0,transparent_70%)] pointer-events-none"></div>
-          
-          <div class="relative z-20 max-w-lg">
-            <div class="flex items-center gap-2 mb-2.5">
-              <span class="bg-cyan-400 text-black font-orbitron font-black text-[10px] sm:text-xs px-2.5 py-1 rounded-lg shadow">ALL RESONATORS POOL</span>
-              <span class="text-xs font-mono font-bold text-cyan-300">48 Resonators • 64 Weapons</span>
-            </div>
-            <h2 class="font-orbitron font-black text-2xl sm:text-4xl text-white drop-shadow-lg">TIDAL CONVERGENCE</h2>
-            <div class="flex items-center gap-1 text-sm mt-1 mb-2 text-cyan-400 font-mono font-bold">
-              ★★★★★
-            </div>
-            <p class="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed mt-2">
-              Every 5★ Resonator has an equal probability! Pure random variety across all elements, weapons, and 47 official convene video cutscenes.
-            </p>
-            <div class="mt-4 flex items-center gap-3">
-              <span class="text-[11px] font-mono text-cyan-200 bg-cyan-950/60 px-3 py-1 rounded-lg border border-cyan-500/30">
-                ✦ Equal 5★ Drop Pool
-              </span>
-              <span class="text-[11px] font-mono text-purple-200 bg-purple-950/60 px-3 py-1 rounded-lg border border-purple-500/30">
-                ✦ Multi-Gold Jackpot Enabled
-              </span>
+        `;
+      } else if (featuredCardEl) {
+        // Standard Convene Banner (All 48 Resonators & 64 Weapons)
+        featuredCardEl.innerHTML = `
+          <div class="relative w-full h-full min-h-[280px] sm:min-h-[320px] rounded-3xl overflow-hidden border-2 border-cyan-400/50 shadow-2xl bg-gradient-to-br from-blue-950/90 via-slate-950 to-black flex items-center group select-none p-6 sm:p-8">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.25)_0,transparent_70%)] pointer-events-none"></div>
+            
+            <div class="relative z-20 max-w-lg">
+              <div class="flex items-center gap-2 mb-2.5">
+                <span class="bg-cyan-400 text-black font-orbitron font-black text-[10px] sm:text-xs px-2.5 py-1 rounded-lg shadow">ALL RESONATORS POOL</span>
+                <span class="text-xs font-mono font-bold text-cyan-300">48 Resonators (Excl. Rover) • 64 Weapons</span>
+              </div>
+              <h2 class="font-orbitron font-black text-2xl sm:text-4xl text-white drop-shadow-lg">TIDAL CONVERGENCE</h2>
+              <div class="flex items-center gap-1 text-sm mt-1 mb-2 text-cyan-400 font-mono font-bold">
+                ★★★★★
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed mt-2">
+                Tất cả Resonator 5 sao có tỉ lệ đồng đều! Rover là nhân vật chính nhận qua cốt truyện, không nằm trong gacha triệu hồi.
+              </p>
+              <div class="mt-4 flex items-center gap-3">
+                <span class="text-[11px] font-mono text-cyan-200 bg-cyan-950/60 px-3 py-1 rounded-lg border border-cyan-500/30">
+                  ✦ Equal 5★ Drop Pool
+                </span>
+                <span class="text-[11px] font-mono text-purple-200 bg-purple-950/60 px-3 py-1 rounded-lg border border-purple-500/30">
+                  ✦ Multi-Gold Jackpot Enabled
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      `;
+        `;
+      }
     }
 
     if (window.lucide) window.lucide.createIcons();
@@ -940,7 +1270,7 @@ class WuWaConveneEngine {
       rateUpContainer.innerHTML = '';
       const listToShow = (b.rateUp4Stars && b.rateUp4Stars.length)
         ? b.rateUp4Stars
-        : ['wuwa-4-sanhua', 'wuwa-4-danjin', 'wuwa-4-chixia'];
+        : (b.category === 'weapon' ? ['w_commando_conviction', 'w_undying_flame', 'w_novaburst'] : ['wuwa-4-sanhua', 'wuwa-4-danjin', 'wuwa-4-chixia']);
 
       listToShow.forEach(cid => {
         const c = window.cardDataService.getCardById(cid);
@@ -948,8 +1278,8 @@ class WuWaConveneEngine {
         const item = document.createElement('div');
         item.className = 'flex items-center gap-2.5 p-2 rounded-xl bg-black/40 border border-purple-500/30';
         item.innerHTML = `
-          <div class="w-10 h-10 rounded-lg overflow-hidden bg-black flex-shrink-0 border border-purple-400/40">
-            <img src="${c.image || ''}" alt="${c.name}" class="w-full h-full object-cover"
+          <div class="w-10 h-10 rounded-lg overflow-hidden bg-black flex-shrink-0 border border-purple-400/40 flex items-center justify-center">
+            <img src="${c.image || ''}" alt="${c.name}" class="${c.category === 'weapon' ? 'w-full h-full object-contain p-1' : 'w-full h-full object-cover'}"
                  onerror="window.cardDataService.handleImageError(this, '${c.id}')">
           </div>
           <div class="min-w-0">
@@ -966,7 +1296,11 @@ class WuWaConveneEngine {
     const pityEl = document.getElementById('wuwa-pity-text');
     const barEl = document.getElementById('wuwa-pity-bar');
 
-    if (pityEl) pityEl.innerText = `${this.pity5Star} / 80 until Guaranteed 5★ Resonator`;
+    const b = this.banners[this.currentBanner];
+    const isWeapon = b && b.category === 'weapon';
+    const guaranteeTarget = isWeapon ? 'Guaranteed 5★ Weapon' : 'Guaranteed 5★ Resonator';
+
+    if (pityEl) pityEl.innerText = `${this.pity5Star} / 80 until ${guaranteeTarget}`;
     if (barEl) {
       const pct = Math.min(100, (this.pity5Star / 80) * 100);
       barEl.style.width = `${pct}%`;
@@ -979,11 +1313,17 @@ class WuWaConveneEngine {
     this.pity4Star++;
     this.totalWuWaPulls++;
 
+    const isWeaponBanner = (b && b.category === 'weapon') || this.bannerCategory === 'weapon';
     const pool = window.cardDataService.pools.wuwa || [];
-    const pool5Star = pool.filter(c => c.stars === 5);
-    const pool4StarRes = pool.filter(c => c.stars === 4 && c.category === 'resonator');
+
+    // Strictly exclude Rover (all elements) from 5-star convene drops!
+    const pool5StarRes = pool.filter(c => c.stars === 5 && c.category === 'resonator' && !c.id.startsWith('rover') && c.isGachaPullable !== false);
+    const pool5StarWeap = pool.filter(c => c.stars === 5 && c.category === 'weapon');
+    const pool4StarRes = pool.filter(c => c.stars === 4 && c.category === 'resonator' && !c.id.startsWith('rover') && c.isGachaPullable !== false);
     const pool4StarWeap = pool.filter(c => c.stars === 4 && c.category === 'weapon');
     const pool3Star = pool.filter(c => c.stars === 3);
+
+    const active5StarPool = isWeaponBanner ? pool5StarWeap : pool5StarRes;
 
     // Hard Pity Trigger at 80 pulls OR Forced 5-Star (Jackpot Surge): 100% 5-Star!
     if (force5Star || this.pity5Star >= 80) {
@@ -993,18 +1333,31 @@ class WuWaConveneEngine {
 
       let picked;
       let isWon = null;
-      if (b && b.featured5Star) {
-        if (Math.random() < 0.5) {
-          picked = window.cardDataService.getCardById(b.featured5Star) || pool5Star[0];
+
+      if (isWeaponBanner) {
+        // Weapon banner guarantees 100% of the featured 5-star weapon (NO 50/50 loss)
+        if (b && b.featured5Star) {
+          picked = window.cardDataService.getCardById(b.featured5Star) || active5StarPool[0];
           isWon = true;
         } else {
-          const standardPool = pool5Star.filter(c => c.id !== b.featured5Star);
-          picked = standardPool.length ? standardPool[Math.floor(Math.random() * standardPool.length)] : pool5Star[0];
-          isWon = false;
+          picked = active5StarPool[Math.floor(Math.random() * active5StarPool.length)] || pool5StarWeap[0];
+          isWon = null;
         }
       } else {
-        picked = pool5Star[Math.floor(Math.random() * pool5Star.length)];
-        isWon = null;
+        // Resonator banner has standard 50/50 mechanic
+        if (b && b.featured5Star) {
+          if (Math.random() < 0.5) {
+            picked = window.cardDataService.getCardById(b.featured5Star) || pool5StarRes[0];
+            isWon = true;
+          } else {
+            const standardPool = pool5StarRes.filter(c => c.id !== b.featured5Star);
+            picked = standardPool.length ? standardPool[Math.floor(Math.random() * standardPool.length)] : pool5StarRes[0];
+            isWon = false;
+          }
+        } else {
+          picked = pool5StarRes[Math.floor(Math.random() * pool5StarRes.length)] || pool[0];
+          isWon = null;
+        }
       }
       return Object.assign({}, picked, { _pityAtDrop: pityAtDrop, _is5050Won: isWon });
     }
@@ -1022,18 +1375,31 @@ class WuWaConveneEngine {
 
       let picked;
       let isWon = null;
-      if (b && b.featured5Star) {
-        if (Math.random() < 0.5) {
-          picked = window.cardDataService.getCardById(b.featured5Star) || pool5Star[0];
+
+      if (isWeaponBanner) {
+        // Weapon banner guarantees 100% of the featured 5-star weapon
+        if (b && b.featured5Star) {
+          picked = window.cardDataService.getCardById(b.featured5Star) || active5StarPool[0];
           isWon = true;
         } else {
-          const standardPool = pool5Star.filter(c => c.id !== b.featured5Star);
-          picked = standardPool.length ? standardPool[Math.floor(Math.random() * standardPool.length)] : pool5Star[0];
-          isWon = false;
+          picked = active5StarPool[Math.floor(Math.random() * active5StarPool.length)] || pool5StarWeap[0];
+          isWon = null;
         }
       } else {
-        picked = pool5Star[Math.floor(Math.random() * pool5Star.length)];
-        isWon = null;
+        // Resonator banner 50/50
+        if (b && b.featured5Star) {
+          if (Math.random() < 0.5) {
+            picked = window.cardDataService.getCardById(b.featured5Star) || pool5StarRes[0];
+            isWon = true;
+          } else {
+            const standardPool = pool5StarRes.filter(c => c.id !== b.featured5Star);
+            picked = standardPool.length ? standardPool[Math.floor(Math.random() * standardPool.length)] : pool5StarRes[0];
+            isWon = false;
+          }
+        } else {
+          picked = pool5StarRes[Math.floor(Math.random() * pool5StarRes.length)] || pool[0];
+          isWon = null;
+        }
       }
       return Object.assign({}, picked, { _pityAtDrop: pityAtDrop, _is5050Won: isWon });
     }
@@ -1050,17 +1416,25 @@ class WuWaConveneEngine {
         if (found) return Object.assign({}, found, { _pityAtDrop: pityAtDrop, _is5050Won: null });
       }
 
-      // 50% 4-star resonator, 50% 4-star weapon
-      let picked;
-      if (Math.random() < 0.5 && pool4StarRes.length) {
-        picked = pool4StarRes[Math.floor(Math.random() * pool4StarRes.length)];
-      } else if (pool4StarWeap.length) {
-        picked = pool4StarWeap[Math.floor(Math.random() * pool4StarWeap.length)];
+      if (isWeaponBanner) {
+        // Weapon banner drops 4-star weapons
+        let picked = pool4StarWeap.length
+          ? pool4StarWeap[Math.floor(Math.random() * pool4StarWeap.length)]
+          : pool[0];
+        return Object.assign({}, picked, { _pityAtDrop: pityAtDrop, _is5050Won: null });
       } else {
-        const p4 = pool.filter(c => c.stars === 4);
-        picked = p4[Math.floor(Math.random() * p4.length)] || pool[0];
+        // Resonator banner: 50% 4-star resonator, 50% 4-star weapon
+        let picked;
+        if (Math.random() < 0.5 && pool4StarRes.length) {
+          picked = pool4StarRes[Math.floor(Math.random() * pool4StarRes.length)];
+        } else if (pool4StarWeap.length) {
+          picked = pool4StarWeap[Math.floor(Math.random() * pool4StarWeap.length)];
+        } else {
+          const p4 = pool.filter(c => c.stars === 4 && !c.id.startsWith('rover'));
+          picked = p4[Math.floor(Math.random() * p4.length)] || pool[0];
+        }
+        return Object.assign({}, picked, { _pityAtDrop: pityAtDrop, _is5050Won: null });
       }
-      return Object.assign({}, picked, { _pityAtDrop: pityAtDrop, _is5050Won: null });
     }
 
     // 3-Star Weapon (Blue)
@@ -1402,35 +1776,48 @@ class WuWaConveneEngine {
         setTimeout(() => { flashEl.style.opacity = '0'; }, 350);
       }
 
-      // Update Character Badge HUD with Multi-Gold indicator
+      // Update Character / Weapon Badge HUD with Multi-Gold indicator
       if (nameEl) nameEl.innerText = res.name;
       if (badgeEl) {
         const tagSpan = badgeEl.querySelector('span:first-child');
+        const isWeapon = res.category === 'weapon';
         if (tagSpan) {
           if (total5 >= 10) {
             tagSpan.className = "bg-gradient-to-r from-yellow-300 via-rose-500 to-purple-600 text-white font-orbitron font-black text-xs px-3.5 py-1.5 rounded-lg shadow-[0_0_40px_rgba(250,204,21,1)] animate-bounce";
-            tagSpan.innerText = `💥 NỔ MƯỜI (10/10 5★ GOD ROLL 0.067%) [${idx + 1}/${total5}]`;
+            tagSpan.innerText = isWeapon
+              ? `💥 NỔ MƯỜI VŨ KHÍ (10/10 5★ WEAPON GOD ROLL) [${idx + 1}/${total5}]`
+              : `💥 NỔ MƯỜI (10/10 5★ GOD ROLL 0.067%) [${idx + 1}/${total5}]`;
           } else if (total5 >= 5) {
             tagSpan.className = "bg-gradient-to-r from-amber-300 via-yellow-400 to-rose-600 text-black font-orbitron font-black text-xs px-3.5 py-1.5 rounded-lg shadow-[0_0_30px_rgba(250,204,21,0.95)] animate-pulse";
-            tagSpan.innerText = `🌌 NỔ NĂM (QUINTUPLE 5★ 0.8%) [${idx + 1}/${total5}]`;
+            tagSpan.innerText = isWeapon
+              ? `🌌 NỔ NĂM VŨ KHÍ (QUINTUPLE 5★ WEAPON) [${idx + 1}/${total5}]`
+              : `🌌 NỔ NĂM (QUINTUPLE 5★ 0.8%) [${idx + 1}/${total5}]`;
           } else if (total5 === 4) {
             tagSpan.className = "bg-gradient-to-r from-yellow-300 via-amber-400 to-red-600 text-black font-orbitron font-black text-xs px-3.5 py-1.5 rounded-lg shadow-[0_0_25px_rgba(250,204,21,0.9)] animate-pulse";
-            tagSpan.innerText = `👑 NỔ BỐN (QUADRUPLE 5★ 0.8%) [${idx + 1}/${total5}]`;
+            tagSpan.innerText = isWeapon
+              ? `👑 NỔ BỐN VŨ KHÍ (QUADRUPLE 5★ WEAPON) [${idx + 1}/${total5}]`
+              : `👑 NỔ BỐN (QUADRUPLE 5★ 0.8%) [${idx + 1}/${total5}]`;
           } else if (total5 === 3) {
             tagSpan.className = "bg-gradient-to-r from-amber-300 via-yellow-400 to-rose-500 text-black font-orbitron font-black text-xs px-3.5 py-1.5 rounded-lg shadow-[0_0_20px_rgba(250,204,21,0.8)]";
-            tagSpan.innerText = `⚡ NỔ BA (TRIPLE 5★ 0.8%) [${idx + 1}/${total5}]`;
+            tagSpan.innerText = isWeapon
+              ? `⚡ NỔ BA VŨ KHÍ (TRIPLE 5★ WEAPON) [${idx + 1}/${total5}]`
+              : `⚡ NỔ BA (TRIPLE 5★ 0.8%) [${idx + 1}/${total5}]`;
           } else if (total5 === 2) {
             tagSpan.className = "bg-gradient-to-r from-amber-400 via-orange-400 to-amber-300 text-black font-orbitron font-black text-xs px-3.5 py-1.5 rounded-lg shadow-[0_0_20px_rgba(250,204,21,0.7)]";
-            tagSpan.innerText = `🔥 NỔ ĐÔI (DOUBLE 5★) [${idx + 1}/${total5}]`;
+            tagSpan.innerText = isWeapon
+              ? `🔥 NỔ ĐÔI VŨ KHÍ (DOUBLE 5★ WEAPON) [${idx + 1}/${total5}]`
+              : `🔥 NỔ ĐÔI (DOUBLE 5★) [${idx + 1}/${total5}]`;
           } else {
             tagSpan.className = "bg-amber-400 text-black font-orbitron font-black text-xs px-3.5 py-1.5 rounded-lg shadow-[0_0_20px_rgba(250,204,21,0.6)]";
-            tagSpan.innerText = `★★★★★ 5★ CONVENE`;
+            tagSpan.innerText = isWeapon
+              ? `⚔️ ★★★★★ 5★ SIGNATURE WEAPON`
+              : `★★★★★ 5★ CONVENE`;
           }
         }
         badgeEl.style.opacity = '1';
       }
 
-      const videoSrc = res.videoUrl || `assets/videos/${res.id}.mp4`;
+      const videoSrc = res.videoUrl || (res.category === 'weapon' ? 'assets/videos/wuwa-5w-blazingbrilliance.mp4' : `assets/videos/${res.id}.mp4`);
       await playClip(videoSrc);
 
       if (badgeEl) badgeEl.style.opacity = '0';
@@ -1552,6 +1939,9 @@ class WuWaConveneEngine {
       const cardEl = document.createElement('div');
       const is5Star = item.stars === 5;
       const is4Star = item.stars === 4;
+      const isWeapon = item.category === 'weapon';
+      const imgClass = isWeapon ? 'w-full h-full object-contain p-2' : 'w-full h-full object-cover object-top';
+      const subLabel = item.element || item.weapon || (isWeapon ? 'Weapon' : 'Resonator');
 
       const starStr = '★'.repeat(item.stars || 3);
 
@@ -1563,7 +1953,7 @@ class WuWaConveneEngine {
 
       cardEl.innerHTML = `
         <div class="relative flex-1 bg-black overflow-hidden flex items-center justify-center">
-          <img src="${item.image || ''}" alt="${item.name}" class="w-full h-full object-cover object-top"
+          <img src="${item.image || ''}" alt="${item.name}" class="${imgClass}"
                onerror="window.cardDataService.handleImageError(this, '${item.id}')">
           <span class="absolute top-1.5 left-1.5 text-[9px] font-black px-1.5 py-0.5 rounded font-mono ${is5Star ? 'bg-amber-400 text-black' : (is4Star ? 'bg-purple-600 text-white' : 'bg-sky-600 text-white')}">
             ${starStr}
@@ -1572,7 +1962,7 @@ class WuWaConveneEngine {
         </div>
         <div class="p-2 bg-slate-950 flex flex-col justify-between border-t border-white/10">
           <div class="text-[9px] font-mono ${is5Star ? 'text-amber-300 font-bold' : (is4Star ? 'text-purple-300' : 'text-slate-400')} truncate">
-            ${item.element || item.type}
+            ${subLabel}
           </div>
           <div class="font-orbitron font-bold text-xs text-white truncate" title="${item.name}">${item.name}</div>
         </div>

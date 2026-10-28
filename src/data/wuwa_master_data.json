@@ -215,6 +215,7 @@
         "vi": "Aalto"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Pistols",
       "role": "sub_dps",
@@ -278,6 +279,7 @@
         "vi": "Aemeath"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Sword",
       "role": "main_dps",
@@ -341,6 +343,7 @@
         "vi": "Augusta"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Broadblade",
       "role": "main_dps",
@@ -404,6 +407,7 @@
         "vi": "Bạch Chỉ (Baizhi)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Glacio",
       "weapon": "Rectifier",
       "role": "support",
@@ -467,6 +471,7 @@
         "vi": "Brant"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Sword",
       "role": "sub_dps",
@@ -530,6 +535,7 @@
         "vi": "Buling"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Rectifier",
       "role": "sub_dps",
@@ -593,6 +599,7 @@
         "vi": "Calcharo (Tạp Tạp)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Broadblade",
       "role": "main_dps",
@@ -656,6 +663,7 @@
         "vi": "Camellya (Sơn Trà)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Havoc",
       "weapon": "Sword",
       "role": "main_dps",
@@ -719,6 +727,7 @@
         "vi": "Cantarella"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Havoc",
       "weapon": "Rectifier",
       "role": "support",
@@ -782,6 +791,7 @@
         "vi": "Carlotta (Kha Lạc Tháp)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Glacio",
       "weapon": "Pistols",
       "role": "main_dps",
@@ -845,6 +855,7 @@
         "vi": "Cartethyia"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Sword",
       "role": "main_dps",
@@ -908,6 +919,7 @@
         "vi": "Trường Ly (Changli)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Sword",
       "role": "sub_dps",
@@ -971,6 +983,7 @@
         "vi": "Chisa"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Havoc",
       "weapon": "Broadblade",
       "role": "main_dps",
@@ -1034,6 +1047,7 @@
         "vi": "Trĩ Hà (Chixia)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Pistols",
       "role": "main_dps",
@@ -1097,6 +1111,7 @@
         "vi": "Ciaccona"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Pistols",
       "role": "main_dps",
@@ -1160,6 +1175,7 @@
         "vi": "Đan Cẩn (Danjin)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Havoc",
       "weapon": "Sword",
       "role": "main_dps",
@@ -1223,6 +1239,7 @@
         "vi": "Denia"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Rectifier",
       "role": "main_dps",
@@ -1286,6 +1303,7 @@
         "vi": "An Khả (Encore)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Rectifier",
       "role": "main_dps",
@@ -1349,6 +1367,7 @@
         "vi": "Galbrena"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Pistols",
       "role": "main_dps",
@@ -1412,6 +1431,7 @@
         "vi": "Hiyuki"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Glacio",
       "weapon": "Sword",
       "role": "main_dps",
@@ -1475,6 +1495,7 @@
         "vi": "Hsin"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Rectifier",
       "role": "main_dps",
@@ -1538,6 +1559,7 @@
         "vi": "Iuno"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Gauntlets",
       "role": "main_dps",
@@ -1601,6 +1623,7 @@
         "vi": "Giám Tâm (Jianxin)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Gauntlets",
       "role": "support",
@@ -1664,6 +1687,7 @@
         "vi": "Cảnh Nhiên (Jingran)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Broadblade",
       "role": "main_dps",
@@ -1727,6 +1751,7 @@
         "vi": "Kim Tịch (Jinhsi)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Spectro",
       "weapon": "Broadblade",
       "role": "main_dps",
@@ -1790,6 +1815,7 @@
         "vi": "Kỵ Viêm (Jiyan)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Broadblade",
       "role": "main_dps",
@@ -1853,6 +1879,7 @@
         "vi": "Lăng Dương (Lingyang)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Glacio",
       "weapon": "Gauntlets",
       "role": "main_dps",
@@ -1916,6 +1943,7 @@
         "vi": "Lucilla"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Glacio",
       "weapon": "Rectifier",
       "role": "main_dps",
@@ -1979,6 +2007,7 @@
         "vi": "Lucy"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Spectro",
       "weapon": "Pistols",
       "role": "main_dps",
@@ -2042,6 +2071,7 @@
         "vi": "Lumi (Lưu Minh)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Broadblade",
       "role": "sub_dps",
@@ -2105,6 +2135,7 @@
         "vi": "Lupa"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Broadblade",
       "role": "main_dps",
@@ -2168,6 +2199,7 @@
         "vi": "Luuk Herssen"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Spectro",
       "weapon": "Gauntlets",
       "role": "main_dps",
@@ -2231,6 +2263,7 @@
         "vi": "Lynae"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Spectro",
       "weapon": "Pistols",
       "role": "main_dps",
@@ -2294,6 +2327,7 @@
         "vi": "Mornye"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Broadblade",
       "role": "main_dps",
@@ -2357,6 +2391,7 @@
         "vi": "Mạc Đặc Phỉ (Mortefi)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Fusion",
       "weapon": "Pistols",
       "role": "sub_dps",
@@ -2420,6 +2455,7 @@
         "vi": "Phoebe"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Spectro",
       "weapon": "Rectifier",
       "role": "main_dps",
@@ -2483,6 +2519,7 @@
         "vi": "Phrolova"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Havoc",
       "weapon": "Rectifier",
       "role": "main_dps",
@@ -2546,6 +2583,7 @@
         "vi": "Thanh Tiêu (Qingxiao)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Sword",
       "role": "main_dps",
@@ -2609,6 +2647,7 @@
         "vi": "Thu Nguyên (Qiuyuan)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Sword",
       "role": "main_dps",
@@ -2672,6 +2711,7 @@
         "vi": "Rebecca"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Pistols",
       "role": "main_dps",
@@ -2735,6 +2775,7 @@
         "vi": "Roccia (Lạc Khắc)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Havoc",
       "weapon": "Gauntlets",
       "role": "sub_dps",
@@ -2797,10 +2838,11 @@
         "en": "Rover: Aero",
         "vi": "Rover (Hệ Phong - Aero)"
       },
-      "rarity": 5,
+      "rarity": 4,
+      "isGachaPullable": false,
       "element": "Aero",
       "weapon": "Sword",
-      "role": "main_dps",
+      "role": "sub_dps",
       "assets": {
         "avatar": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.webp",
         "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.webp",
@@ -2808,12 +2850,12 @@
         "cutsceneVideo": "assets/videos/wuwa-5-roveraero.mp4"
       },
       "tiers": {
-        "toa": "T1",
-        "ww": "T1",
-        "matrix": "T1"
+        "toa": "T2",
+        "ww": "T2",
+        "matrix": "T2"
       },
       "build": {
-        "bestWeapon": "Signature 5★ Weapon",
+        "bestWeapon": "High-Refinement 4★ Weapon",
         "echoSet": "Aero Sonata Set (5pc)",
         "mainEcho": "Cost-4 Calamity/Overlord Echo",
         "statPriority": "Crit Rate / DMG > Element DMG% > ATK% > Energy Regen",
@@ -2821,33 +2863,33 @@
           "Rover: Aero + Sub-DPS + Verina/Shorekeeper"
         ],
         "analysis": {
-          "vi": "Rover (Hệ Phong - Aero) là một Resonator hệ Aero sử dụng Sword với vai trò MAIN DPS xuất sắc. Lối chơi xoay tua tối ưu hóa đòn đánh Forte Circuit kết hợp tuyệt kỹ Liberation giúp dọn dẹp các tầng Tháp Nghịch Cảnh và Ma Trận Chiến Thuật nhanh chóng.",
-          "en": "Rover: Aero is a premier Aero MAIN DPS wielding Sword. Features high burst rotation capitalizing on Forte Circuit synergy and Resonance Liberation AoE nukes."
+          "vi": "Rover (Hệ Phong - Aero) là một Resonator hệ Aero sử dụng Sword với vai trò SUB DPS xuất sắc. Lối chơi xoay tua tối ưu hóa đòn đánh Forte Circuit kết hợp tuyệt kỹ Liberation giúp dọn dẹp các tầng Tháp Nghịch Cảnh và Ma Trận Chiến Thuật nhanh chóng.",
+          "en": "Rover: Aero is a premier Aero SUB DPS wielding Sword. Features high burst rotation capitalizing on Forte Circuit synergy and Resonance Liberation AoE nukes."
         }
       },
       "combatStats": {
-        "hp": 13000,
-        "atk": 3000,
-        "critRate": 0.65,
-        "critDmg": 2.4,
+        "hp": 12400,
+        "atk": 2520,
+        "critRate": 0.5,
+        "critDmg": 2.0,
         "skills": {
           "basic": {
             "name": "Rover: Aero Combo",
-            "dmg": 660
+            "dmg": 554
           },
           "skill": {
             "name": "Rover: Aero Resonance Skill",
-            "dmg": 2250,
+            "dmg": 1890,
             "cd": 7
           },
           "forte": {
             "name": "Rover: Aero Forte Circuit",
-            "dmg": 6600,
+            "dmg": 5544,
             "forteCost": 100
           },
           "liberation": {
             "name": "Rover: Aero Resonance Liberation",
-            "dmg": 10200,
+            "dmg": 8568,
             "energyCost": 100
           }
         }
@@ -2860,10 +2902,11 @@
         "en": "Rover: Electro",
         "vi": "Rover (Hệ Lôi - Electro)"
       },
-      "rarity": 5,
+      "rarity": 4,
+      "isGachaPullable": false,
       "element": "Electro",
       "weapon": "Sword",
-      "role": "main_dps",
+      "role": "sub_dps",
       "assets": {
         "avatar": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.webp",
         "fullArt": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.webp",
@@ -2871,12 +2914,12 @@
         "cutsceneVideo": "assets/videos/wuwa-5-roverelectro.mp4"
       },
       "tiers": {
-        "toa": "T1",
-        "ww": "T1",
-        "matrix": "T1"
+        "toa": "T2",
+        "ww": "T2",
+        "matrix": "T2"
       },
       "build": {
-        "bestWeapon": "Signature 5★ Weapon",
+        "bestWeapon": "High-Refinement 4★ Weapon",
         "echoSet": "Electro Sonata Set (5pc)",
         "mainEcho": "Cost-4 Calamity/Overlord Echo",
         "statPriority": "Crit Rate / DMG > Element DMG% > ATK% > Energy Regen",
@@ -2884,33 +2927,33 @@
           "Rover: Electro + Sub-DPS + Verina/Shorekeeper"
         ],
         "analysis": {
-          "vi": "Rover (Hệ Lôi - Electro) là một Resonator hệ Electro sử dụng Sword với vai trò MAIN DPS xuất sắc. Lối chơi xoay tua tối ưu hóa đòn đánh Forte Circuit kết hợp tuyệt kỹ Liberation giúp dọn dẹp các tầng Tháp Nghịch Cảnh và Ma Trận Chiến Thuật nhanh chóng.",
-          "en": "Rover: Electro is a premier Electro MAIN DPS wielding Sword. Features high burst rotation capitalizing on Forte Circuit synergy and Resonance Liberation AoE nukes."
+          "vi": "Rover (Hệ Lôi - Electro) là một Resonator hệ Electro sử dụng Sword với vai trò SUB DPS xuất sắc. Lối chơi xoay tua tối ưu hóa đòn đánh Forte Circuit kết hợp tuyệt kỹ Liberation giúp dọn dẹp các tầng Tháp Nghịch Cảnh và Ma Trận Chiến Thuật nhanh chóng.",
+          "en": "Rover: Electro is a premier Electro SUB DPS wielding Sword. Features high burst rotation capitalizing on Forte Circuit synergy and Resonance Liberation AoE nukes."
         }
       },
       "combatStats": {
-        "hp": 13000,
-        "atk": 3000,
-        "critRate": 0.65,
-        "critDmg": 2.4,
+        "hp": 12400,
+        "atk": 2520,
+        "critRate": 0.5,
+        "critDmg": 2.0,
         "skills": {
           "basic": {
             "name": "Rover: Electro Combo",
-            "dmg": 660
+            "dmg": 554
           },
           "skill": {
             "name": "Rover: Electro Resonance Skill",
-            "dmg": 2250,
+            "dmg": 1890,
             "cd": 7
           },
           "forte": {
             "name": "Rover: Electro Forte Circuit",
-            "dmg": 6600,
+            "dmg": 5544,
             "forteCost": 100
           },
           "liberation": {
             "name": "Rover: Electro Resonance Liberation",
-            "dmg": 10200,
+            "dmg": 8568,
             "energyCost": 100
           }
         }
@@ -2923,7 +2966,8 @@
         "en": "Rover: Havoc",
         "vi": "Rover (Hệ Hủy Diệt - Havoc)"
       },
-      "rarity": 5,
+      "rarity": 4,
+      "isGachaPullable": false,
       "element": "Havoc",
       "weapon": "Sword",
       "role": "main_dps",
@@ -2952,28 +2996,28 @@
         }
       },
       "combatStats": {
-        "hp": 13000,
-        "atk": 3000,
-        "critRate": 0.65,
-        "critDmg": 2.4,
+        "hp": 12400,
+        "atk": 2820,
+        "critRate": 0.5,
+        "critDmg": 2.0,
         "skills": {
           "basic": {
             "name": "Rover: Havoc Combo",
-            "dmg": 660
+            "dmg": 620
           },
           "skill": {
             "name": "Rover: Havoc Resonance Skill",
-            "dmg": 2250,
+            "dmg": 2115,
             "cd": 7
           },
           "forte": {
             "name": "Rover: Havoc Forte Circuit",
-            "dmg": 6600,
+            "dmg": 6204,
             "forteCost": 100
           },
           "liberation": {
             "name": "Rover: Havoc Resonance Liberation",
-            "dmg": 10200,
+            "dmg": 9588,
             "energyCost": 100
           }
         }
@@ -2986,7 +3030,8 @@
         "en": "Rover: Spectro",
         "vi": "Rover (Hệ Quang - Spectro)"
       },
-      "rarity": 5,
+      "rarity": 4,
+      "isGachaPullable": false,
       "element": "Spectro",
       "weapon": "Sword",
       "role": "sub_dps",
@@ -3015,28 +3060,28 @@
         }
       },
       "combatStats": {
-        "hp": 13000,
-        "atk": 2700,
-        "critRate": 0.65,
-        "critDmg": 2.4,
+        "hp": 12400,
+        "atk": 2520,
+        "critRate": 0.5,
+        "critDmg": 2.0,
         "skills": {
           "basic": {
             "name": "Rover: Spectro Combo",
-            "dmg": 594
+            "dmg": 554
           },
           "skill": {
             "name": "Rover: Spectro Resonance Skill",
-            "dmg": 2025,
+            "dmg": 1890,
             "cd": 7
           },
           "forte": {
             "name": "Rover: Spectro Forte Circuit",
-            "dmg": 5940,
+            "dmg": 5544,
             "forteCost": 100
           },
           "liberation": {
             "name": "Rover: Spectro Resonance Liberation",
-            "dmg": 9180,
+            "dmg": 8568,
             "energyCost": 100
           }
         }
@@ -3050,6 +3095,7 @@
         "vi": "Tản Hoa (Sanhua)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Glacio",
       "weapon": "Sword",
       "role": "sub_dps",
@@ -3113,6 +3159,7 @@
         "vi": "Người Gác Bờ (Shorekeeper)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Spectro",
       "weapon": "Rectifier",
       "role": "support",
@@ -3176,6 +3223,7 @@
         "vi": "Sigrika"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Gauntlets",
       "role": "main_dps",
@@ -3239,6 +3287,7 @@
         "vi": "Tuế Tuế (Suisui)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Glacio",
       "weapon": "Rectifier",
       "role": "main_dps",
@@ -3302,6 +3351,7 @@
         "vi": "Tỏa Minh (Suoming)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Sword",
       "role": "main_dps",
@@ -3365,6 +3415,7 @@
         "vi": "Đào Kỳ (Taoqi)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Havoc",
       "weapon": "Broadblade",
       "role": "support",
@@ -3428,6 +3479,7 @@
         "vi": "Bạch Thược (Verina)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Spectro",
       "weapon": "Rectifier",
       "role": "support",
@@ -3491,6 +3543,7 @@
         "vi": "Tương Ly Diêu (Xiangli Yao)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Gauntlets",
       "role": "main_dps",
@@ -3554,6 +3607,7 @@
         "vi": "Ương Ương (Yangyang)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Aero",
       "weapon": "Sword",
       "role": "support",
@@ -3617,6 +3671,7 @@
         "vi": "Ương Ương: Huyền Linh"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Havoc",
       "weapon": "Sword",
       "role": "main_dps",
@@ -3680,6 +3735,7 @@
         "vi": "Ngâm Lâm (Yinlin)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Rectifier",
       "role": "sub_dps",
@@ -3743,6 +3799,7 @@
         "vi": "Dữu Hồ (Youhu)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Glacio",
       "weapon": "Gauntlets",
       "role": "support",
@@ -3806,6 +3863,7 @@
         "vi": "Viên Vũ (Yuanwu)"
       },
       "rarity": 4,
+      "isGachaPullable": true,
       "element": "Electro",
       "weapon": "Gauntlets",
       "role": "support",
@@ -3869,6 +3927,7 @@
         "vi": "Zani"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Spectro",
       "weapon": "Gauntlets",
       "role": "main_dps",
@@ -3932,6 +3991,7 @@
         "vi": "Chiết Chi (Zhezhi)"
       },
       "rarity": 5,
+      "isGachaPullable": true,
       "element": "Glacio",
       "weapon": "Rectifier",
       "role": "sub_dps",

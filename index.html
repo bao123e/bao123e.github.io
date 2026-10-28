@@ -163,10 +163,24 @@
       <!-- Top WuWa Banner Header -->
       <div class="glass-panel p-4 sm:p-5 rounded-3xl border border-amber-400/30 mb-5 shadow-2xl relative overflow-hidden bg-gradient-to-r from-slate-950 via-[#0c0f17] to-slate-950">
         
-        <!-- Banner Tabs -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-2 mb-3 border-b border-white/10 text-xs font-orbitron">
+        <!-- Master Category Switcher: Resonator Convene vs Weapon Convene -->
+        <div class="flex items-center gap-2.5 mb-3.5 pb-3 border-b border-white/10 flex-wrap">
+          <button id="convene-type-resonator" onclick="window.wuwaConveneEngine.setBannerCategory('resonator')"
+                  class="px-5 py-2.5 rounded-2xl font-orbitron font-black text-xs sm:text-sm border-2 border-amber-400 bg-amber-500/20 text-amber-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] flex items-center gap-2 transition-all cursor-pointer">
+            <i data-lucide="users" class="w-4 h-4 text-amber-400"></i>
+            <span>BANNER NHÂN VẬT (RESONATORS)</span>
+          </button>
+          <button id="convene-type-weapon" onclick="window.wuwaConveneEngine.setBannerCategory('weapon')"
+                  class="px-5 py-2.5 rounded-2xl font-orbitron font-black text-xs sm:text-sm border-2 border-white/10 bg-black/40 text-slate-400 hover:text-white flex items-center gap-2 transition-all cursor-pointer">
+            <i data-lucide="sword" class="w-4 h-4 text-amber-400"></i>
+            <span>BANNER VŨ KHÍ (WEAPONS)</span>
+          </button>
+        </div>
+
+        <!-- Resonator Banner Tabs -->
+        <div id="convene-resonator-tabs" class="flex items-center gap-2 overflow-x-auto pb-2 mb-3 border-b border-white/10 text-xs font-orbitron scrollbar-none">
           <button data-banner="all" class="wuwa-banner-tab active px-3.5 py-1.5 rounded-xl border border-amber-400 bg-amber-500/20 text-amber-300 font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
-            <span>🌌 Tidal Convergence (All Resonators)</span>
+            <span>🌌 Tidal Convergence (All 5★ Resonators)</span>
           </button>
           <button data-banner="jinhsi" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
             <span>✨ Tides of Jinzhou (Jinhsi)</span>
@@ -191,6 +205,52 @@
           </button>
           <button data-banner="phrolova" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
             <span>🌑 Abyssal Discord (Phrolova)</span>
+          </button>
+        </div>
+
+        <!-- Weapon Banner Tabs (Hidden by default, shown when Weapon category is active) -->
+        <div id="convene-weapon-tabs" class="hidden flex items-center gap-2 overflow-x-auto pb-2 mb-3 border-b border-white/10 text-xs font-orbitron scrollbar-none">
+          <button data-banner="w_all" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>⚔️ Absolute Pulsation (All 5★ Weapons)</span>
+          </button>
+          <button data-banner="w_blazing_brilliance" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>🔥 Blazing Brilliance (Sword • Changli)</span>
+          </button>
+          <button data-banner="w_blooming_jadehaven" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>🌿 Blooming Jadehaven (Broadblade)</span>
+          </button>
+          <button data-banner="w_azure_oath" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>💧 Azure Oath (Sword)</span>
+          </button>
+          <button data-banner="w_firstlights_herald" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>🔫 Firstlight's Herald (Pistols)</span>
+          </button>
+          <button data-banner="w_forged_dwarf_star" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>⭐ Forged Dwarf Star (Broadblade)</span>
+          </button>
+          <button data-banner="w_unspoken_rue" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>🗡️ Unspoken Rue (5★ Sword)</span>
+          </button>
+          <button data-banner="w_thousandfold_deliverance" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>✨ Thousandfold Deliverance (Sword)</span>
+          </button>
+          <button data-banner="w_freeze_frame" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>❄️ Freeze Frame (Rectifier)</span>
+          </button>
+          <button data-banner="w_spectral_trigger" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>🎯 Spectral Trigger (Pistols)</span>
+          </button>
+          <button data-banner="w_skull_thrasher" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>🥊 Skull Thrasher (Gauntlets)</span>
+          </button>
+          <button data-banner="w_ages_of_harvest" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>🌾 Ages of Harvest (Broadblade • Jinhsi)</span>
+          </button>
+          <button data-banner="w_stringmaster" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>⚡ Stringmaster (Rectifier • Yinlin)</span>
+          </button>
+          <button data-banner="w_verdant_summit" class="wuwa-banner-tab px-3.5 py-1.5 rounded-xl border border-transparent text-slate-400 hover:text-white font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+            <span>🐉 Verdant Summit (Broadblade • Jiyan)</span>
           </button>
         </div>
 
