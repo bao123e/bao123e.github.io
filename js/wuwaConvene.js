@@ -1253,9 +1253,20 @@ class WuWaConveneEngine {
     if (flashEl) flashEl.style.opacity = '0';
 
     let currentStepResolve = null;
+    let currentStepCleanup = null;
+    let isSkippedAll = false;
 
-    // Skipping advances to next clip or exits video sequence
-    const skipStep = () => {
+    // Advance current clip or exit cutscene
+    const advanceStep = () => {
+      try {
+        videoEl.pause();
+      } catch (e) {}
+
+      if (currentStepCleanup) {
+        currentStepCleanup();
+        currentStepCleanup = null;
+      }
+
       if (currentStepResolve) {
         const resolve = currentStepResolve;
         currentStepResolve = null;
@@ -1271,7 +1282,7 @@ class WuWaConveneEngine {
       if (mode === 'intro') {
         skipBtn.className = "wuwa-skip-intro-hotspot";
         skipBtn.innerHTML = '';
-        skipBtn.title = "Bỏ qua đoạn mở đầu (Skip)";
+        skipBtn.title = "Bỏ qua đoạn mở đầu (Skip Intro)";
         skipBtn.setAttribute('aria-label', 'Skip Intro');
       } else {
         skipBtn.className = "wuwa-skip-character-btn";
@@ -1279,29 +1290,45 @@ class WuWaConveneEngine {
           <span>SKIP</span>
           <i data-lucide="fast-forward" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400"></i>
         `;
-        skipBtn.title = "Bỏ qua hoạt cảnh nhân vật (Skip)";
+        skipBtn.title = "Bỏ qua hoạt cảnh nhân vật (Skip to Results)";
         skipBtn.setAttribute('aria-label', 'Skip Character Cutscene');
         if (window.lucide) window.lucide.createIcons();
       }
     };
 
-    if (skipBtn) {
-      skipBtn.onclick = (e) => {
+    // User triggers Skip button
+    const handleSkipClick = (e) => {
+      if (e) {
+        e.preventDefault();
         e.stopPropagation();
-        skipStep();
-      };
+      }
+      // If currently on character cutscene, skip directly to 10-item result screen
+      if (skipBtn && skipBtn.classList.contains('wuwa-skip-character-btn')) {
+        isSkippedAll = true;
+      }
+      advanceStep();
+    };
+
+    if (skipBtn) {
+      skipBtn.onclick = handleSkipClick;
+      skipBtn.ontouchend = handleSkipClick;
     }
 
-    // Allow clicking anywhere on video overlay or pressing Space/Esc/Enter to skip gracefully
-    const onOverlayClick = () => {
-      skipStep();
+    // Clicking anywhere on video overlay also advances
+    const onOverlayClick = (e) => {
+      if (e.target === skipBtn || (skipBtn && skipBtn.contains(e.target))) return;
+      advanceStep();
     };
-    videoOverlay.addEventListener('click', onOverlayClick);
+    videoOverlay.onclick = onOverlayClick;
 
+    // Keyboard shortcuts for PC (Space, Escape, Enter)
     const onKeyDown = (e) => {
       if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
-        skipStep();
+        if (skipBtn && skipBtn.classList.contains('wuwa-skip-character-btn')) {
+          isSkippedAll = true;
+        }
+        advanceStep();
       }
     };
     window.addEventListener('keydown', onKeyDown);
@@ -1309,6 +1336,8 @@ class WuWaConveneEngine {
     // Safe video playback runner
     const playClip = (src) => {
       return new Promise(resolve => {
+        if (isSkippedAll) return resolve();
+
         currentStepResolve = resolve;
         videoEl.src = src;
         videoEl.muted = false;
@@ -1330,8 +1359,10 @@ class WuWaConveneEngine {
           videoEl.removeEventListener('ended', onEnded);
           videoEl.removeEventListener('error', onError);
           currentStepResolve = null;
+          currentStepCleanup = null;
         };
 
+        currentStepCleanup = cleanup;
         videoEl.addEventListener('ended', onEnded, { once: true });
         videoEl.addEventListener('error', onError, { once: true });
 
@@ -1360,6 +1391,8 @@ class WuWaConveneEngine {
     setSkipMode('character');
     const total5 = highTierResonators.length;
     for (let idx = 0; idx < highTierResonators.length; idx++) {
+      if (isSkippedAll) break;
+
       const res = highTierResonators[idx];
 
       // White supernova flash transition into character cutscene
@@ -1408,9 +1441,12 @@ class WuWaConveneEngine {
       videoEl.src = '';
     } catch (e) {}
 
-    videoOverlay.removeEventListener('click', onOverlayClick);
+    videoOverlay.onclick = null;
     window.removeEventListener('keydown', onKeyDown);
-    if (skipBtn) skipBtn.onclick = null;
+    if (skipBtn) {
+      skipBtn.onclick = null;
+      skipBtn.ontouchend = null;
+    }
 
     videoOverlay.classList.add('hidden');
     videoOverlay.style.display = 'none';

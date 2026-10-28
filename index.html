@@ -1174,19 +1174,18 @@
       <!-- Fullscreen High-Resolution Cutscene Video (Tràn Viền Full Màn) -->
       <video id="wuwa-cutscene-video" class="wuwa-cinema-video pointer-events-none" playsinline preload="auto"></video>
       
-      <!-- Top Bar HUD: Character Title & Skip Button -->
-      <div id="wuwa-video-hud" class="absolute top-3 left-3 right-3 sm:top-6 sm:left-6 sm:right-6 flex items-center justify-between pointer-events-none z-20">
-        <div id="wuwa-video-char-badge" class="flex items-center gap-2 sm:gap-3 opacity-0 transition-opacity duration-300 pointer-events-auto">
-          <span class="bg-amber-400 text-black font-orbitron font-black text-[10px] sm:text-xs px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg shadow-[0_0_20px_rgba(250,204,21,0.6)]">
-            ★★★★★ 5★ CONVENE
-          </span>
-          <span id="wuwa-video-char-name" class="text-white font-orbitron font-bold text-xs sm:text-sm tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] truncate max-w-[130px] sm:max-w-xs"></span>
-        </div>
-
-        <button id="wuwa-video-skip-btn" class="pointer-events-auto cursor-pointer transition-all duration-200">
-          <!-- Populated dynamically via wuwaConvene.js (Transparent hotspot for intro vs Gold SKIP >> button for character) -->
-        </button>
+      <!-- Top Left HUD: Character Title & Badge -->
+      <div id="wuwa-video-char-badge" class="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2 sm:gap-3 opacity-0 transition-opacity duration-300 pointer-events-none z-20">
+        <span class="bg-amber-400 text-black font-orbitron font-black text-[10px] sm:text-xs px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg shadow-[0_0_20px_rgba(250,204,21,0.6)]">
+          ★★★★★ 5★ CONVENE
+        </span>
+        <span id="wuwa-video-char-name" class="text-white font-orbitron font-bold text-xs sm:text-sm tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] truncate max-w-[130px] sm:max-w-xs"></span>
       </div>
+
+      <!-- Top Right: Direct Interactive Skip Button (High Z-Index, Explicit Pointer Events) -->
+      <button id="wuwa-video-skip-btn" type="button" class="pointer-events-auto cursor-pointer z-50">
+        <!-- Styled dynamically via wuwaConvene.js (Transparent hotspot for intro vs Gold SKIP >> button for character) -->
+      </button>
 
       <!-- Flash Transition Overlay between clips -->
       <div id="wuwa-video-flash" class="absolute inset-0 bg-white pointer-events-none opacity-0 transition-opacity duration-200"></div>
