@@ -187,7 +187,7 @@ class WuWaConveneEngine {
       });
     }
 
-    // Result summary close / convene again
+    // Result summary close / convene again / open tracker
     const closeSummaryBtn = document.getElementById('wuwa-summary-close-btn');
     if (closeSummaryBtn) {
       closeSummaryBtn.addEventListener('click', () => this.closeSummary());
@@ -198,6 +198,14 @@ class WuWaConveneEngine {
       againBtn.addEventListener('click', () => {
         this.closeSummary();
         setTimeout(() => this.executeConvene(10), 300);
+      });
+    }
+
+    const summaryTrackerBtn = document.getElementById('wuwa-summary-tracker-btn');
+    if (summaryTrackerBtn) {
+      summaryTrackerBtn.addEventListener('click', () => {
+        this.closeSummary();
+        this.openTrackerDashboardView();
       });
     }
   }
@@ -1255,9 +1263,48 @@ class WuWaConveneEngine {
       }
     };
 
+    // Skip mode switcher:
+    // 'intro': transparent hotspot precisely mapped over the video's baked-in hexagon button (invisible/clean).
+    // 'character': stylish visible gold SKIP >> button for 5★ character cutscenes.
+    const setSkipMode = (mode) => {
+      if (!skipBtn) return;
+      if (mode === 'intro') {
+        skipBtn.className = "wuwa-skip-intro-hotspot";
+        skipBtn.innerHTML = '';
+        skipBtn.title = "Bỏ qua đoạn mở đầu (Skip)";
+        skipBtn.setAttribute('aria-label', 'Skip Intro');
+      } else {
+        skipBtn.className = "wuwa-skip-character-btn";
+        skipBtn.innerHTML = `
+          <span>SKIP</span>
+          <i data-lucide="fast-forward" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400"></i>
+        `;
+        skipBtn.title = "Bỏ qua hoạt cảnh nhân vật (Skip)";
+        skipBtn.setAttribute('aria-label', 'Skip Character Cutscene');
+        if (window.lucide) window.lucide.createIcons();
+      }
+    };
+
     if (skipBtn) {
-      skipBtn.onclick = skipStep;
+      skipBtn.onclick = (e) => {
+        e.stopPropagation();
+        skipStep();
+      };
     }
+
+    // Allow clicking anywhere on video overlay or pressing Space/Esc/Enter to skip gracefully
+    const onOverlayClick = () => {
+      skipStep();
+    };
+    videoOverlay.addEventListener('click', onOverlayClick);
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        skipStep();
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
 
     // Safe video playback runner
     const playClip = (src) => {
@@ -1304,9 +1351,13 @@ class WuWaConveneEngine {
     };
 
     // 1. Play Golden Convene Meteor Vortex Intro (wuwa_gold_intro.mp4)
+    // Intro video has baked-in hexagon skip icon -> use transparent hotspot mode
+    setSkipMode('intro');
     await playClip('assets/videos/wuwa_gold_intro.mp4');
 
     // 2. Play Individual 5★ Character Cutscene(s) in sequence
+    // Character videos do NOT have hexagon button -> switch to stylish gold SKIP >> button
+    setSkipMode('character');
     const total5 = highTierResonators.length;
     for (let idx = 0; idx < highTierResonators.length; idx++) {
       const res = highTierResonators[idx];
@@ -1357,9 +1408,12 @@ class WuWaConveneEngine {
       videoEl.src = '';
     } catch (e) {}
 
+    videoOverlay.removeEventListener('click', onOverlayClick);
+    window.removeEventListener('keydown', onKeyDown);
+    if (skipBtn) skipBtn.onclick = null;
+
     videoOverlay.classList.add('hidden');
     videoOverlay.style.display = 'none';
-    if (skipBtn) skipBtn.onclick = null;
   }
 
   // Display Fullscreen 5★ Resonator Splash Art Modal
@@ -1468,8 +1522,7 @@ class WuWaConveneEngine {
         ? 'border-2 border-amber-400 shadow-[0_0_20px_rgba(250,204,21,0.5)]'
         : (is4Star ? 'border border-purple-400/80 shadow-[0_0_12px_rgba(192,132,252,0.3)]' : 'border border-sky-400/30');
 
-      cardEl.className = `wuwa-diamond-card flex flex-col rounded-xl overflow-hidden bg-slate-900/90 ${borderClass} relative group select-none transition-transform duration-300 hover:scale-105`;
-      cardEl.style.height = '230px';
+      cardEl.className = `wuwa-diamond-card flex flex-col rounded-xl overflow-hidden bg-slate-900/90 ${borderClass} relative group select-none transition-transform duration-300 hover:scale-105 h-48 sm:h-56`;
 
       cardEl.innerHTML = `
         <div class="relative flex-1 bg-black overflow-hidden flex items-center justify-center">

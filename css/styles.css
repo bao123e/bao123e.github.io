@@ -534,3 +534,108 @@ body {
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
   background: rgba(250, 204, 21, 0.8);
 }
+
+/* ====================================================================
+   WUTHERING WAVES FULLSCREEN CINEMA CUTSCENE & RESPONSIVE VIDEO
+   ==================================================================== */
+#wuwa-video-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: #000000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full-bleed border-to-border video (Tràn viền full màn, không viền đen) */
+.wuwa-cinema-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Authentic In-Video Hexagon Hotspot (Intro Mode)
+   Covers the top-right baked-in hexagon skip icon with transparent hit area */
+.wuwa-skip-intro-hotspot {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 76px;
+  height: 68px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 30;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+@media (min-width: 640px) {
+  .wuwa-skip-intro-hotspot {
+    top: 14px;
+    right: 20px;
+    width: 92px;
+    height: 80px;
+  }
+}
+
+/* Stylish Cutscene Skip Button (Character Mode)
+   Displays prominent gold SKIP >> button when character animations play */
+.wuwa-skip-character-btn {
+  background: rgba(0, 0, 0, 0.68);
+  color: #fde047;
+  border: 1px solid rgba(250, 204, 21, 0.55);
+  padding: 6px 14px;
+  border-radius: 0.75rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 12px rgba(250, 204, 21, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  cursor: pointer;
+  z-index: 30;
+  user-select: none;
+}
+
+.wuwa-skip-character-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fef08a;
+  border-color: #facc15;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.5);
+}
+
+.wuwa-skip-character-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 640px) {
+  .wuwa-skip-character-btn {
+    padding: 5px 11px;
+    font-size: 0.7rem;
+    gap: 0.35rem;
+  }
+}
+
+/* Scrollbar None Utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
