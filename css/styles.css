@@ -544,7 +544,7 @@ body {
   z-index: 70;
   background: #000000;
   overflow: hidden;
-  display: flex;
+  display: none; /* Hidden by default - dynamically displayed via wuwaConvene.js */
   align-items: center;
   justify-content: center;
 }
