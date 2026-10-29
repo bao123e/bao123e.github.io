@@ -206,7 +206,8 @@ class AppController {
       tracker: document.getElementById('view-tracker'),
       tierlist: document.getElementById('view-tierlist'),
       combat: document.getElementById('view-combat'),
-      archive: document.getElementById('view-archive')
+      archive: document.getElementById('view-archive'),
+      abyss: document.getElementById('view-abyss')
     };
 
     Object.keys(views).forEach(key => {
@@ -214,7 +215,7 @@ class AppController {
       if (el) {
         if (key === viewName) {
           el.classList.remove('hidden');
-          el.style.display = (key === 'convene' || key === 'tracker' || key === 'tierlist' || key === 'combat' || key === 'archive') ? 'flex' : 'block';
+          el.style.display = (key === 'convene' || key === 'tracker' || key === 'tierlist' || key === 'combat' || key === 'archive' || key === 'abyss') ? 'flex' : 'block';
         } else {
           el.classList.add('hidden');
           el.style.display = 'none';

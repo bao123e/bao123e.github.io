@@ -100,6 +100,11 @@
           <i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>
           <span data-i18n="nav.archive">Hồ Sơ Resonator</span>
         </button>
+        <button data-view="abyss" class="nav-tab-btn px-3.5 py-1.5 rounded-lg border border-transparent text-slate-400 hover:text-white transition-all flex items-center gap-1.5 font-bold cursor-pointer group">
+          <i data-lucide="gamepad-2" class="w-3.5 h-3.5 text-cyan-400 group-hover:rotate-12 transition-transform"></i>
+          <span data-i18n="nav.abyss">WuWa Abyss (Godot 2D)</span>
+          <span class="text-[9px] bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 px-1.5 py-0.2 rounded font-mono font-bold animate-pulse">NEW</span>
+        </button>
       </nav>
 
       <!-- Right HUD Controls: Language Toggle, Astrite, Refill, Audio -->
@@ -152,6 +157,10 @@
       <button data-view="archive" class="nav-tab-btn px-3 py-1.5 rounded-lg border border-transparent text-slate-400 font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
         <i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>
         <span>Archive</span>
+      </button>
+      <button data-view="abyss" class="nav-tab-btn px-3 py-1.5 rounded-lg border border-transparent text-slate-400 font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+        <i data-lucide="gamepad-2" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <span>Abyss (Godot)</span>
       </button>
     </div>
 
@@ -1048,6 +1057,45 @@
       <!-- Resonators Showcase Grid -->
       <div id="archive-resonators-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 flex-1">
         <!-- Populated via app.js -->
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         VIEW 6: WUTHERING WAVES: ABYSS (GODOT 2D ROGUELIKE ENGINE)
+         ==================================================================== -->
+    <section id="view-abyss" class="hidden relative flex-1 flex flex-col p-3 sm:p-6 overflow-y-auto max-w-7xl mx-auto w-full space-y-4 select-none">
+      
+      <!-- Header Banner -->
+      <div class="glass-panel p-4 sm:p-6 rounded-3xl border border-cyan-400/40 shadow-2xl relative overflow-hidden bg-gradient-to-r from-slate-950 via-[#0a1122] to-slate-950 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-center gap-3.5">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cyan-500/20 border border-cyan-400/50 p-1 shadow-lg flex items-center justify-center flex-shrink-0 text-cyan-300">
+            <i data-lucide="gamepad-2" class="w-7 h-7 text-cyan-400"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <h1 class="font-orbitron font-black text-lg sm:text-2xl text-white tracking-wide">WUTHERING WAVES: ABYSS</h1>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-400/40 font-bold uppercase">GODOT 4.7 2D ROGUELIKE</span>
+            </div>
+            <p class="text-xs text-slate-300 font-sans mt-0.5">
+              Tựa game Roguelike 2D phong cách Wuthering Waves Abyss xuất bản từ Godot Engine. Điều khiển: <span class="text-amber-300 font-mono font-bold">W, A, S, D</span> di chuyển • <span class="text-cyan-300 font-mono font-bold">SPACE</span> Lướt né (I-Frames) • <span class="text-yellow-300 font-mono font-bold">Chuột Trái / J</span> Chém • <span class="text-purple-300 font-mono font-bold">E</span> Kỹ năng • <span class="text-rose-400 font-mono font-bold">Q</span> Nộ (Liberation)
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 self-start md:self-auto flex-wrap">
+          <a href="abyss/index.html" target="_blank" class="px-4 py-2 rounded-xl border border-cyan-400/50 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-md">
+            <i data-lucide="maximize" class="w-3.5 h-3.5"></i>
+            <span>Chơi Toàn Màn Hình</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Embedded Godot WebAssembly Game Container -->
+      <div class="glass-panel p-2 sm:p-3 rounded-3xl border border-cyan-400/30 bg-black/80 shadow-2xl relative overflow-hidden flex flex-col items-center">
+        <div class="relative w-full aspect-[16/9] max-h-[640px] rounded-2xl overflow-hidden bg-black border border-white/10 shadow-inner">
+          <iframe id="abyss-godot-frame" src="abyss/index.html" class="w-full h-full border-0" allow="autoplay; fullscreen; focus-without-user-activation" loading="lazy"></iframe>
+        </div>
       </div>
 
     </section>

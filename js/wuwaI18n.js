@@ -15,7 +15,8 @@ class WuWaI18n {
           tracker: "Thống Kê (Tracker)",
           tierList: "Bảng Xếp Hạng Meta",
           combat: "Đấu Trường 2D Chibi",
-          archive: "Hồ Sơ Resonator"
+          archive: "Hồ Sơ Resonator",
+          abyss: "WuWa Abyss (Godot 2D)"
         },
         modes: {
           toa: "Tháp Nghịch Cảnh (ToA)",
@@ -105,7 +106,8 @@ class WuWaI18n {
           tracker: "Tracker",
           tierList: "Meta Tier List",
           combat: "2D Chibi Combat",
-          archive: "Resonator Archive"
+          archive: "Resonator Archive",
+          abyss: "WuWa Abyss (2D Game)"
         },
         modes: {
           toa: "Tower of Adversity (ToA)",
